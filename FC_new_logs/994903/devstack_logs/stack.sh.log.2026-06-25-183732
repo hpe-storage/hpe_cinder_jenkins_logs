@@ -1,0 +1,567 @@
+2026-06-25 18:37:33.268 | +[38;5;242m./stack.sh:main:488                      (B[m exec
+2026-06-25 18:37:33.268 | ++[38;5;242m./stack.sh:main:488                      (B[m /usr/bin/python3.12 /opt/stack/devstack/tools/outfilter.py -o /opt/stack/logs/stack.sh.log.2026-06-25-183732.summary.2026-06-25-183732
+2026-06-25 18:37:33.269 | +[38;5;242m./stack.sh:main:496                      (B[m echo_summary 'stack.sh log /opt/stack/logs/stack.sh.log.2026-06-25-183732'
+2026-06-25 18:37:33.269 | +[38;5;242m./stack.sh:echo_summary:441              (B[m [[ -t 3 ]]
+2026-06-25 18:37:33.269 | +[38;5;242m./stack.sh:echo_summary:447              (B[m echo -e stack.sh log /opt/stack/logs/stack.sh.log.2026-06-25-183732
+2026-06-25 18:37:33.269 | +[38;5;242m./stack.sh:main:498                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-06-25-183732 /opt/stack/logs/stack.sh.log
+2026-06-25 18:37:33.294 | +[38;5;242m./stack.sh:main:499                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-06-25-183732.summary.2026-06-25-183732 /opt/stack/logs/stack.sh.log.summary
+2026-06-25 18:37:33.319 | +[38;5;242m./stack.sh:main:514                      (B[m check_path_perm_sanity /opt/stack
+2026-06-25 18:37:33.340 | +[38;5;242mfunctions:check_path_perm_sanity:615     (B[m local real_path
+2026-06-25 18:37:33.363 | ++[38;5;242mfunctions:check_path_perm_sanity:616     (B[m readlink -f /opt/stack
+2026-06-25 18:37:33.395 | +[38;5;242mfunctions:check_path_perm_sanity:616     (B[m real_path=/opt/stack
+2026-06-25 18:37:33.415 | +[38;5;242mfunctions:check_path_perm_sanity:617     (B[m local rebuilt_path=
+2026-06-25 18:37:33.439 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m tr / ' '
+2026-06-25 18:37:33.439 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m echo /opt/stack
+2026-06-25 18:37:33.465 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-06-25 18:37:33.487 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt
+2026-06-25 18:37:33.509 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt
+2026-06-25 18:37:33.535 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 755 = 700 ]]
+2026-06-25 18:37:33.557 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-06-25 18:37:33.578 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt/stack
+2026-06-25 18:37:33.600 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt/stack
+2026-06-25 18:37:33.626 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 751 = 700 ]]
+2026-06-25 18:37:33.647 | +[38;5;242m./stack.sh:main:520                      (B[m trap exit_trap EXIT
+2026-06-25 18:37:33.669 | +[38;5;242m./stack.sh:main:561                      (B[m trap err_trap ERR
+2026-06-25 18:37:33.690 | +[38;5;242m./stack.sh:main:574                      (B[m set -o errexit
+2026-06-25 18:37:33.712 | +[38;5;242m./stack.sh:main:577                      (B[m uname -a
+2026-06-25 18:37:33.716 | Linux ubuntu 6.8.0-124-generic #124-Ubuntu SMP PREEMPT_DYNAMIC Tue May 26 13:00:45 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+2026-06-25 18:37:33.737 | +[38;5;242m./stack.sh:main:580                      (B[m SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
+2026-06-25 18:37:33.758 | +[38;5;242m./stack.sh:main:581                      (B[m rm -f /opt/stack/data/ca-bundle.pem
+2026-06-25 18:37:33.783 | +[38;5;242m./stack.sh:main:584                      (B[m source /opt/stack/devstack/lib/database
+2026-06-25 18:37:33.958 | +[38;5;242m./stack.sh:main:585                      (B[m source /opt/stack/devstack/lib/rpc_backend
+2026-06-25 18:37:34.068 | +[38;5;242m./stack.sh:main:588                      (B[m source /opt/stack/devstack/lib/host
+2026-06-25 18:37:34.093 | +++[38;5;242mlib/host:source:12                       (B[m trueorfalse True ENABLE_KSM
+2026-06-25 18:37:34.208 | ++[38;5;242mlib/host:source:12                       (B[m ENABLE_KSM=True
+2026-06-25 18:37:34.231 | +++[38;5;242mlib/host:source:13                       (B[m trueorfalse True ENABLE_KSMTUNED
+2026-06-25 18:37:34.348 | ++[38;5;242mlib/host:source:13                       (B[m ENABLE_KSMTUNED=True
+2026-06-25 18:37:34.372 | +++[38;5;242mlib/host:source:56                       (B[m trueorfalse False ENABLE_ZSWAP
+2026-06-25 18:37:34.485 | ++[38;5;242mlib/host:source:56                       (B[m ENABLE_ZSWAP=False
+2026-06-25 18:37:34.507 | ++[38;5;242mlib/host:source:59                       (B[m ZSWAP_COMPRESSOR=lz4
+2026-06-25 18:37:34.529 | ++[38;5;242mlib/host:source:60                       (B[m ZSWAP_ZPOOL=zsmalloc
+2026-06-25 18:37:34.552 | +++[38;5;242mlib/host:source:82                       (B[m trueorfalse False ENABLE_SYSCTL_MEM_TUNING
+2026-06-25 18:37:34.668 | ++[38;5;242mlib/host:source:82                       (B[m ENABLE_SYSCTL_MEM_TUNING=False
+2026-06-25 18:37:34.691 | +++[38;5;242mlib/host:source:104                      (B[m trueorfalse False ENABLE_SYSCTL_NET_TUNING
+2026-06-25 18:37:34.807 | ++[38;5;242mlib/host:source:104                      (B[m ENABLE_SYSCTL_NET_TUNING=False
+2026-06-25 18:37:34.830 | +[38;5;242m./stack.sh:main:591                      (B[m tune_host
+2026-06-25 18:37:34.852 | +[38;5;242mlib/host:tune_host:125                   (B[m configure_host_mem
+2026-06-25 18:37:34.873 | +[38;5;242mlib/host:configure_host_mem:99           (B[m configure_zswap
+2026-06-25 18:37:34.893 | +[38;5;242mlib/host:configure_zswap:69              (B[m [[ False == \T\r\u\e ]]
+2026-06-25 18:37:34.915 | +[38;5;242mlib/host:configure_host_mem:100          (B[m configure_ksm
+2026-06-25 18:37:34.936 | +[38;5;242mlib/host:configure_ksm:39                (B[m [[ True == \T\r\u\e ]]
+2026-06-25 18:37:34.957 | +[38;5;242mlib/host:configure_ksm:40                (B[m install_package ksmtuned
+2026-06-25 18:37:34.978 | +[38;5;242mfunctions-common:install_package:1438    (B[m update_package_repo
+2026-06-25 18:37:34.999 | +[38;5;242mfunctions-common:update_package_repo:1412 (B[m NO_UPDATE_REPOS=False
+2026-06-25 18:37:35.019 | +[38;5;242mfunctions-common:update_package_repo:1413 (B[m REPOS_UPDATED=False
+2026-06-25 18:37:35.040 | +[38;5;242mfunctions-common:update_package_repo:1414 (B[m RETRY_UPDATE=False
+2026-06-25 18:37:35.062 | +[38;5;242mfunctions-common:update_package_repo:1416 (B[m [[ False = \T\r\u\e ]]
+2026-06-25 18:37:35.083 | +[38;5;242mfunctions-common:update_package_repo:1420 (B[m is_ubuntu
+2026-06-25 18:37:35.103 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-06-25 18:37:35.124 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-06-25 18:37:35.145 | +[38;5;242mfunctions-common:update_package_repo:1421 (B[m apt_get_update
+2026-06-25 18:37:35.167 | +[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ False == \T\r\u\e ]]
+2026-06-25 18:37:35.188 | +[38;5;242mfunctions-common:apt_get_update:1171     (B[m [[ False = \T\r\u\e ]]
+2026-06-25 18:37:35.209 | +[38;5;242mfunctions-common:apt_get_update:1173     (B[m local sudo=sudo
+2026-06-25 18:37:35.232 | ++[38;5;242mfunctions-common:apt_get_update:1174     (B[m id -u
+2026-06-25 18:37:35.258 | +[38;5;242mfunctions-common:apt_get_update:1174     (B[m [[ 1001 = \0 ]]
+2026-06-25 18:37:35.279 | +[38;5;242mfunctions-common:apt_get_update:1177     (B[m time_start apt-get-update
+2026-06-25 18:37:35.299 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=apt-get-update
+2026-06-25 18:37:35.320 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-06-25 18:37:35.342 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-06-25 18:37:35.365 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-06-25 18:37:35.390 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1782412655368
+2026-06-25 18:37:35.411 | +[38;5;242mfunctions-common:apt_get_update:1179     (B[m local 'proxies=http_proxy=http://proxy-in.its.hpecorp.net:80 https_proxy=http://proxy-in.its.hpecorp.net:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 '
+2026-06-25 18:37:35.432 | +[38;5;242mfunctions-common:apt_get_update:1180     (B[m local 'update_cmd=sudo http_proxy=http://proxy-in.its.hpecorp.net:80 https_proxy=http://proxy-in.its.hpecorp.net:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update'
+2026-06-25 18:37:35.453 | +[38;5;242mfunctions-common:apt_get_update:1181     (B[m timeout 300 sh -c 'while ! sudo http_proxy=http://proxy-in.its.hpecorp.net:80 https_proxy=http://proxy-in.its.hpecorp.net:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update; do sleep 30; done'
+2026-06-25 18:37:36.518 | Hit:1 https://in.archive.ubuntu.com/ubuntu noble InRelease
+2026-06-25 18:37:36.671 | Get:2 https://in.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-06-25 18:37:37.287 | Hit:3 https://in.archive.ubuntu.com/ubuntu noble-backports InRelease
+2026-06-25 18:37:37.548 | Get:4 https://in.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17.4 kB]
+2026-06-25 18:37:38.432 | Hit:5 https://security.ubuntu.com/ubuntu noble-security InRelease
+2026-06-25 18:37:43.202 | Fetched 144 kB in 3s (48.7 kB/s)
+2026-06-25 18:37:46.120 | Reading package lists...
+2026-06-25 18:37:46.186 | +[38;5;242mfunctions-common:apt_get_update:1185     (B[m REPOS_UPDATED=True
+2026-06-25 18:37:46.202 | +[38;5;242mfunctions-common:apt_get_update:1187     (B[m time_stop apt-get-update
+2026-06-25 18:37:46.220 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-06-25 18:37:46.236 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-06-25 18:37:46.251 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-06-25 18:37:46.268 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-06-25 18:37:46.290 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-06-25 18:37:46.309 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get-update
+2026-06-25 18:37:46.328 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1782412655368
+2026-06-25 18:37:46.350 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1782412655368 ]]
+2026-06-25 18:37:46.372 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-06-25 18:37:46.399 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1782412666376
+2026-06-25 18:37:46.420 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=11008
+2026-06-25 18:37:46.441 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=0
+2026-06-25 18:37:46.463 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-06-25 18:37:46.484 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=11008
+2026-06-25 18:37:46.505 | +[38;5;242mfunctions-common:install_package:1439    (B[m real_install_package ksmtuned
+2026-06-25 18:37:46.527 | +[38;5;242mfunctions-common:real_install_package:1426 (B[m is_ubuntu
+2026-06-25 18:37:46.548 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-06-25 18:37:46.569 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-06-25 18:37:46.591 | +[38;5;242mfunctions-common:real_install_package:1427 (B[m apt_get install ksmtuned
+2026-06-25 18:37:46.728 | +[38;5;242mfunctions-common:apt_get:1207            (B[m sudo DEBIAN_FRONTEND=noninteractive http_proxy=http://proxy-in.its.hpecorp.net:80 https_proxy=http://proxy-in.its.hpecorp.net:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 apt-get --option Dpkg::Options::=--force-confold --assume-yes install ksmtuned
+2026-06-25 18:37:46.827 | Reading package lists...
+2026-06-25 18:37:47.309 | Building dependency tree...
+2026-06-25 18:37:47.311 | Reading state information...
+2026-06-25 18:37:47.667 | ksmtuned is already the newest version (4.20150326).
+2026-06-25 18:37:47.667 | The following packages were automatically installed and are no longer required:
+2026-06-25 18:37:47.667 |   libcgi-fast-perl libcgi-pm-perl libclone-perl libencode-locale-perl
+2026-06-25 18:37:47.667 |   libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+2026-06-25 18:37:47.667 |   libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
+2026-06-25 18:37:47.667 |   libhttp-date-perl libhttp-message-perl libio-html-perl
+2026-06-25 18:37:47.667 |   liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
+2026-06-25 18:37:47.668 |   liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils
+2026-06-25 18:37:47.668 | Use 'sudo apt autoremove' to remove them.
+2026-06-25 18:37:47.731 | 0 upgraded, 0 newly installed, 0 to remove and 68 not upgraded.
+2026-06-25 18:37:47.754 | +[38;5;242mfunctions-common:apt_get:1211            (B[m result=0
+2026-06-25 18:37:47.770 | +[38;5;242mfunctions-common:apt_get:1214            (B[m time_stop apt-get
+2026-06-25 18:37:47.786 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-06-25 18:37:47.799 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-06-25 18:37:47.813 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-06-25 18:37:47.827 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-06-25 18:37:47.848 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-06-25 18:37:47.869 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get
+2026-06-25 18:37:47.890 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1782412666708
+2026-06-25 18:37:47.911 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1782412666708 ]]
+2026-06-25 18:37:47.934 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-06-25 18:37:47.960 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1782412667937
+2026-06-25 18:37:47.981 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=1229
+2026-06-25 18:37:48.002 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=1657
+2026-06-25 18:37:48.023 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-06-25 18:37:48.044 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=2886
+2026-06-25 18:37:48.065 | +[38;5;242mfunctions-common:apt_get:1215            (B[m return 0
+2026-06-25 18:37:48.090 | ++[38;5;242mlib/host:configure_ksm:42                (B[m bool_to_int ENABLE_KSM
+2026-06-25 18:37:48.214 | +[38;5;242mlib/host:configure_ksm:42                (B[m set_sysfs_parameter ksm 0 /sys/kernel/mm/ksm/run
+2026-06-25 18:37:48.235 | +[38;5;242mlib/host:set_sysfs_parameter:15          (B[m local name=ksm
+2026-06-25 18:37:48.257 | +[38;5;242mlib/host:set_sysfs_parameter:16          (B[m local value=0
+2026-06-25 18:37:48.279 | +[38;5;242mlib/host:set_sysfs_parameter:17          (B[m local param_file=/sys/kernel/mm/ksm/run
+2026-06-25 18:37:48.301 | +[38;5;242mlib/host:set_sysfs_parameter:19          (B[m [[ ! -e /sys/kernel/mm/ksm/run ]]
+2026-06-25 18:37:48.324 | +[38;5;242mlib/host:set_sysfs_parameter:24          (B[m echo 0
+2026-06-25 18:37:48.329 | +[38;5;242mlib/host:set_sysfs_parameter:24          (B[m sudo tee /sys/kernel/mm/ksm/run
+2026-06-25 18:37:48.360 | 0
+2026-06-25 18:37:48.386 | +[38;5;242mlib/host:configure_host_mem:101          (B[m configure_sysctl_mem_parmaters
+2026-06-25 18:37:48.408 | +[38;5;242mlib/host:configure_sysctl_mem_parmaters:84 (B[m [[ False == \T\r\u\e ]]
+2026-06-25 18:37:48.431 | +[38;5;242mlib/host:tune_host:126                   (B[m configure_host_net
+2026-06-25 18:37:48.453 | +[38;5;242mlib/host:configure_host_net:121          (B[m configure_sysctl_net_parmaters
+2026-06-25 18:37:48.476 | +[38;5;242mlib/host:configure_sysctl_net_parmaters:106 (B[m [[ False == \T\r\u\e ]]
+2026-06-25 18:37:48.499 | +[38;5;242m./stack.sh:main:597                      (B[m fetch_plugins
+2026-06-25 18:37:48.522 | +[38;5;242mfunctions-common:fetch_plugins:1766      (B[m local plugins=
+2026-06-25 18:37:48.545 | +[38;5;242mfunctions-common:fetch_plugins:1767      (B[m local plugin
+2026-06-25 18:37:48.567 | +[38;5;242mfunctions-common:fetch_plugins:1770      (B[m [[ -z '' ]]
+2026-06-25 18:37:48.590 | +[38;5;242mfunctions-common:fetch_plugins:1771      (B[m return
+2026-06-25 18:37:48.613 | +[38;5;242m./stack.sh:main:601                      (B[m run_phase override_defaults
+2026-06-25 18:37:48.636 | +[38;5;242mfunctions-common:run_phase:1848          (B[m local mode=override_defaults
+2026-06-25 18:37:48.658 | +[38;5;242mfunctions-common:run_phase:1849          (B[m local phase=
+2026-06-25 18:37:48.681 | +[38;5;242mfunctions-common:run_phase:1850          (B[m [[ -d /opt/stack/devstack/extras.d ]]
+2026-06-25 18:37:48.704 | +[38;5;242mfunctions-common:run_phase:1851          (B[m local extra_plugin_file_name
+2026-06-25 18:37:48.726 | +[38;5;242mfunctions-common:run_phase:1852          (B[m for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
+2026-06-25 18:37:48.747 | +[38;5;242mfunctions-common:run_phase:1857          (B[m local exceptions=80-tempest.sh
+2026-06-25 18:37:48.769 | +[38;5;242mfunctions-common:run_phase:1858          (B[m local extra
+2026-06-25 18:37:48.793 | ++[38;5;242mfunctions-common:run_phase:1859          (B[m basename /opt/stack/devstack/extras.d/80-tempest.sh
+2026-06-25 18:37:48.829 | +[38;5;242mfunctions-common:run_phase:1859          (B[m extra=80-tempest.sh
+2026-06-25 18:37:48.851 | +[38;5;242mfunctions-common:run_phase:1860          (B[m [[ 80-tempest.sh =~ 80-tempest\.sh ]]
+2026-06-25 18:37:48.873 | +[38;5;242mfunctions-common:run_phase:1864          (B[m [[ -r /opt/stack/devstack/extras.d/80-tempest.sh ]]
+2026-06-25 18:37:48.895 | +[38;5;242mfunctions-common:run_phase:1864          (B[m source /opt/stack/devstack/extras.d/80-tempest.sh override_defaults
+2026-06-25 18:37:48.917 | ++[38;5;242mextras.d/80-tempest.sh:source:3          (B[m is_service_enabled tempest
+2026-06-25 18:37:49.031 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-06-25 18:37:49.052 | ++[38;5;242mextras.d/80-tempest.sh:source:4          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2026-06-25 18:37:49.074 | ++[38;5;242mextras.d/80-tempest.sh:source:7          (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-06-25 18:37:49.096 | ++[38;5;242mextras.d/80-tempest.sh:source:10         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-06-25 18:37:49.118 | ++[38;5;242mextras.d/80-tempest.sh:source:13         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-06-25 18:37:49.140 | ++[38;5;242mextras.d/80-tempest.sh:source:16         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-06-25 18:37:49.162 | ++[38;5;242mextras.d/80-tempest.sh:source:19         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-06-25 18:37:49.184 | ++[38;5;242mextras.d/80-tempest.sh:source:27         (B[m [[ override_defaults == \u\n\s\t\a\c\k ]]
+2026-06-25 18:37:49.206 | ++[38;5;242mextras.d/80-tempest.sh:source:32         (B[m [[ override_defaults == \c\l\e\a\n ]]
+2026-06-25 18:37:49.228 | +[38;5;242mfunctions-common:run_phase:1869          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2026-06-25 18:37:49.251 | +[38;5;242mfunctions-common:run_phase:1872          (B[m [[ override_defaults == \o\v\e\r\r\i\d\e\_\d\e\f\a\u\l\t\s ]]
+2026-06-25 18:37:49.274 | +[38;5;242mfunctions-common:run_phase:1873          (B[m plugin_override_defaults
+2026-06-25 18:37:49.297 | +[38;5;242mfunctions-common:plugin_override_defaults:1807 (B[m local plugins=
+2026-06-25 18:37:49.320 | +[38;5;242mfunctions-common:plugin_override_defaults:1808 (B[m local plugin
+2026-06-25 18:37:49.343 | +[38;5;242mfunctions-common:plugin_override_defaults:1811 (B[m [[ -z '' ]]
+2026-06-25 18:37:49.367 | +[38;5;242mfunctions-common:plugin_override_defaults:1812 (B[m return
+2026-06-25 18:37:49.390 | +[38;5;242m./stack.sh:main:604                      (B[m source /opt/stack/devstack/lib/apache
+2026-06-25 18:37:49.509 | +[38;5;242m./stack.sh:main:607                      (B[m source /opt/stack/devstack/lib/tls
+2026-06-25 18:37:49.532 | ++[38;5;242mlib/tls:source:38                        (B[m is_service_enabled tls-proxy
+2026-06-25 18:37:49.650 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-06-25 18:37:49.675 | +++[38;5;242mlib/tls:source:43                        (B[m hostname -f
+2026-06-25 18:37:49.702 | ++[38;5;242mlib/tls:source:43                        (B[m DEVSTACK_HOSTNAME=localhost
+2026-06-25 18:37:49.725 | ++[38;5;242mlib/tls:source:44                        (B[m DEVSTACK_CERT_NAME=devstack-cert
+2026-06-25 18:37:49.748 | ++[38;5;242mlib/tls:source:45                        (B[m DEVSTACK_CERT=/opt/stack/data/devstack-cert.pem
+2026-06-25 18:37:49.772 | ++[38;5;242mlib/tls:source:48                        (B[m ROOT_CA_DIR=/opt/stack/data/CA/root-ca
+2026-06-25 18:37:49.794 | ++[38;5;242mlib/tls:source:49                        (B[m INT_CA_DIR=/opt/stack/data/CA/int-ca
+2026-06-25 18:37:49.818 | ++[38;5;242mlib/tls:source:51                        (B[m ORG_NAME=OpenStack
+2026-06-25 18:37:49.841 | ++[38;5;242mlib/tls:source:52                        (B[m ORG_UNIT_NAME=DevStack
+2026-06-25 18:37:49.864 | ++[38;5;242mlib/tls:source:55                        (B[m STUD_PROTO=--tls
+2026-06-25 18:37:49.887 | ++[38;5;242mlib/tls:source:56                        (B[m STUD_CIPHERS='TLSv1+HIGH:!DES:!aNULL:!eNULL:@STRENGTH'
+2026-06-25 18:37:49.910 | ++[38;5;242mlib/tls:source:63                        (B[m OPENSSL=/usr/bin/openssl
+2026-06-25 18:37:49.942 | +[38;5;242m./stack.sh:main:610                      (B[m source /opt/stack/devstack/lib/infra
+2026-06-25 18:37:50.046 | +[38;5;242m./stack.sh:main:611                      (B[m source /opt/stack/devstack/lib/libraries
+2026-06-25 18:37:50.163 | +[38;5;242m./stack.sh:main:612                      (B[m source /opt/stack/devstack/lib/lvm
+2026-06-25 18:37:50.272 | +[38;5;242m./stack.sh:main:613                      (B[m source /opt/stack/devstack/lib/horizon
+2026-06-25 18:37:50.379 | +[38;5;242m./stack.sh:main:614                      (B[m source /opt/stack/devstack/lib/keystone
+2026-06-25 18:37:50.560 | +[38;5;242m./stack.sh:main:615                      (B[m source /opt/stack/devstack/lib/glance
+2026-06-25 18:37:50.859 | +[38;5;242m./stack.sh:main:616                      (B[m source /opt/stack/devstack/lib/nova
+2026-06-25 18:37:51.246 | +[38;5;242m./stack.sh:main:617                      (B[m source /opt/stack/devstack/lib/placement
+2026-06-25 18:37:51.398 | +[38;5;242m./stack.sh:main:618                      (B[m source /opt/stack/devstack/lib/cinder
+2026-06-25 18:37:51.649 | +[38;5;242m./stack.sh:main:619                      (B[m source /opt/stack/devstack/lib/swift
+2026-06-25 18:37:51.876 | +[38;5;242m./stack.sh:main:620                      (B[m source /opt/stack/devstack/lib/neutron
+2026-06-25 18:37:51.901 | ++[38;5;242mlib/neutron:source:61                    (B[m is_service_enabled tls-proxy
+2026-06-25 18:37:52.028 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-06-25 18:37:52.053 | ++[38;5;242mlib/neutron:source:66                    (B[m GITDIR["python-neutronclient"]=/opt/stack/python-neutronclient
+2026-06-25 18:37:52.080 | ++[38;5;242mlib/neutron:source:68                    (B[m NEUTRON_DIR=/opt/stack/neutron
+2026-06-25 18:37:52.106 | ++[38;5;242mlib/neutron:source:69                    (B[m NEUTRON_FWAAS_DIR=/opt/stack/neutron-fwaas
+2026-06-25 18:37:52.132 | ++[38;5;242mlib/neutron:source:72                    (B[m [[ -d /opt/stack/neutron/bin/neutron-server ]]
+2026-06-25 18:37:52.158 | +++[38;5;242mlib/neutron:source:75                    (B[m get_python_exec_prefix
+2026-06-25 18:37:52.291 | +++[38;5;242minc/python:get_python_exec_prefix:80     (B[m [[ True == \T\r\u\e ]]
+2026-06-25 18:37:52.315 | +++[38;5;242minc/python:get_python_exec_prefix:81     (B[m echo /opt/stack/data/venv/bin
+2026-06-25 18:37:52.343 | ++[38;5;242mlib/neutron:source:75                    (B[m NEUTRON_BIN_DIR=/opt/stack/data/venv/bin
+2026-06-25 18:37:52.368 | ++[38;5;242mlib/neutron:source:78                    (B[m NEUTRON_CONF_DIR=/etc/neutron
+2026-06-25 18:37:52.392 | ++[38;5;242mlib/neutron:source:79                    (B[m NEUTRON_CONF=/etc/neutron/neutron.conf
+2026-06-25 18:37:52.417 | ++[38;5;242mlib/neutron:source:80                    (B[m export NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2026-06-25 18:37:52.442 | ++[38;5;242mlib/neutron:source:80                    (B[m NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2026-06-25 18:37:52.467 | ++[38;5;242mlib/neutron:source:82                    (B[m NEUTRON_UWSGI=neutron.wsgi.api:application
+2026-06-25 18:37:52.492 | ++[38;5;242mlib/neutron:source:83                    (B[m NEUTRON_UWSGI_CONF=/etc/neutron/neutron-api-uwsgi.ini
+2026-06-25 18:37:52.518 | +++[38;5;242mlib/neutron:source:89                    (B[m trueorfalse True NEUTRON_ENFORCE_SCOPE
+2026-06-25 18:37:52.650 | ++[38;5;242mlib/neutron:source:89                    (B[m NEUTRON_ENFORCE_SCOPE=True
+2026-06-25 18:37:52.675 | ++[38;5;242mlib/neutron:source:93                    (B[m AGENT_DHCP_BINARY=/opt/stack/data/venv/bin/neutron-dhcp-agent
+2026-06-25 18:37:52.700 | ++[38;5;242mlib/neutron:source:94                    (B[m AGENT_L3_BINARY=/opt/stack/data/venv/bin/neutron-l3-agent
+2026-06-25 18:37:52.724 | ++[38;5;242mlib/neutron:source:95                    (B[m AGENT_META_BINARY=/opt/stack/data/venv/bin/neutron-metadata-agent
+2026-06-25 18:37:52.749 | ++[38;5;242mlib/neutron:source:99                    (B[m Q_DHCP_CONF_FILE=/etc/neutron/dhcp_agent.ini
+2026-06-25 18:37:52.773 | ++[38;5;242mlib/neutron:source:102                   (B[m NEUTRON_DHCP_CONF=/etc/neutron/dhcp_agent.ini
+2026-06-25 18:37:52.798 | ++[38;5;242mlib/neutron:source:103                   (B[m Q_L3_CONF_FILE=/etc/neutron/l3_agent.ini
+2026-06-25 18:37:52.822 | ++[38;5;242mlib/neutron:source:106                   (B[m NEUTRON_L3_CONF=/etc/neutron/l3_agent.ini
+2026-06-25 18:37:52.847 | ++[38;5;242mlib/neutron:source:107                   (B[m Q_META_CONF_FILE=/etc/neutron/metadata_agent.ini
+2026-06-25 18:37:52.871 | ++[38;5;242mlib/neutron:source:110                   (B[m Q_DB_NAME=neutron
+2026-06-25 18:37:52.895 | ++[38;5;242mlib/neutron:source:112                   (B[m Q_PLUGIN=ml2
+2026-06-25 18:37:52.920 | ++[38;5;242mlib/neutron:source:114                   (B[m Q_HOST=10.132.239.110
+2026-06-25 18:37:52.944 | ++[38;5;242mlib/neutron:source:116                   (B[m Q_PROTOCOL=http
+2026-06-25 18:37:52.971 | +++[38;5;242mlib/neutron:source:118                   (B[m ipv6_unquote 0.0.0.0
+2026-06-25 18:37:52.996 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m echo 0.0.0.0
+2026-06-25 18:37:52.997 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m tr -d '[]'
+2026-06-25 18:37:53.028 | ++[38;5;242mlib/neutron:source:118                   (B[m Q_LISTEN_ADDRESS=0.0.0.0
+2026-06-25 18:37:53.052 | ++[38;5;242mlib/neutron:source:120                   (B[m Q_ADMIN_USERNAME=neutron
+2026-06-25 18:37:53.076 | ++[38;5;242mlib/neutron:source:122                   (B[m Q_AUTH_STRATEGY=keystone
+2026-06-25 18:37:53.100 | ++[38;5;242mlib/neutron:source:124                   (B[m Q_OVS_USE_VETH=False
+2026-06-25 18:37:53.124 | ++[38;5;242mlib/neutron:source:125                   (B[m Q_USE_ROOTWRAP=True
+2026-06-25 18:37:53.151 | +++[38;5;242mlib/neutron:source:126                   (B[m trueorfalse True Q_USE_ROOTWRAP_DAEMON
+2026-06-25 18:37:53.281 | ++[38;5;242mlib/neutron:source:126                   (B[m Q_USE_ROOTWRAP_DAEMON=True
+2026-06-25 18:37:53.308 | +++[38;5;242mlib/neutron:source:128                   (B[m ipv6_unquote 10.132.239.110
+2026-06-25 18:37:53.332 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m echo 10.132.239.110
+2026-06-25 18:37:53.332 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m tr -d '[]'
+2026-06-25 18:37:53.362 | ++[38;5;242mlib/neutron:source:128                   (B[m Q_META_DATA_IP=10.132.239.110
+2026-06-25 18:37:53.386 | ++[38;5;242mlib/neutron:source:130                   (B[m Q_ALLOW_OVERLAPPING_IP=True
+2026-06-25 18:37:53.410 | ++[38;5;242mlib/neutron:source:131                   (B[m Q_NOTIFY_NOVA_PORT_STATUS_CHANGES=True
+2026-06-25 18:37:53.434 | ++[38;5;242mlib/neutron:source:132                   (B[m Q_NOTIFY_NOVA_PORT_DATA_CHANGES=True
+2026-06-25 18:37:53.459 | ++[38;5;242mlib/neutron:source:133                   (B[m VIF_PLUGGING_IS_FATAL=True
+2026-06-25 18:37:53.482 | ++[38;5;242mlib/neutron:source:134                   (B[m VIF_PLUGGING_TIMEOUT=300
+2026-06-25 18:37:53.506 | ++[38;5;242mlib/neutron:source:137                   (B[m SKIP_STOP_OVN=False
+2026-06-25 18:37:53.530 | ++[38;5;242mlib/neutron:source:141                   (B[m _Q_PLUGIN_EXTRA_CONF_PATH=/etc/neutron
+2026-06-25 18:37:53.554 | ++[38;5;242mlib/neutron:source:144                   (B[m NEUTRON_ENDPOINT_SERVICE_NAME=networking
+2026-06-25 18:37:53.577 | ++[38;5;242mlib/neutron:source:145                   (B[m [[ -z networking ]]
+2026-06-25 18:37:53.601 | ++[38;5;242mlib/neutron:source:150                   (B[m ALEMBIC_REPO=https://github.com/sqlalchemy/alembic.git
+2026-06-25 18:37:53.625 | ++[38;5;242mlib/neutron:source:151                   (B[m ALEMBIC_DIR=/opt/stack/alembic
+2026-06-25 18:37:53.648 | ++[38;5;242mlib/neutron:source:152                   (B[m ALEMBIC_BRANCH=main
+2026-06-25 18:37:53.672 | ++[38;5;242mlib/neutron:source:153                   (B[m SQLALCHEMY_REPO=https://github.com/sqlalchemy/sqlalchemy.git
+2026-06-25 18:37:53.695 | ++[38;5;242mlib/neutron:source:154                   (B[m SQLALCHEMY_DIR=/opt/stack/sqlalchemy
+2026-06-25 18:37:53.720 | ++[38;5;242mlib/neutron:source:155                   (B[m SQLALCHEMY_BRANCH=main
+2026-06-25 18:37:53.744 | ++[38;5;242mlib/neutron:source:166                   (B[m declare -a -g Q_PLUGIN_EXTRA_CONF_FILES
+2026-06-25 18:37:53.767 | ++[38;5;242mlib/neutron:source:169                   (B[m declare -a -g _Q_PLUGIN_EXTRA_CONF_FILES_ABS
+2026-06-25 18:37:53.791 | ++[38;5;242mlib/neutron:source:172                   (B[m Q_RR_CONF_FILE=/etc/neutron/rootwrap.conf
+2026-06-25 18:37:53.814 | ++[38;5;242mlib/neutron:source:173                   (B[m [[ True == \F\a\l\s\e ]]
+2026-06-25 18:37:53.840 | +++[38;5;242mlib/neutron:source:176                   (B[m get_rootwrap_location neutron
+2026-06-25 18:37:53.863 | +++[38;5;242mfunctions:get_rootwrap_location:601      (B[m local module=neutron
+2026-06-25 18:37:53.887 | ++++[38;5;242mfunctions:get_rootwrap_location:603      (B[m get_python_exec_prefix
+2026-06-25 18:37:54.015 | ++++[38;5;242minc/python:get_python_exec_prefix:80     (B[m [[ True == \T\r\u\e ]]
+2026-06-25 18:37:54.038 | ++++[38;5;242minc/python:get_python_exec_prefix:81     (B[m echo /opt/stack/data/venv/bin
+2026-06-25 18:37:54.063 | +++[38;5;242mfunctions:get_rootwrap_location:603      (B[m echo /opt/stack/data/venv/bin/neutron-rootwrap
+2026-06-25 18:37:54.088 | ++[38;5;242mlib/neutron:source:176                   (B[m NEUTRON_ROOTWRAP=/opt/stack/data/venv/bin/neutron-rootwrap
+2026-06-25 18:37:54.111 | ++[38;5;242mlib/neutron:source:177                   (B[m Q_RR_COMMAND='sudo /opt/stack/data/venv/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2026-06-25 18:37:54.134 | ++[38;5;242mlib/neutron:source:178                   (B[m [[ True == \T\r\u\e ]]
+2026-06-25 18:37:54.156 | ++[38;5;242mlib/neutron:source:179                   (B[m Q_RR_DAEMON_COMMAND='sudo /opt/stack/data/venv/bin/neutron-rootwrap-daemon /etc/neutron/rootwrap.conf'
+2026-06-25 18:37:54.181 | ++[38;5;242mlib/neutron:source:191                   (B[m Q_DVR_MODE=legacy
+2026-06-25 18:37:54.204 | ++[38;5;242mlib/neutron:source:192                   (B[m [[ legacy != \l\e\g\a\c\y ]]
+2026-06-25 18:37:54.228 | ++[38;5;242mlib/neutron:source:208                   (B[m ENABLE_TENANT_TUNNELS=True
+2026-06-25 18:37:54.252 | ++[38;5;242mlib/neutron:source:213                   (B[m TENANT_TUNNEL_RANGES=1:1000
+2026-06-25 18:37:54.275 | ++[38;5;242mlib/neutron:source:218                   (B[m ENABLE_TENANT_VLANS=False
+2026-06-25 18:37:54.299 | ++[38;5;242mlib/neutron:source:226                   (B[m TENANT_VLAN_RANGE=
+2026-06-25 18:37:54.322 | ++[38;5;242mlib/neutron:source:234                   (B[m PHYSICAL_NETWORK=public
+2026-06-25 18:37:54.346 | ++[38;5;242mlib/neutron:source:244                   (B[m OVS_PHYSICAL_BRIDGE=br-ex
+2026-06-25 18:37:54.369 | ++[38;5;242mlib/neutron:source:250                   (B[m OVS_ENABLE_TUNNELING=True
+2026-06-25 18:37:54.393 | ++[38;5;242mlib/neutron:source:254                   (B[m ENABLE_ISOLATED_METADATA=False
+2026-06-25 18:37:54.417 | ++[38;5;242mlib/neutron:source:259                   (B[m ENABLE_METADATA_NETWORK=False
+2026-06-25 18:37:54.440 | ++[38;5;242mlib/neutron:source:264                   (B[m '[' -f /opt/stack/devstack/lib/neutron_plugins/ml2 ']'
+2026-06-25 18:37:54.463 | ++[38;5;242mlib/neutron:source:265                   (B[m source /opt/stack/devstack/lib/neutron_plugins/ml2
+2026-06-25 18:37:54.893 | ++[38;5;242mlib/neutron:source:272                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/metering
+2026-06-25 18:37:55.003 | ++[38;5;242mlib/neutron:source:275                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/l3
+2026-06-25 18:37:55.027 | +++[38;5;242mlib/neutron_plugins/services/l3:source:3 (B[m IP_VERSION=4
+2026-06-25 18:37:55.052 | +++[38;5;242mlib/neutron_plugins/services/l3:source:5 (B[m [[ 4 != \4 ]]
+2026-06-25 18:37:55.077 | +++[38;5;242mlib/neutron_plugins/services/l3:source:9 (B[m NEUTRON_CREATE_INITIAL_NETWORKS=True
+2026-06-25 18:37:55.102 | +++[38;5;242mlib/neutron_plugins/services/l3:source:12 (B[m PROVIDER_SUBNET_NAME=provider_net
+2026-06-25 18:37:55.126 | +++[38;5;242mlib/neutron_plugins/services/l3:source:13 (B[m IPV6_PROVIDER_SUBNET_NAME=provider_net_v6
+2026-06-25 18:37:55.151 | +++[38;5;242mlib/neutron_plugins/services/l3:source:14 (B[m IPV6_PROVIDER_FIXED_RANGE=
+2026-06-25 18:37:55.175 | +++[38;5;242mlib/neutron_plugins/services/l3:source:15 (B[m IPV6_PROVIDER_NETWORK_GATEWAY=
+2026-06-25 18:37:55.200 | +++[38;5;242mlib/neutron_plugins/services/l3:source:17 (B[m PUBLIC_BRIDGE=br-ex
+2026-06-25 18:37:55.225 | +++[38;5;242mlib/neutron_plugins/services/l3:source:18 (B[m PUBLIC_BRIDGE_MTU=1500
+2026-06-25 18:37:55.249 | +++[38;5;242mlib/neutron_plugins/services/l3:source:23 (B[m Q_ASSIGN_GATEWAY_TO_PUBLIC_BRIDGE=True
+2026-06-25 18:37:55.274 | +++[38;5;242mlib/neutron_plugins/services/l3:source:26 (B[m Q_ROUTER_NAME=router1
+2026-06-25 18:37:55.298 | +++[38;5;242mlib/neutron_plugins/services/l3:source:31 (B[m Q_USE_PUBLIC_VETH=False
+2026-06-25 18:37:55.323 | +++[38;5;242mlib/neutron_plugins/services/l3:source:32 (B[m Q_PUBLIC_VETH_EX=veth-pub-ex
+2026-06-25 18:37:55.348 | +++[38;5;242mlib/neutron_plugins/services/l3:source:33 (B[m Q_PUBLIC_VETH_INT=veth-pub-int
+2026-06-25 18:37:55.373 | +++[38;5;242mlib/neutron_plugins/services/l3:source:39 (B[m Q_L3_ROUTER_PER_TENANT=True
+2026-06-25 18:37:55.398 | +++[38;5;242mlib/neutron_plugins/services/l3:source:72 (B[m Q_USE_PROVIDERNET_FOR_PUBLIC=True
+2026-06-25 18:37:55.422 | +++[38;5;242mlib/neutron_plugins/services/l3:source:73 (B[m PUBLIC_PHYSICAL_NETWORK=public
+2026-06-25 18:37:55.449 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m uuidgen
+2026-06-25 18:37:55.450 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m sed s/-//g
+2026-06-25 18:37:55.451 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m cut -c 23-
+2026-06-25 18:37:55.453 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m sed -e 's/\(..\)\(....\)\(....\)/\1:\2:\3/'
+2026-06-25 18:37:55.487 | +++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m IPV6_GLOBAL_ID=0f:6479:29df
+2026-06-25 18:37:55.511 | +++[38;5;242mlib/neutron_plugins/services/l3:source:79 (B[m IPV6_RA_MODE=slaac
+2026-06-25 18:37:55.536 | +++[38;5;242mlib/neutron_plugins/services/l3:source:80 (B[m IPV6_ADDRESS_MODE=slaac
+2026-06-25 18:37:55.560 | +++[38;5;242mlib/neutron_plugins/services/l3:source:81 (B[m IPV6_PUBLIC_SUBNET_NAME=ipv6-public-subnet
+2026-06-25 18:37:55.585 | +++[38;5;242mlib/neutron_plugins/services/l3:source:82 (B[m IPV6_PRIVATE_SUBNET_NAME=ipv6-private-subnet
+2026-06-25 18:37:55.610 | +++[38;5;242mlib/neutron_plugins/services/l3:source:83 (B[m IPV6_ADDRS_SAFE_TO_USE=fd0f:6479:29df::/56
+2026-06-25 18:37:55.637 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:86 (B[m echo fd0f:6479:29df::/56
+2026-06-25 18:37:55.637 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:86 (B[m awk -F / '{ print $1"/"($2>63 ? $2 : 64) }'
+2026-06-25 18:37:55.672 | +++[38;5;242mlib/neutron_plugins/services/l3:source:86 (B[m FIXED_RANGE_V6=fd0f:6479:29df::/64
+2026-06-25 18:37:55.696 | +++[38;5;242mlib/neutron_plugins/services/l3:source:87 (B[m IPV6_PRIVATE_NETWORK_GATEWAY=
+2026-06-25 18:37:55.721 | +++[38;5;242mlib/neutron_plugins/services/l3:source:88 (B[m IPV6_PUBLIC_RANGE=2001:db8::/64
+2026-06-25 18:37:55.745 | +++[38;5;242mlib/neutron_plugins/services/l3:source:89 (B[m IPV6_PUBLIC_NETWORK_GATEWAY=2001:db8::2
+2026-06-25 18:37:55.769 | +++[38;5;242mlib/neutron_plugins/services/l3:source:90 (B[m IPV6_ROUTER_GW_IP=2001:db8::1
+2026-06-25 18:37:55.793 | +++[38;5;242mlib/neutron_plugins/services/l3:source:93 (B[m NETWORK_GATEWAY=
+2026-06-25 18:37:55.818 | +++[38;5;242mlib/neutron_plugins/services/l3:source:94 (B[m PUBLIC_NETWORK_GATEWAY=
+2026-06-25 18:37:55.843 | +++[38;5;242mlib/neutron_plugins/services/l3:source:95 (B[m PRIVATE_SUBNET_NAME=private-subnet
+2026-06-25 18:37:55.868 | +++[38;5;242mlib/neutron_plugins/services/l3:source:96 (B[m PUBLIC_SUBNET_NAME=public-subnet
+2026-06-25 18:37:55.892 | +++[38;5;242mlib/neutron_plugins/services/l3:source:97 (B[m PUBLIC_SUBNET_ENABLE_DHCP=False
+2026-06-25 18:37:55.916 | +++[38;5;242mlib/neutron_plugins/services/l3:source:100 (B[m USE_SUBNETPOOL=False
+2026-06-25 18:37:55.940 | +++[38;5;242mlib/neutron_plugins/services/l3:source:101 (B[m SUBNETPOOL_NAME_V4=shared-default-subnetpool-v4
+2026-06-25 18:37:55.964 | +++[38;5;242mlib/neutron_plugins/services/l3:source:102 (B[m SUBNETPOOL_NAME_V6=shared-default-subnetpool-v6
+2026-06-25 18:37:55.988 | +++[38;5;242mlib/neutron_plugins/services/l3:source:104 (B[m SUBNETPOOL_PREFIX_V4=10.0.0.0/22
+2026-06-25 18:37:56.012 | +++[38;5;242mlib/neutron_plugins/services/l3:source:105 (B[m SUBNETPOOL_PREFIX_V6=fd0f:6479:29df::/56
+2026-06-25 18:37:56.036 | +++[38;5;242mlib/neutron_plugins/services/l3:source:107 (B[m SUBNETPOOL_SIZE_V4=26
+2026-06-25 18:37:56.060 | +++[38;5;242mlib/neutron_plugins/services/l3:source:108 (B[m SUBNETPOOL_SIZE_V6=64
+2026-06-25 18:37:56.088 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m ip -4 route
+2026-06-25 18:37:56.090 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m awk '{print $5}'
+2026-06-25 18:37:56.090 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m grep '^default'
+2026-06-25 18:37:56.125 | +++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m default_v4_route_devs=ens192
+2026-06-25 18:37:56.155 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m awk '{print $5}'
+2026-06-25 18:37:56.155 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m ip -6 route list match default table all
+2026-06-25 18:37:56.158 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m grep via
+2026-06-25 18:37:56.191 | +++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m default_v6_route_devs=
+2026-06-25 18:37:56.223 | ++[38;5;242mlib/neutron:source:278                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/placement
+2026-06-25 18:37:56.249 | ++[38;5;242mlib/neutron:source:279                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/trunk
+2026-06-25 18:37:56.274 | ++[38;5;242mlib/neutron:source:280                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/qos
+2026-06-25 18:37:56.300 | ++[38;5;242mlib/neutron:source:281                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/segments
+2026-06-25 18:37:56.326 | ++[38;5;242mlib/neutron:source:282                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/ovn-bgp
+2026-06-25 18:37:56.351 | ++[38;5;242mlib/neutron:source:285                   (B[m has_neutron_plugin_security_group
+2026-06-25 18:37:56.375 | ++[38;5;242mlib/neutron_plugins/ml2:has_neutron_plugin_security_group:146 (B[m return 0
+2026-06-25 18:37:56.401 | ++[38;5;242mlib/neutron:source:286                   (B[m Q_USE_SECGROUP=True
+2026-06-25 18:37:56.427 | ++[38;5;242mlib/neutron:source:294                   (B[m OVN_BRIDGE_MAPPINGS=public:br-ex
+2026-06-25 18:37:56.560 | +[38;5;242m./stack.sh:main:621                      (B[m source /opt/stack/devstack/lib/ldap
+2026-06-25 18:37:56.682 | +[38;5;242m./stack.sh:main:622                      (B[m source /opt/stack/devstack/lib/dstat
+2026-06-25 18:37:56.796 | +[38;5;242m./stack.sh:main:623                      (B[m source /opt/stack/devstack/lib/atop
+2026-06-25 18:37:56.912 | +[38;5;242m./stack.sh:main:624                      (B[m source /opt/stack/devstack/lib/tcpdump
+2026-06-25 18:37:57.024 | +[38;5;242m./stack.sh:main:625                      (B[m source /opt/stack/devstack/lib/etcd3
+2026-06-25 18:37:57.201 | +[38;5;242m./stack.sh:main:626                      (B[m source /opt/stack/devstack/lib/os-vif
+2026-06-25 18:37:57.229 | +++[38;5;242mlib/os-vif:source:12                     (B[m is_ml2_ovs
+2026-06-25 18:37:57.253 | +++[38;5;242mlib/os-vif:is_ml2_ovs:4                  (B[m [[ ovn == \o\p\e\n\v\s\w\i\t\c\h ]]
+2026-06-25 18:37:57.278 | +++[38;5;242mlib/os-vif:is_ml2_ovs:7                  (B[m echo False
+2026-06-25 18:37:57.305 | ++[38;5;242mlib/os-vif:source:12                     (B[m OS_VIF_OVS_ISOLATE_VIF=False
+2026-06-25 18:37:57.333 | +++[38;5;242mlib/os-vif:source:13                     (B[m trueorfalse False OS_VIF_OVS_ISOLATE_VIF
+2026-06-25 18:37:57.468 | ++[38;5;242mlib/os-vif:source:13                     (B[m OS_VIF_OVS_ISOLATE_VIF=False
+2026-06-25 18:37:57.494 | +[38;5;242m./stack.sh:main:632                      (B[m run_phase source
+2026-06-25 18:37:57.519 | +[38;5;242mfunctions-common:run_phase:1848          (B[m local mode=source
+2026-06-25 18:37:57.543 | +[38;5;242mfunctions-common:run_phase:1849          (B[m local phase=
+2026-06-25 18:37:57.568 | +[38;5;242mfunctions-common:run_phase:1850          (B[m [[ -d /opt/stack/devstack/extras.d ]]
+2026-06-25 18:37:57.592 | +[38;5;242mfunctions-common:run_phase:1851          (B[m local extra_plugin_file_name
+2026-06-25 18:37:57.616 | +[38;5;242mfunctions-common:run_phase:1852          (B[m for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
+2026-06-25 18:37:57.641 | +[38;5;242mfunctions-common:run_phase:1857          (B[m local exceptions=80-tempest.sh
+2026-06-25 18:37:57.665 | +[38;5;242mfunctions-common:run_phase:1858          (B[m local extra
+2026-06-25 18:37:57.691 | ++[38;5;242mfunctions-common:run_phase:1859          (B[m basename /opt/stack/devstack/extras.d/80-tempest.sh
+2026-06-25 18:37:57.722 | +[38;5;242mfunctions-common:run_phase:1859          (B[m extra=80-tempest.sh
+2026-06-25 18:37:57.747 | +[38;5;242mfunctions-common:run_phase:1860          (B[m [[ 80-tempest.sh =~ 80-tempest\.sh ]]
+2026-06-25 18:37:57.772 | +[38;5;242mfunctions-common:run_phase:1864          (B[m [[ -r /opt/stack/devstack/extras.d/80-tempest.sh ]]
+2026-06-25 18:37:57.797 | +[38;5;242mfunctions-common:run_phase:1864          (B[m source /opt/stack/devstack/extras.d/80-tempest.sh source
+2026-06-25 18:37:57.821 | ++[38;5;242mextras.d/80-tempest.sh:source:3          (B[m is_service_enabled tempest
+2026-06-25 18:37:57.953 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-06-25 18:37:57.978 | ++[38;5;242mextras.d/80-tempest.sh:source:4          (B[m [[ source == \s\o\u\r\c\e ]]
+2026-06-25 18:37:58.003 | ++[38;5;242mextras.d/80-tempest.sh:source:6          (B[m source /opt/stack/devstack/lib/tempest
+2026-06-25 18:37:58.222 | ++[38;5;242mextras.d/80-tempest.sh:source:27         (B[m [[ source == \u\n\s\t\a\c\k ]]
+2026-06-25 18:37:58.249 | ++[38;5;242mextras.d/80-tempest.sh:source:32         (B[m [[ source == \c\l\e\a\n ]]
+2026-06-25 18:37:58.277 | +[38;5;242mfunctions-common:run_phase:1869          (B[m [[ source == \s\o\u\r\c\e ]]
+2026-06-25 18:37:58.305 | +[38;5;242mfunctions-common:run_phase:1870          (B[m load_plugin_settings
+2026-06-25 18:37:58.332 | +[38;5;242mfunctions-common:load_plugin_settings:1784 (B[m local plugins=
+2026-06-25 18:37:58.359 | +[38;5;242mfunctions-common:load_plugin_settings:1785 (B[m local plugin
+2026-06-25 18:37:58.386 | +[38;5;242mfunctions-common:load_plugin_settings:1788 (B[m [[ -z '' ]]
+2026-06-25 18:37:58.414 | +[38;5;242mfunctions-common:load_plugin_settings:1789 (B[m return
+2026-06-25 18:37:58.442 | +[38;5;242mfunctions-common:run_phase:1871          (B[m verify_disabled_services
+2026-06-25 18:37:58.470 | +[38;5;242mfunctions-common:verify_disabled_services:2131 (B[m local service
+2026-06-25 18:37:58.498 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.526 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,key, ]]
+2026-06-25 18:37:58.552 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.579 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-api, ]]
+2026-06-25 18:37:58.605 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.632 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-cpu, ]]
+2026-06-25 18:37:58.658 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.684 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-cond, ]]
+2026-06-25 18:37:58.711 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.737 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-sch, ]]
+2026-06-25 18:37:58.763 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.793 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-novnc, ]]
+2026-06-25 18:37:58.821 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.848 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-api-meta, ]]
+2026-06-25 18:37:58.874 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.901 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,placement-api, ]]
+2026-06-25 18:37:58.927 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:58.954 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,placement-client, ]]
+2026-06-25 18:37:58.981 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.007 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,g-api, ]]
+2026-06-25 18:37:59.034 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.060 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-sch, ]]
+2026-06-25 18:37:59.088 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.115 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-api, ]]
+2026-06-25 18:37:59.142 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.169 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-vol, ]]
+2026-06-25 18:37:59.196 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.223 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovn-controller, ]]
+2026-06-25 18:37:59.249 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.275 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovn-northd, ]]
+2026-06-25 18:37:59.304 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.331 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovs-vswitchd, ]]
+2026-06-25 18:37:59.359 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.386 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovsdb-server, ]]
+2026-06-25 18:37:59.413 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.440 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,q-svc, ]]
+2026-06-25 18:37:59.467 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.493 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,q-ovn-agent, ]]
+2026-06-25 18:37:59.521 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.549 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,rabbit, ]]
+2026-06-25 18:37:59.576 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.604 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,tempest, ]]
+2026-06-25 18:37:59.632 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.660 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,mysql, ]]
+2026-06-25 18:37:59.687 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.715 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,etcd3, ]]
+2026-06-25 18:37:59.742 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.769 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,dstat, ]]
+2026-06-25 18:37:59.797 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.825 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,cinder, ]]
+2026-06-25 18:37:59.851 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-06-25 18:37:59.878 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-bak, ]]
+2026-06-25 18:37:59.907 | +[38;5;242m./stack.sh:main:703                      (B[m initialize_database_backends
+2026-06-25 18:37:59.934 | +[38;5;242mlib/database:initialize_database_backends:65 (B[m for backend in $DATABASE_BACKENDS
+2026-06-25 18:37:59.961 | +[38;5;242mlib/database:initialize_database_backends:66 (B[m is_service_enabled mysql
+2026-06-25 18:38:00.099 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-06-25 18:38:00.126 | +[38;5;242mlib/database:initialize_database_backends:66 (B[m DATABASE_TYPE=mysql
+2026-06-25 18:38:00.154 | +[38;5;242mlib/database:initialize_database_backends:65 (B[m for backend in $DATABASE_BACKENDS
+2026-06-25 18:38:00.180 | +[38;5;242mlib/database:initialize_database_backends:66 (B[m is_service_enabled postgresql
+2026-06-25 18:38:00.329 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-06-25 18:38:00.356 | +[38;5;242mlib/database:initialize_database_backends:69 (B[m '[' -z mysql ']'
+2026-06-25 18:38:00.383 | +[38;5;242mlib/database:initialize_database_backends:73 (B[m MYSQL_HOST=127.0.0.1
+2026-06-25 18:38:00.411 | +[38;5;242mlib/database:initialize_database_backends:74 (B[m MYSQL_USER=root
+2026-06-25 18:38:00.438 | +[38;5;242mlib/database:initialize_database_backends:80 (B[m [[ 4 == 6 ]]
+2026-06-25 18:38:00.465 | +[38;5;242mlib/database:initialize_database_backends:83 (B[m DATABASE_HOST=127.0.0.1
+2026-06-25 18:38:00.492 | +[38;5;242mlib/database:initialize_database_backends:86 (B[m DATABASE_USER=root
+2026-06-25 18:38:00.519 | +[38;5;242mlib/database:initialize_database_backends:88 (B[m '[' -n '' ']'
+2026-06-25 18:38:00.546 | +[38;5;242mlib/database:initialize_database_backends:92 (B[m return 0
+2026-06-25 18:38:00.573 | +[38;5;242m./stack.sh:main:704                      (B[m echo 'Using mysql database backend'
+2026-06-25 18:38:00.574 | Using mysql database backend
+2026-06-25 18:38:00.601 | +[38;5;242m./stack.sh:main:707                      (B[m read_password DATABASE_PASSWORD 'ENTER A PASSWORD TO USE FOR THE DATABASE.'
+2026-06-25 18:38:00.750 | +[38;5;242m./stack.sh:main:709                      (B[m define_database_baseurl
+2026-06-25 18:38:00.780 | ++[38;5;242mlib/database:define_database_baseurl:106 (B[m get_database_type_mysql
+2026-06-25 18:38:00.808 | ++[38;5;242mlib/databases/mysql:get_database_type_mysql:32 (B[m [[ PyMySQL == \P\y\M\y\S\Q\L ]]
+2026-06-25 18:38:00.835 | ++[38;5;242mlib/databases/mysql:get_database_type_mysql:33 (B[m echo mysql+pymysql
+2026-06-25 18:38:00.865 | +[38;5;242mlib/database:define_database_baseurl:106 (B[m BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
+2026-06-25 18:38:00.893 | +[38;5;242m./stack.sh:main:721                      (B[m is_service_enabled rabbit
+2026-06-25 18:38:01.039 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-06-25 18:38:01.067 | +[38;5;242m./stack.sh:main:722                      (B[m read_password RABBIT_PASSWORD 'ENTER A PASSWORD TO USE FOR RABBIT.'
+2026-06-25 18:38:01.219 | +[38;5;242m./stack.sh:main:729                      (B[m is_service_enabled keystone
+2026-06-25 18:38:01.365 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-06-25 18:38:01.393 | +[38;5;242m./stack.sh:main:731                      (B[m read_password SERVICE_PASSWORD 'ENTER A SERVICE_PASSWORD TO USE FOR THE SERVICE AUTHENTICATION.'
+2026-06-25 18:38:01.547 | +[38;5;242m./stack.sh:main:733                      (B[m read_password ADMIN_PASSWORD 'ENTER A PASSWORD TO USE FOR HORIZON AND KEYSTONE (20 CHARS OR LESS).'
+2026-06-25 18:38:01.698 | +[38;5;242m./stack.sh:main:744                      (B[m is_service_enabled ldap
+2026-06-25 18:38:01.848 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-06-25 18:38:01.877 | +[38;5;242m./stack.sh:main:753                      (B[m is_service_enabled s-proxy
+2026-06-25 18:38:02.025 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-06-25 18:38:02.053 | +[38;5;242m./stack.sh:main:765                      (B[m save_stackenv 765
+2026-06-25 18:38:02.082 | +[38;5;242mfunctions-common:save_stackenv:65        (B[m local tag=765
+2026-06-25 18:38:02.112 | ++[38;5;242mfunctions-common:save_stackenv:67        (B[m date +%F-%H%M%S
+2026-06-25 18:38:02.146 | +[38;5;242mfunctions-common:save_stackenv:67        (B[m time_stamp=2026-06-25-183802
+2026-06-25 18:38:02.174 | +[38;5;242mfunctions-common:save_stackenv:68        (B[m echo '# 2026-06-25-183802 765'
+2026-06-25 18:38:02.202 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.230 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
+2026-06-25 18:38:02.259 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.286 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo DATA_DIR=/opt/stack/data
+2026-06-25 18:38:02.314 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.342 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo DEST=/opt/stack
+2026-06-25 18:38:02.371 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.398 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo ENABLED_SERVICES=key,n-api,n-cpu,n-cond,n-sch,n-novnc,n-api-meta,placement-api,placement-client,g-api,c-sch,c-api,c-vol,ovn-controller,ovn-northd,ovs-vswitchd,ovsdb-server,q-svc,q-ovn-agent,rabbit,tempest,mysql,etcd3,dstat,cinder,c-bak
+2026-06-25 18:38:02.426 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.454 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo HOST_IP=10.132.239.110
+2026-06-25 18:38:02.481 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.509 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo KEYSTONE_SERVICE_URI=http://10.132.239.110/identity
+2026-06-25 18:38:02.538 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.565 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo LOGFILE=/opt/stack/logs/stack.sh.log.2026-06-25-183732
+2026-06-25 18:38:02.593 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.621 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo OS_CACERT=
+2026-06-25 18:38:02.649 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.676 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo SERVICE_HOST=10.132.239.110
+2026-06-25 18:38:02.704 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.732 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo STACK_USER=stack
+2026-06-25 18:38:02.760 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.789 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo TLS_IP=
+2026-06-25 18:38:02.816 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.845 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo HOST_IPV6=::1
+2026-06-25 18:38:02.872 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.900 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo SERVICE_IP_VERSION=4
+2026-06-25 18:38:02.927 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:02.955 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo TUNNEL_ENDPOINT_IP=10.132.239.110
+2026-06-25 18:38:02.983 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-06-25 18:38:03.010 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo TUNNEL_IP_VERSION=4
+2026-06-25 18:38:03.039 | +[38;5;242m./stack.sh:main:778                      (B[m GIT_DEPTH=0
+2026-06-25 18:38:03.067 | +[38;5;242m./stack.sh:main:778                      (B[m git_clone http://github.com/openstack/requirements.git /opt/stack/requirements master
+2026-06-25 18:38:03.094 | +[38;5;242mfunctions-common:git_clone:589           (B[m local git_remote=http://github.com/openstack/requirements.git
+2026-06-25 18:38:03.119 | +[38;5;242mfunctions-common:git_clone:590           (B[m local git_dest=/opt/stack/requirements
+2026-06-25 18:38:03.144 | +[38;5;242mfunctions-common:git_clone:591           (B[m local git_ref=master
+2026-06-25 18:38:03.169 | +[38;5;242mfunctions-common:git_clone:592           (B[m local orig_dir
+2026-06-25 18:38:03.197 | ++[38;5;242mfunctions-common:git_clone:593           (B[m pwd
+2026-06-25 18:38:03.224 | +[38;5;242mfunctions-common:git_clone:593           (B[m orig_dir=/opt/stack/devstack
+2026-06-25 18:38:03.250 | +[38;5;242mfunctions-common:git_clone:594           (B[m local git_clone_flags=
+2026-06-25 18:38:03.277 | ++[38;5;242mfunctions-common:git_clone:596           (B[m trueorfalse False RECLONE
+2026-06-25 18:38:03.418 | +[38;5;242mfunctions-common:git_clone:596           (B[m RECLONE=False
+2026-06-25 18:38:03.444 | +[38;5;242mfunctions-common:git_clone:597           (B[m [[ 0 -gt 0 ]]
+2026-06-25 18:38:03.470 | +[38;5;242mfunctions-common:git_clone:601           (B[m [[ False = \T\r\u\e ]]
+2026-06-25 18:38:03.496 | +[38;5;242mfunctions-common:git_clone:610           (B[m echo master
+2026-06-25 18:38:03.498 | +[38;5;242mfunctions-common:git_clone:610           (B[m egrep -q '^refs'
+2026-06-25 18:38:03.541 | +[38;5;242mfunctions-common:git_clone:624           (B[m [[ ! -d /opt/stack/requirements ]]
+2026-06-25 18:38:03.566 | +[38;5;242mfunctions-common:git_clone:625           (B[m [[ False = \T\r\u\e ]]
+2026-06-25 18:38:03.593 | +[38;5;242mfunctions-common:git_clone:630           (B[m git_timed clone --no-checkout http://github.com/openstack/requirements.git /opt/stack/requirements
+2026-06-25 18:38:03.618 | +[38;5;242mfunctions-common:git_timed:697           (B[m local count=0
+2026-06-25 18:38:03.643 | +[38;5;242mfunctions-common:git_timed:698           (B[m local timeout=0
+2026-06-25 18:38:03.667 | +[38;5;242mfunctions-common:git_timed:700           (B[m [[ -n 0 ]]
+2026-06-25 18:38:03.693 | +[38;5;242mfunctions-common:git_timed:701           (B[m timeout=0
+2026-06-25 18:38:03.718 | +[38;5;242mfunctions-common:git_timed:704           (B[m time_start git_timed
+2026-06-25 18:38:03.744 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=git_timed
+2026-06-25 18:38:03.768 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-06-25 18:38:03.793 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-06-25 18:38:03.820 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-06-25 18:38:03.850 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1782412683824
+2026-06-25 18:38:03.876 | +[38;5;242mfunctions-common:git_timed:705           (B[m timeout -s SIGINT 0 git clone --no-checkout http://github.com/openstack/requirements.git /opt/stack/requirements
+2026-06-25 18:38:03.886 | Cloning into '/opt/stack/requirements'...
+2026-06-25 18:38:05.236 | warning: redirecting to https://github.com/openstack/requirements.git/
+2026-06-25 18:45:23.839 | error: RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
+2026-06-25 18:45:23.839 | error: 6245 bytes of body are still expected
+2026-06-25 18:45:23.852 | fetch-pack: unexpected disconnect while reading sideband packet
+2026-06-25 18:45:23.852 | fatal: early EOF
+2026-06-25 18:45:23.856 | fatal: fetch-pack: invalid index-pack output
+2026-06-25 18:45:23.899 | +[38;5;242mfunctions-common:git_timed:708           (B[m [[ 128 -ne 124 ]]
+2026-06-25 18:45:23.925 | +[38;5;242mfunctions-common:git_timed:709           (B[m die 709 'git call failed: [git clone' --no-checkout http://github.com/openstack/requirements.git '/opt/stack/requirements]'
+2026-06-25 18:45:23.950 | +[38;5;242mfunctions-common:die:290                 (B[m local exitcode=0
+2026-06-25 18:45:23.976 | [Call Trace]
+2026-06-25 18:45:23.976 | ./stack.sh:778:git_clone
+2026-06-25 18:45:23.976 | /opt/stack/devstack/functions-common:630:git_timed
+2026-06-25 18:45:23.976 | /opt/stack/devstack/functions-common:709:die
+2026-06-25 18:45:23.989 | [ERROR] /opt/stack/devstack/functions-common:709 git call failed: [git clone --no-checkout http://github.com/openstack/requirements.git /opt/stack/requirements]
+2026-06-25 18:45:25.000 | Error on exit
+2026-06-25 18:45:25.397 | ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+2026-06-25 18:45:25.488 | ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
