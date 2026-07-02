@@ -13,8 +13,8 @@ interface = public
 auth_type = password
 
 [DEFAULT]
-cinder_internal_tenant_user_id = 9c3c1f7a20db4ed79dea6af046134938
-cinder_internal_tenant_project_id = e523d8c569154ea5b93444326c4e0942
+cinder_internal_tenant_user_id = f1dd0102161a48a5842875a58aa86800
+cinder_internal_tenant_project_id = 8fe6e27fa8a24f478066fae72177bbb7
 graceful_shutdown_timeout = 5
 glance_api_servers = http://10.132.239.111/image
 log_color = True
@@ -91,8 +91,7 @@ auth_type = password
 backend_url = etcd3+http://10.132.239.111:2379?api_version=v3
 
 [oslo_policy]
-enforce_new_defaults = false
-enforce_scope = false
+enforce_new_defaults = true
 
 [service_user]
 project_domain_name = Default
