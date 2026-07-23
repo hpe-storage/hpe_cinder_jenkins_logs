@@ -1,0 +1,1283 @@
+2026-07-23 10:03:48.802 | +[38;5;242m./stack.sh:main:510                      (B[m exec
+2026-07-23 10:03:48.802 | +[38;5;242m./stack.sh:main:518                      (B[m echo_summary 'stack.sh log /opt/stack/logs/stack.sh.log.2026-07-23-100348'
+2026-07-23 10:03:48.802 | ++[38;5;242m./stack.sh:main:510                      (B[m /usr/bin/python3.12 /opt/stack/devstack/tools/outfilter.py -o /opt/stack/logs/stack.sh.log.2026-07-23-100348.summary.2026-07-23-100348
+2026-07-23 10:03:48.802 | +[38;5;242m./stack.sh:echo_summary:462              (B[m [[ -t 3 ]]
+2026-07-23 10:03:48.802 | +[38;5;242m./stack.sh:echo_summary:468              (B[m echo -e stack.sh log /opt/stack/logs/stack.sh.log.2026-07-23-100348
+2026-07-23 10:03:48.802 | +[38;5;242m./stack.sh:main:520                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-07-23-100348 /opt/stack/logs/stack.sh.log
+2026-07-23 10:03:48.809 | +[38;5;242m./stack.sh:main:521                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-07-23-100348.summary.2026-07-23-100348 /opt/stack/logs/stack.sh.log.summary
+2026-07-23 10:03:48.842 | +[38;5;242m./stack.sh:main:536                      (B[m check_path_perm_sanity /opt/stack
+2026-07-23 10:03:48.867 | +[38;5;242mfunctions:check_path_perm_sanity:615     (B[m local real_path
+2026-07-23 10:03:48.891 | ++[38;5;242mfunctions:check_path_perm_sanity:616     (B[m readlink -f /opt/stack
+2026-07-23 10:03:48.919 | +[38;5;242mfunctions:check_path_perm_sanity:616     (B[m real_path=/opt/stack
+2026-07-23 10:03:48.944 | +[38;5;242mfunctions:check_path_perm_sanity:617     (B[m local rebuilt_path=
+2026-07-23 10:03:48.973 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m echo /opt/stack
+2026-07-23 10:03:48.973 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m tr / ' '
+2026-07-23 10:03:48.999 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-07-23 10:03:49.024 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt
+2026-07-23 10:03:49.049 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt
+2026-07-23 10:03:49.076 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 755 = 700 ]]
+2026-07-23 10:03:49.099 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-07-23 10:03:49.121 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt/stack
+2026-07-23 10:03:49.148 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt/stack
+2026-07-23 10:03:49.175 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 751 = 700 ]]
+2026-07-23 10:03:49.198 | +[38;5;242m./stack.sh:main:542                      (B[m trap exit_trap EXIT
+2026-07-23 10:03:49.221 | +[38;5;242m./stack.sh:main:583                      (B[m trap err_trap ERR
+2026-07-23 10:03:49.244 | +[38;5;242m./stack.sh:main:596                      (B[m set -o errexit
+2026-07-23 10:03:49.268 | +[38;5;242m./stack.sh:main:599                      (B[m uname -a
+2026-07-23 10:03:49.271 | Linux ubuntu 6.8.0-134-generic #134-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 26 18:43:11 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+2026-07-23 10:03:49.295 | +[38;5;242m./stack.sh:main:602                      (B[m SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
+2026-07-23 10:03:49.317 | +[38;5;242m./stack.sh:main:603                      (B[m rm -f /opt/stack/data/ca-bundle.pem
+2026-07-23 10:03:49.346 | +[38;5;242m./stack.sh:main:606                      (B[m source /opt/stack/devstack/lib/database
+2026-07-23 10:03:49.546 | +[38;5;242m./stack.sh:main:607                      (B[m source /opt/stack/devstack/lib/rpc_backend
+2026-07-23 10:03:49.676 | +[38;5;242m./stack.sh:main:610                      (B[m source /opt/stack/devstack/lib/host
+2026-07-23 10:03:49.726 | +++[38;5;242mlib/host:source:12                       (B[m trueorfalse True ENABLE_KSM
+2026-07-23 10:03:49.858 | ++[38;5;242mlib/host:source:12                       (B[m ENABLE_KSM=True
+2026-07-23 10:03:49.885 | +++[38;5;242mlib/host:source:13                       (B[m trueorfalse True ENABLE_KSMTUNED
+2026-07-23 10:03:50.011 | ++[38;5;242mlib/host:source:13                       (B[m ENABLE_KSMTUNED=True
+2026-07-23 10:03:50.036 | +++[38;5;242mlib/host:source:56                       (B[m trueorfalse False ENABLE_ZSWAP
+2026-07-23 10:03:50.165 | ++[38;5;242mlib/host:source:56                       (B[m ENABLE_ZSWAP=False
+2026-07-23 10:03:50.189 | ++[38;5;242mlib/host:source:59                       (B[m ZSWAP_COMPRESSOR=lz4
+2026-07-23 10:03:50.212 | ++[38;5;242mlib/host:source:60                       (B[m ZSWAP_ZPOOL=zsmalloc
+2026-07-23 10:03:50.239 | +++[38;5;242mlib/host:source:82                       (B[m trueorfalse False ENABLE_SYSCTL_MEM_TUNING
+2026-07-23 10:03:50.365 | ++[38;5;242mlib/host:source:82                       (B[m ENABLE_SYSCTL_MEM_TUNING=False
+2026-07-23 10:03:50.392 | +++[38;5;242mlib/host:source:104                      (B[m trueorfalse False ENABLE_SYSCTL_NET_TUNING
+2026-07-23 10:03:50.520 | ++[38;5;242mlib/host:source:104                      (B[m ENABLE_SYSCTL_NET_TUNING=False
+2026-07-23 10:03:50.544 | +[38;5;242m./stack.sh:main:613                      (B[m tune_host
+2026-07-23 10:03:50.573 | +[38;5;242mlib/host:tune_host:125                   (B[m configure_host_mem
+2026-07-23 10:03:50.601 | +[38;5;242mlib/host:configure_host_mem:99           (B[m configure_zswap
+2026-07-23 10:03:50.627 | +[38;5;242mlib/host:configure_zswap:69              (B[m [[ False == \T\r\u\e ]]
+2026-07-23 10:03:50.650 | +[38;5;242mlib/host:configure_host_mem:100          (B[m configure_ksm
+2026-07-23 10:03:50.673 | +[38;5;242mlib/host:configure_ksm:39                (B[m [[ True == \T\r\u\e ]]
+2026-07-23 10:03:50.712 | +[38;5;242mlib/host:configure_ksm:40                (B[m install_package ksmtuned
+2026-07-23 10:03:50.734 | +[38;5;242mfunctions-common:install_package:1438    (B[m update_package_repo
+2026-07-23 10:03:50.756 | +[38;5;242mfunctions-common:update_package_repo:1412 (B[m NO_UPDATE_REPOS=False
+2026-07-23 10:03:50.777 | +[38;5;242mfunctions-common:update_package_repo:1413 (B[m REPOS_UPDATED=False
+2026-07-23 10:03:50.798 | +[38;5;242mfunctions-common:update_package_repo:1414 (B[m RETRY_UPDATE=False
+2026-07-23 10:03:50.821 | +[38;5;242mfunctions-common:update_package_repo:1416 (B[m [[ False = \T\r\u\e ]]
+2026-07-23 10:03:50.842 | +[38;5;242mfunctions-common:update_package_repo:1420 (B[m is_ubuntu
+2026-07-23 10:03:50.864 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-07-23 10:03:50.886 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-07-23 10:03:50.907 | +[38;5;242mfunctions-common:update_package_repo:1421 (B[m apt_get_update
+2026-07-23 10:03:50.929 | +[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ False == \T\r\u\e ]]
+2026-07-23 10:03:50.952 | +[38;5;242mfunctions-common:apt_get_update:1171     (B[m [[ False = \T\r\u\e ]]
+2026-07-23 10:03:50.974 | +[38;5;242mfunctions-common:apt_get_update:1173     (B[m local sudo=sudo
+2026-07-23 10:03:50.997 | ++[38;5;242mfunctions-common:apt_get_update:1174     (B[m id -u
+2026-07-23 10:03:51.026 | +[38;5;242mfunctions-common:apt_get_update:1174     (B[m [[ 1001 = \0 ]]
+2026-07-23 10:03:51.047 | +[38;5;242mfunctions-common:apt_get_update:1177     (B[m time_start apt-get-update
+2026-07-23 10:03:51.073 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=apt-get-update
+2026-07-23 10:03:51.094 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-07-23 10:03:51.115 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-07-23 10:03:51.139 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-07-23 10:03:51.165 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1784801031142
+2026-07-23 10:03:51.188 | +[38;5;242mfunctions-common:apt_get_update:1179     (B[m local 'proxies=http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 '
+2026-07-23 10:03:51.210 | +[38;5;242mfunctions-common:apt_get_update:1180     (B[m local 'update_cmd=sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update'
+2026-07-23 10:03:51.233 | +[38;5;242mfunctions-common:apt_get_update:1181     (B[m timeout 300 sh -c 'while ! sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update; do sleep 30; done'
+2026-07-23 10:03:53.251 | Hit:1 https://in.archive.ubuntu.com/ubuntu noble InRelease
+2026-07-23 10:03:53.562 | Hit:2 https://in.archive.ubuntu.com/ubuntu noble-updates InRelease
+2026-07-23 10:03:53.906 | Hit:3 https://in.archive.ubuntu.com/ubuntu noble-backports InRelease
+2026-07-23 10:03:56.280 | Hit:4 https://security.ubuntu.com/ubuntu noble-security InRelease
+2026-07-23 10:04:00.056 | Reading package lists...
+2026-07-23 10:04:00.161 | +[38;5;242mfunctions-common:apt_get_update:1185     (B[m REPOS_UPDATED=True
+2026-07-23 10:04:00.183 | +[38;5;242mfunctions-common:apt_get_update:1187     (B[m time_stop apt-get-update
+2026-07-23 10:04:00.205 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-07-23 10:04:00.227 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-07-23 10:04:00.248 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-07-23 10:04:00.270 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-07-23 10:04:00.291 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-07-23 10:04:00.313 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get-update
+2026-07-23 10:04:00.336 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1784801031142
+2026-07-23 10:04:00.357 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1784801031142 ]]
+2026-07-23 10:04:00.381 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-07-23 10:04:00.407 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1784801040385
+2026-07-23 10:04:00.428 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=9243
+2026-07-23 10:04:00.450 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=0
+2026-07-23 10:04:00.471 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-07-23 10:04:00.493 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=9243
+2026-07-23 10:04:00.515 | +[38;5;242mfunctions-common:install_package:1439    (B[m real_install_package ksmtuned
+2026-07-23 10:04:00.537 | +[38;5;242mfunctions-common:real_install_package:1426 (B[m is_ubuntu
+2026-07-23 10:04:00.559 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-07-23 10:04:00.581 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-07-23 10:04:00.603 | +[38;5;242mfunctions-common:real_install_package:1427 (B[m apt_get install ksmtuned
+2026-07-23 10:04:00.739 | +[38;5;242mfunctions-common:apt_get:1207            (B[m sudo DEBIAN_FRONTEND=noninteractive http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 apt-get --option Dpkg::Options::=--force-confold --assume-yes install ksmtuned
+2026-07-23 10:04:00.845 | Reading package lists...
+2026-07-23 10:04:01.256 | Building dependency tree...
+2026-07-23 10:04:01.258 | Reading state information...
+2026-07-23 10:04:01.671 | ksmtuned is already the newest version (4.20150326).
+2026-07-23 10:04:01.671 | The following packages were automatically installed and are no longer required:
+2026-07-23 10:04:01.671 |   libcgi-fast-perl libcgi-pm-perl libclone-perl libencode-locale-perl
+2026-07-23 10:04:01.671 |   libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+2026-07-23 10:04:01.671 |   libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
+2026-07-23 10:04:01.671 |   libhttp-date-perl libhttp-message-perl libio-html-perl
+2026-07-23 10:04:01.690 |   liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
+2026-07-23 10:04:01.691 |   liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils
+2026-07-23 10:04:01.692 | Use 'sudo apt autoremove' to remove them.
+2026-07-23 10:04:01.808 | 0 upgraded, 0 newly installed, 0 to remove and 66 not upgraded.
+2026-07-23 10:04:01.840 | +[38;5;242mfunctions-common:apt_get:1211            (B[m result=0
+2026-07-23 10:04:01.862 | +[38;5;242mfunctions-common:apt_get:1214            (B[m time_stop apt-get
+2026-07-23 10:04:01.885 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-07-23 10:04:01.907 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-07-23 10:04:01.929 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-07-23 10:04:01.951 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-07-23 10:04:01.974 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-07-23 10:04:01.995 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get
+2026-07-23 10:04:02.016 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1784801040716
+2026-07-23 10:04:02.037 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1784801040716 ]]
+2026-07-23 10:04:02.061 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-07-23 10:04:02.087 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1784801042064
+2026-07-23 10:04:02.109 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=1348
+2026-07-23 10:04:02.130 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=1722
+2026-07-23 10:04:02.152 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-07-23 10:04:02.175 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=3070
+2026-07-23 10:04:02.198 | +[38;5;242mfunctions-common:apt_get:1215            (B[m return 0
+2026-07-23 10:04:02.222 | ++[38;5;242mlib/host:configure_ksm:42                (B[m bool_to_int ENABLE_KSM
+2026-07-23 10:04:02.349 | +[38;5;242mlib/host:configure_ksm:42                (B[m set_sysfs_parameter ksm 0 /sys/kernel/mm/ksm/run
+2026-07-23 10:04:02.372 | +[38;5;242mlib/host:set_sysfs_parameter:15          (B[m local name=ksm
+2026-07-23 10:04:02.394 | +[38;5;242mlib/host:set_sysfs_parameter:16          (B[m local value=0
+2026-07-23 10:04:02.417 | +[38;5;242mlib/host:set_sysfs_parameter:17          (B[m local param_file=/sys/kernel/mm/ksm/run
+2026-07-23 10:04:02.442 | +[38;5;242mlib/host:set_sysfs_parameter:19          (B[m [[ ! -e /sys/kernel/mm/ksm/run ]]
+2026-07-23 10:04:02.471 | +[38;5;242mlib/host:set_sysfs_parameter:24          (B[m echo 0
+2026-07-23 10:04:02.471 | +[38;5;242mlib/host:set_sysfs_parameter:24          (B[m sudo tee /sys/kernel/mm/ksm/run
+2026-07-23 10:04:02.503 | 0
+2026-07-23 10:04:02.533 | +[38;5;242mlib/host:configure_host_mem:101          (B[m configure_sysctl_mem_parmaters
+2026-07-23 10:04:02.556 | +[38;5;242mlib/host:configure_sysctl_mem_parmaters:84 (B[m [[ False == \T\r\u\e ]]
+2026-07-23 10:04:02.581 | +[38;5;242mlib/host:tune_host:126                   (B[m configure_host_net
+2026-07-23 10:04:02.604 | +[38;5;242mlib/host:configure_host_net:121          (B[m configure_sysctl_net_parmaters
+2026-07-23 10:04:02.626 | +[38;5;242mlib/host:configure_sysctl_net_parmaters:106 (B[m [[ False == \T\r\u\e ]]
+2026-07-23 10:04:02.650 | +[38;5;242m./stack.sh:main:619                      (B[m fetch_plugins
+2026-07-23 10:04:02.690 | +[38;5;242mfunctions-common:fetch_plugins:1766      (B[m local plugins=
+2026-07-23 10:04:02.714 | +[38;5;242mfunctions-common:fetch_plugins:1767      (B[m local plugin
+2026-07-23 10:04:02.738 | +[38;5;242mfunctions-common:fetch_plugins:1770      (B[m [[ -z '' ]]
+2026-07-23 10:04:02.759 | +[38;5;242mfunctions-common:fetch_plugins:1771      (B[m return
+2026-07-23 10:04:02.784 | +[38;5;242m./stack.sh:main:623                      (B[m run_phase override_defaults
+2026-07-23 10:04:02.807 | +[38;5;242mfunctions-common:run_phase:1848          (B[m local mode=override_defaults
+2026-07-23 10:04:02.831 | +[38;5;242mfunctions-common:run_phase:1849          (B[m local phase=
+2026-07-23 10:04:02.856 | +[38;5;242mfunctions-common:run_phase:1850          (B[m [[ -d /opt/stack/devstack/extras.d ]]
+2026-07-23 10:04:02.879 | +[38;5;242mfunctions-common:run_phase:1851          (B[m local extra_plugin_file_name
+2026-07-23 10:04:02.902 | +[38;5;242mfunctions-common:run_phase:1852          (B[m for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
+2026-07-23 10:04:02.924 | +[38;5;242mfunctions-common:run_phase:1857          (B[m local exceptions=80-tempest.sh
+2026-07-23 10:04:02.945 | +[38;5;242mfunctions-common:run_phase:1858          (B[m local extra
+2026-07-23 10:04:02.972 | ++[38;5;242mfunctions-common:run_phase:1859          (B[m basename /opt/stack/devstack/extras.d/80-tempest.sh
+2026-07-23 10:04:03.003 | +[38;5;242mfunctions-common:run_phase:1859          (B[m extra=80-tempest.sh
+2026-07-23 10:04:03.025 | +[38;5;242mfunctions-common:run_phase:1860          (B[m [[ 80-tempest.sh =~ 80-tempest\.sh ]]
+2026-07-23 10:04:03.048 | +[38;5;242mfunctions-common:run_phase:1864          (B[m [[ -r /opt/stack/devstack/extras.d/80-tempest.sh ]]
+2026-07-23 10:04:03.072 | +[38;5;242mfunctions-common:run_phase:1864          (B[m source /opt/stack/devstack/extras.d/80-tempest.sh override_defaults
+2026-07-23 10:04:03.095 | ++[38;5;242mextras.d/80-tempest.sh:source:3          (B[m is_service_enabled tempest
+2026-07-23 10:04:03.213 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-07-23 10:04:03.236 | ++[38;5;242mextras.d/80-tempest.sh:source:4          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2026-07-23 10:04:03.259 | ++[38;5;242mextras.d/80-tempest.sh:source:7          (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-07-23 10:04:03.281 | ++[38;5;242mextras.d/80-tempest.sh:source:10         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-07-23 10:04:03.304 | ++[38;5;242mextras.d/80-tempest.sh:source:13         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-07-23 10:04:03.326 | ++[38;5;242mextras.d/80-tempest.sh:source:16         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-07-23 10:04:03.348 | ++[38;5;242mextras.d/80-tempest.sh:source:19         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-07-23 10:04:03.370 | ++[38;5;242mextras.d/80-tempest.sh:source:27         (B[m [[ override_defaults == \u\n\s\t\a\c\k ]]
+2026-07-23 10:04:03.392 | ++[38;5;242mextras.d/80-tempest.sh:source:32         (B[m [[ override_defaults == \c\l\e\a\n ]]
+2026-07-23 10:04:03.415 | +[38;5;242mfunctions-common:run_phase:1869          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2026-07-23 10:04:03.438 | +[38;5;242mfunctions-common:run_phase:1872          (B[m [[ override_defaults == \o\v\e\r\r\i\d\e\_\d\e\f\a\u\l\t\s ]]
+2026-07-23 10:04:03.461 | +[38;5;242mfunctions-common:run_phase:1873          (B[m plugin_override_defaults
+2026-07-23 10:04:03.484 | +[38;5;242mfunctions-common:plugin_override_defaults:1807 (B[m local plugins=
+2026-07-23 10:04:03.508 | +[38;5;242mfunctions-common:plugin_override_defaults:1808 (B[m local plugin
+2026-07-23 10:04:03.532 | +[38;5;242mfunctions-common:plugin_override_defaults:1811 (B[m [[ -z '' ]]
+2026-07-23 10:04:03.557 | +[38;5;242mfunctions-common:plugin_override_defaults:1812 (B[m return
+2026-07-23 10:04:03.578 | +[38;5;242m./stack.sh:main:626                      (B[m source /opt/stack/devstack/lib/apache
+2026-07-23 10:04:03.698 | +[38;5;242m./stack.sh:main:629                      (B[m source /opt/stack/devstack/lib/tls
+2026-07-23 10:04:03.722 | ++[38;5;242mlib/tls:source:38                        (B[m is_service_enabled tls-proxy
+2026-07-23 10:04:03.848 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-07-23 10:04:03.875 | +++[38;5;242mlib/tls:source:43                        (B[m hostname -f
+2026-07-23 10:04:03.905 | ++[38;5;242mlib/tls:source:43                        (B[m DEVSTACK_HOSTNAME=localhost
+2026-07-23 10:04:03.927 | ++[38;5;242mlib/tls:source:44                        (B[m DEVSTACK_CERT_NAME=devstack-cert
+2026-07-23 10:04:03.957 | ++[38;5;242mlib/tls:source:45                        (B[m DEVSTACK_CERT=/opt/stack/data/devstack-cert.pem
+2026-07-23 10:04:03.983 | ++[38;5;242mlib/tls:source:48                        (B[m ROOT_CA_DIR=/opt/stack/data/CA/root-ca
+2026-07-23 10:04:04.006 | ++[38;5;242mlib/tls:source:49                        (B[m INT_CA_DIR=/opt/stack/data/CA/int-ca
+2026-07-23 10:04:04.033 | ++[38;5;242mlib/tls:source:51                        (B[m ORG_NAME=OpenStack
+2026-07-23 10:04:04.057 | ++[38;5;242mlib/tls:source:52                        (B[m ORG_UNIT_NAME=DevStack
+2026-07-23 10:04:04.081 | ++[38;5;242mlib/tls:source:55                        (B[m STUD_PROTO=--tls
+2026-07-23 10:04:04.103 | ++[38;5;242mlib/tls:source:56                        (B[m STUD_CIPHERS='TLSv1+HIGH:!DES:!aNULL:!eNULL:@STRENGTH'
+2026-07-23 10:04:04.126 | ++[38;5;242mlib/tls:source:63                        (B[m OPENSSL=/usr/bin/openssl
+2026-07-23 10:04:04.159 | +[38;5;242m./stack.sh:main:632                      (B[m source /opt/stack/devstack/lib/infra
+2026-07-23 10:04:04.268 | +[38;5;242m./stack.sh:main:633                      (B[m source /opt/stack/devstack/lib/libraries
+2026-07-23 10:04:04.395 | +[38;5;242m./stack.sh:main:634                      (B[m source /opt/stack/devstack/lib/lvm
+2026-07-23 10:04:04.505 | +[38;5;242m./stack.sh:main:635                      (B[m source /opt/stack/devstack/lib/horizon
+2026-07-23 10:04:04.615 | +[38;5;242m./stack.sh:main:636                      (B[m source /opt/stack/devstack/lib/keystone
+2026-07-23 10:04:04.829 | +[38;5;242m./stack.sh:main:637                      (B[m source /opt/stack/devstack/lib/glance
+2026-07-23 10:04:05.143 | +[38;5;242m./stack.sh:main:638                      (B[m source /opt/stack/devstack/lib/nova
+2026-07-23 10:04:05.544 | +[38;5;242m./stack.sh:main:639                      (B[m source /opt/stack/devstack/lib/placement
+2026-07-23 10:04:05.729 | +[38;5;242m./stack.sh:main:640                      (B[m source /opt/stack/devstack/lib/cinder
+2026-07-23 10:04:06.006 | +[38;5;242m./stack.sh:main:641                      (B[m source /opt/stack/devstack/lib/swift
+2026-07-23 10:04:06.254 | +[38;5;242m./stack.sh:main:642                      (B[m source /opt/stack/devstack/lib/neutron
+2026-07-23 10:04:06.282 | ++[38;5;242mlib/neutron:source:61                    (B[m is_service_enabled tls-proxy
+2026-07-23 10:04:06.414 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-07-23 10:04:06.441 | ++[38;5;242mlib/neutron:source:66                    (B[m GITDIR["python-neutronclient"]=/opt/stack/python-neutronclient
+2026-07-23 10:04:06.470 | ++[38;5;242mlib/neutron:source:68                    (B[m NEUTRON_DIR=/opt/stack/neutron
+2026-07-23 10:04:06.499 | ++[38;5;242mlib/neutron:source:69                    (B[m NEUTRON_FWAAS_DIR=/opt/stack/neutron-fwaas
+2026-07-23 10:04:06.527 | ++[38;5;242mlib/neutron:source:72                    (B[m [[ -d /opt/stack/neutron/bin/neutron-server ]]
+2026-07-23 10:04:06.555 | +++[38;5;242mlib/neutron:source:75                    (B[m get_python_exec_prefix
+2026-07-23 10:04:06.711 | +++[38;5;242minc/python:get_python_exec_prefix:80     (B[m [[ True == \T\r\u\e ]]
+2026-07-23 10:04:06.735 | +++[38;5;242minc/python:get_python_exec_prefix:81     (B[m echo /opt/stack/data/venv/bin
+2026-07-23 10:04:06.763 | ++[38;5;242mlib/neutron:source:75                    (B[m NEUTRON_BIN_DIR=/opt/stack/data/venv/bin
+2026-07-23 10:04:06.789 | ++[38;5;242mlib/neutron:source:78                    (B[m NEUTRON_CONF_DIR=/etc/neutron
+2026-07-23 10:04:06.814 | ++[38;5;242mlib/neutron:source:79                    (B[m NEUTRON_CONF=/etc/neutron/neutron.conf
+2026-07-23 10:04:06.839 | ++[38;5;242mlib/neutron:source:80                    (B[m export NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2026-07-23 10:04:06.864 | ++[38;5;242mlib/neutron:source:80                    (B[m NEUTRON_TEST_CONFIG_FILE=/etc/neutron/debug.ini
+2026-07-23 10:04:06.891 | ++[38;5;242mlib/neutron:source:82                    (B[m NEUTRON_UWSGI=neutron.wsgi.api:application
+2026-07-23 10:04:06.917 | ++[38;5;242mlib/neutron:source:83                    (B[m NEUTRON_UWSGI_CONF=/etc/neutron/neutron-api-uwsgi.ini
+2026-07-23 10:04:06.945 | +++[38;5;242mlib/neutron:source:89                    (B[m trueorfalse True NEUTRON_ENFORCE_NEW_DEFAULTS
+2026-07-23 10:04:07.083 | ++[38;5;242mlib/neutron:source:89                    (B[m NEUTRON_ENFORCE_NEW_DEFAULTS=True
+2026-07-23 10:04:07.108 | ++[38;5;242mlib/neutron:source:90                    (B[m [[ -n '' ]]
+2026-07-23 10:04:07.133 | ++[38;5;242mlib/neutron:source:96                    (B[m AGENT_DHCP_BINARY=/opt/stack/data/venv/bin/neutron-dhcp-agent
+2026-07-23 10:04:07.159 | ++[38;5;242mlib/neutron:source:97                    (B[m AGENT_L3_BINARY=/opt/stack/data/venv/bin/neutron-l3-agent
+2026-07-23 10:04:07.185 | ++[38;5;242mlib/neutron:source:98                    (B[m AGENT_META_BINARY=/opt/stack/data/venv/bin/neutron-metadata-agent
+2026-07-23 10:04:07.211 | ++[38;5;242mlib/neutron:source:102                   (B[m Q_DHCP_CONF_FILE=/etc/neutron/dhcp_agent.ini
+2026-07-23 10:04:07.235 | ++[38;5;242mlib/neutron:source:105                   (B[m NEUTRON_DHCP_CONF=/etc/neutron/dhcp_agent.ini
+2026-07-23 10:04:07.261 | ++[38;5;242mlib/neutron:source:106                   (B[m Q_L3_CONF_FILE=/etc/neutron/l3_agent.ini
+2026-07-23 10:04:07.286 | ++[38;5;242mlib/neutron:source:109                   (B[m NEUTRON_L3_CONF=/etc/neutron/l3_agent.ini
+2026-07-23 10:04:07.313 | ++[38;5;242mlib/neutron:source:110                   (B[m Q_META_CONF_FILE=/etc/neutron/metadata_agent.ini
+2026-07-23 10:04:07.339 | ++[38;5;242mlib/neutron:source:113                   (B[m Q_DB_NAME=neutron
+2026-07-23 10:04:07.364 | ++[38;5;242mlib/neutron:source:115                   (B[m Q_PLUGIN=ml2
+2026-07-23 10:04:07.389 | ++[38;5;242mlib/neutron:source:117                   (B[m Q_HOST=10.132.239.111
+2026-07-23 10:04:07.414 | ++[38;5;242mlib/neutron:source:119                   (B[m Q_PROTOCOL=http
+2026-07-23 10:04:07.442 | +++[38;5;242mlib/neutron:source:121                   (B[m ipv6_unquote 0.0.0.0
+2026-07-23 10:04:07.462 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m echo 0.0.0.0
+2026-07-23 10:04:07.467 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m tr -d '[]'
+2026-07-23 10:04:07.491 | ++[38;5;242mlib/neutron:source:121                   (B[m Q_LISTEN_ADDRESS=0.0.0.0
+2026-07-23 10:04:07.516 | ++[38;5;242mlib/neutron:source:123                   (B[m Q_ADMIN_USERNAME=neutron
+2026-07-23 10:04:07.540 | ++[38;5;242mlib/neutron:source:125                   (B[m Q_AUTH_STRATEGY=keystone
+2026-07-23 10:04:07.566 | ++[38;5;242mlib/neutron:source:127                   (B[m Q_OVS_USE_VETH=False
+2026-07-23 10:04:07.595 | ++[38;5;242mlib/neutron:source:128                   (B[m Q_USE_ROOTWRAP=True
+2026-07-23 10:04:07.623 | +++[38;5;242mlib/neutron:source:129                   (B[m trueorfalse True Q_USE_ROOTWRAP_DAEMON
+2026-07-23 10:04:07.758 | ++[38;5;242mlib/neutron:source:129                   (B[m Q_USE_ROOTWRAP_DAEMON=True
+2026-07-23 10:04:07.786 | +++[38;5;242mlib/neutron:source:131                   (B[m ipv6_unquote 10.132.239.111
+2026-07-23 10:04:07.810 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m echo 10.132.239.111
+2026-07-23 10:04:07.813 | +++[38;5;242mfunctions-common:ipv6_unquote:2218       (B[m tr -d '[]'
+2026-07-23 10:04:07.846 | ++[38;5;242mlib/neutron:source:131                   (B[m Q_META_DATA_IP=10.132.239.111
+2026-07-23 10:04:07.871 | ++[38;5;242mlib/neutron:source:133                   (B[m Q_ALLOW_OVERLAPPING_IP=True
+2026-07-23 10:04:07.896 | ++[38;5;242mlib/neutron:source:134                   (B[m Q_NOTIFY_NOVA_PORT_STATUS_CHANGES=True
+2026-07-23 10:04:07.922 | ++[38;5;242mlib/neutron:source:135                   (B[m Q_NOTIFY_NOVA_PORT_DATA_CHANGES=True
+2026-07-23 10:04:07.949 | ++[38;5;242mlib/neutron:source:136                   (B[m VIF_PLUGGING_IS_FATAL=True
+2026-07-23 10:04:07.974 | ++[38;5;242mlib/neutron:source:137                   (B[m VIF_PLUGGING_TIMEOUT=300
+2026-07-23 10:04:08.000 | ++[38;5;242mlib/neutron:source:140                   (B[m SKIP_STOP_OVN=False
+2026-07-23 10:04:08.025 | ++[38;5;242mlib/neutron:source:144                   (B[m _Q_PLUGIN_EXTRA_CONF_PATH=/etc/neutron
+2026-07-23 10:04:08.050 | ++[38;5;242mlib/neutron:source:147                   (B[m NEUTRON_ENDPOINT_SERVICE_NAME=networking
+2026-07-23 10:04:08.075 | ++[38;5;242mlib/neutron:source:148                   (B[m [[ -z networking ]]
+2026-07-23 10:04:08.105 | ++[38;5;242mlib/neutron:source:153                   (B[m ALEMBIC_REPO=https://github.com/sqlalchemy/alembic.git
+2026-07-23 10:04:08.132 | ++[38;5;242mlib/neutron:source:154                   (B[m ALEMBIC_DIR=/opt/stack/alembic
+2026-07-23 10:04:08.157 | ++[38;5;242mlib/neutron:source:155                   (B[m ALEMBIC_BRANCH=main
+2026-07-23 10:04:08.184 | ++[38;5;242mlib/neutron:source:156                   (B[m SQLALCHEMY_REPO=https://github.com/sqlalchemy/sqlalchemy.git
+2026-07-23 10:04:08.210 | ++[38;5;242mlib/neutron:source:157                   (B[m SQLALCHEMY_DIR=/opt/stack/sqlalchemy
+2026-07-23 10:04:08.235 | ++[38;5;242mlib/neutron:source:158                   (B[m SQLALCHEMY_BRANCH=main
+2026-07-23 10:04:08.261 | ++[38;5;242mlib/neutron:source:169                   (B[m declare -a -g Q_PLUGIN_EXTRA_CONF_FILES
+2026-07-23 10:04:08.285 | ++[38;5;242mlib/neutron:source:172                   (B[m declare -a -g _Q_PLUGIN_EXTRA_CONF_FILES_ABS
+2026-07-23 10:04:08.310 | ++[38;5;242mlib/neutron:source:175                   (B[m Q_RR_CONF_FILE=/etc/neutron/rootwrap.conf
+2026-07-23 10:04:08.336 | ++[38;5;242mlib/neutron:source:176                   (B[m [[ True == \F\a\l\s\e ]]
+2026-07-23 10:04:08.364 | +++[38;5;242mlib/neutron:source:179                   (B[m get_rootwrap_location neutron
+2026-07-23 10:04:08.389 | +++[38;5;242mfunctions:get_rootwrap_location:601      (B[m local module=neutron
+2026-07-23 10:04:08.415 | ++++[38;5;242mfunctions:get_rootwrap_location:603      (B[m get_python_exec_prefix
+2026-07-23 10:04:08.547 | ++++[38;5;242minc/python:get_python_exec_prefix:80     (B[m [[ True == \T\r\u\e ]]
+2026-07-23 10:04:08.571 | ++++[38;5;242minc/python:get_python_exec_prefix:81     (B[m echo /opt/stack/data/venv/bin
+2026-07-23 10:04:08.597 | +++[38;5;242mfunctions:get_rootwrap_location:603      (B[m echo /opt/stack/data/venv/bin/neutron-rootwrap
+2026-07-23 10:04:08.625 | ++[38;5;242mlib/neutron:source:179                   (B[m NEUTRON_ROOTWRAP=/opt/stack/data/venv/bin/neutron-rootwrap
+2026-07-23 10:04:08.650 | ++[38;5;242mlib/neutron:source:180                   (B[m Q_RR_COMMAND='sudo /opt/stack/data/venv/bin/neutron-rootwrap /etc/neutron/rootwrap.conf'
+2026-07-23 10:04:08.696 | ++[38;5;242mlib/neutron:source:181                   (B[m [[ True == \T\r\u\e ]]
+2026-07-23 10:04:08.722 | ++[38;5;242mlib/neutron:source:182                   (B[m Q_RR_DAEMON_COMMAND='sudo /opt/stack/data/venv/bin/neutron-rootwrap-daemon /etc/neutron/rootwrap.conf'
+2026-07-23 10:04:08.747 | ++[38;5;242mlib/neutron:source:194                   (B[m Q_DVR_MODE=legacy
+2026-07-23 10:04:08.776 | ++[38;5;242mlib/neutron:source:195                   (B[m [[ legacy != \l\e\g\a\c\y ]]
+2026-07-23 10:04:08.800 | ++[38;5;242mlib/neutron:source:211                   (B[m ENABLE_TENANT_TUNNELS=True
+2026-07-23 10:04:08.827 | ++[38;5;242mlib/neutron:source:216                   (B[m TENANT_TUNNEL_RANGES=1:1000
+2026-07-23 10:04:08.852 | ++[38;5;242mlib/neutron:source:221                   (B[m ENABLE_TENANT_VLANS=False
+2026-07-23 10:04:08.876 | ++[38;5;242mlib/neutron:source:229                   (B[m TENANT_VLAN_RANGE=
+2026-07-23 10:04:08.901 | ++[38;5;242mlib/neutron:source:237                   (B[m PHYSICAL_NETWORK=public
+2026-07-23 10:04:08.929 | ++[38;5;242mlib/neutron:source:247                   (B[m OVS_PHYSICAL_BRIDGE=br-ex
+2026-07-23 10:04:08.955 | ++[38;5;242mlib/neutron:source:253                   (B[m OVS_ENABLE_TUNNELING=True
+2026-07-23 10:04:08.980 | ++[38;5;242mlib/neutron:source:257                   (B[m ENABLE_ISOLATED_METADATA=False
+2026-07-23 10:04:09.005 | ++[38;5;242mlib/neutron:source:262                   (B[m ENABLE_METADATA_NETWORK=False
+2026-07-23 10:04:09.031 | ++[38;5;242mlib/neutron:source:267                   (B[m '[' -f /opt/stack/devstack/lib/neutron_plugins/ml2 ']'
+2026-07-23 10:04:09.057 | ++[38;5;242mlib/neutron:source:268                   (B[m source /opt/stack/devstack/lib/neutron_plugins/ml2
+2026-07-23 10:04:09.526 | ++[38;5;242mlib/neutron:source:275                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/metering
+2026-07-23 10:04:09.645 | ++[38;5;242mlib/neutron:source:278                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/l3
+2026-07-23 10:04:09.671 | +++[38;5;242mlib/neutron_plugins/services/l3:source:3 (B[m IP_VERSION=4
+2026-07-23 10:04:09.720 | +++[38;5;242mlib/neutron_plugins/services/l3:source:5 (B[m [[ 4 != \4 ]]
+2026-07-23 10:04:09.746 | +++[38;5;242mlib/neutron_plugins/services/l3:source:9 (B[m NEUTRON_CREATE_INITIAL_NETWORKS=True
+2026-07-23 10:04:09.773 | +++[38;5;242mlib/neutron_plugins/services/l3:source:12 (B[m PROVIDER_SUBNET_NAME=provider_net
+2026-07-23 10:04:09.801 | +++[38;5;242mlib/neutron_plugins/services/l3:source:13 (B[m IPV6_PROVIDER_SUBNET_NAME=provider_net_v6
+2026-07-23 10:04:09.826 | +++[38;5;242mlib/neutron_plugins/services/l3:source:14 (B[m IPV6_PROVIDER_FIXED_RANGE=
+2026-07-23 10:04:09.852 | +++[38;5;242mlib/neutron_plugins/services/l3:source:15 (B[m IPV6_PROVIDER_NETWORK_GATEWAY=
+2026-07-23 10:04:09.879 | +++[38;5;242mlib/neutron_plugins/services/l3:source:17 (B[m PUBLIC_BRIDGE=br-ex
+2026-07-23 10:04:09.906 | +++[38;5;242mlib/neutron_plugins/services/l3:source:18 (B[m PUBLIC_BRIDGE_MTU=1500
+2026-07-23 10:04:09.931 | +++[38;5;242mlib/neutron_plugins/services/l3:source:23 (B[m Q_ASSIGN_GATEWAY_TO_PUBLIC_BRIDGE=True
+2026-07-23 10:04:09.961 | +++[38;5;242mlib/neutron_plugins/services/l3:source:26 (B[m Q_ROUTER_NAME=router1
+2026-07-23 10:04:09.987 | +++[38;5;242mlib/neutron_plugins/services/l3:source:31 (B[m Q_USE_PUBLIC_VETH=False
+2026-07-23 10:04:10.014 | +++[38;5;242mlib/neutron_plugins/services/l3:source:32 (B[m Q_PUBLIC_VETH_EX=veth-pub-ex
+2026-07-23 10:04:10.041 | +++[38;5;242mlib/neutron_plugins/services/l3:source:33 (B[m Q_PUBLIC_VETH_INT=veth-pub-int
+2026-07-23 10:04:10.068 | +++[38;5;242mlib/neutron_plugins/services/l3:source:39 (B[m Q_L3_ROUTER_PER_TENANT=True
+2026-07-23 10:04:10.096 | +++[38;5;242mlib/neutron_plugins/services/l3:source:72 (B[m Q_USE_PROVIDERNET_FOR_PUBLIC=True
+2026-07-23 10:04:10.122 | +++[38;5;242mlib/neutron_plugins/services/l3:source:73 (B[m PUBLIC_PHYSICAL_NETWORK=public
+2026-07-23 10:04:10.156 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m sed s/-//g
+2026-07-23 10:04:10.156 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m uuidgen
+2026-07-23 10:04:10.157 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m cut -c 23-
+2026-07-23 10:04:10.158 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m sed -e 's/\(..\)\(....\)\(....\)/\1:\2:\3/'
+2026-07-23 10:04:10.196 | +++[38;5;242mlib/neutron_plugins/services/l3:source:76 (B[m IPV6_GLOBAL_ID=f4:3935:cd94
+2026-07-23 10:04:10.226 | +++[38;5;242mlib/neutron_plugins/services/l3:source:79 (B[m IPV6_RA_MODE=slaac
+2026-07-23 10:04:10.252 | +++[38;5;242mlib/neutron_plugins/services/l3:source:80 (B[m IPV6_ADDRESS_MODE=slaac
+2026-07-23 10:04:10.280 | +++[38;5;242mlib/neutron_plugins/services/l3:source:81 (B[m IPV6_PUBLIC_SUBNET_NAME=ipv6-public-subnet
+2026-07-23 10:04:10.304 | +++[38;5;242mlib/neutron_plugins/services/l3:source:82 (B[m IPV6_PRIVATE_SUBNET_NAME=ipv6-private-subnet
+2026-07-23 10:04:10.330 | +++[38;5;242mlib/neutron_plugins/services/l3:source:83 (B[m IPV6_ADDRS_SAFE_TO_USE=fdf4:3935:cd94::/56
+2026-07-23 10:04:10.357 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:86 (B[m echo fdf4:3935:cd94::/56
+2026-07-23 10:04:10.358 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:86 (B[m awk -F / '{ print $1"/"($2>63 ? $2 : 64) }'
+2026-07-23 10:04:10.394 | +++[38;5;242mlib/neutron_plugins/services/l3:source:86 (B[m FIXED_RANGE_V6=fdf4:3935:cd94::/64
+2026-07-23 10:04:10.420 | +++[38;5;242mlib/neutron_plugins/services/l3:source:87 (B[m IPV6_PRIVATE_NETWORK_GATEWAY=
+2026-07-23 10:04:10.446 | +++[38;5;242mlib/neutron_plugins/services/l3:source:88 (B[m IPV6_PUBLIC_RANGE=2001:db8::/64
+2026-07-23 10:04:10.472 | +++[38;5;242mlib/neutron_plugins/services/l3:source:89 (B[m IPV6_PUBLIC_NETWORK_GATEWAY=2001:db8::2
+2026-07-23 10:04:10.498 | +++[38;5;242mlib/neutron_plugins/services/l3:source:90 (B[m IPV6_ROUTER_GW_IP=2001:db8::1
+2026-07-23 10:04:10.523 | +++[38;5;242mlib/neutron_plugins/services/l3:source:93 (B[m NETWORK_GATEWAY=
+2026-07-23 10:04:10.548 | +++[38;5;242mlib/neutron_plugins/services/l3:source:94 (B[m PUBLIC_NETWORK_GATEWAY=
+2026-07-23 10:04:10.573 | +++[38;5;242mlib/neutron_plugins/services/l3:source:95 (B[m PRIVATE_SUBNET_NAME=private-subnet
+2026-07-23 10:04:10.599 | +++[38;5;242mlib/neutron_plugins/services/l3:source:96 (B[m PUBLIC_SUBNET_NAME=public-subnet
+2026-07-23 10:04:10.625 | +++[38;5;242mlib/neutron_plugins/services/l3:source:97 (B[m PUBLIC_SUBNET_ENABLE_DHCP=False
+2026-07-23 10:04:10.651 | +++[38;5;242mlib/neutron_plugins/services/l3:source:100 (B[m USE_SUBNETPOOL=False
+2026-07-23 10:04:10.680 | +++[38;5;242mlib/neutron_plugins/services/l3:source:101 (B[m SUBNETPOOL_NAME_V4=shared-default-subnetpool-v4
+2026-07-23 10:04:10.715 | +++[38;5;242mlib/neutron_plugins/services/l3:source:102 (B[m SUBNETPOOL_NAME_V6=shared-default-subnetpool-v6
+2026-07-23 10:04:10.741 | +++[38;5;242mlib/neutron_plugins/services/l3:source:104 (B[m SUBNETPOOL_PREFIX_V4=10.0.0.0/22
+2026-07-23 10:04:10.768 | +++[38;5;242mlib/neutron_plugins/services/l3:source:105 (B[m SUBNETPOOL_PREFIX_V6=fdf4:3935:cd94::/56
+2026-07-23 10:04:10.793 | +++[38;5;242mlib/neutron_plugins/services/l3:source:107 (B[m SUBNETPOOL_SIZE_V4=26
+2026-07-23 10:04:10.818 | +++[38;5;242mlib/neutron_plugins/services/l3:source:108 (B[m SUBNETPOOL_SIZE_V6=64
+2026-07-23 10:04:10.848 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m awk '{print $5}'
+2026-07-23 10:04:10.849 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m ip -4 route
+2026-07-23 10:04:10.850 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m grep '^default'
+2026-07-23 10:04:10.891 | +++[38;5;242mlib/neutron_plugins/services/l3:source:110 (B[m default_v4_route_devs=ens192
+2026-07-23 10:04:10.921 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m ip -6 route list match default table all
+2026-07-23 10:04:10.923 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m grep via
+2026-07-23 10:04:10.925 | ++++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m awk '{print $5}'
+2026-07-23 10:04:10.969 | +++[38;5;242mlib/neutron_plugins/services/l3:source:112 (B[m default_v6_route_devs=
+2026-07-23 10:04:11.006 | ++[38;5;242mlib/neutron:source:281                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/placement
+2026-07-23 10:04:11.033 | ++[38;5;242mlib/neutron:source:282                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/trunk
+2026-07-23 10:04:11.061 | ++[38;5;242mlib/neutron:source:283                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/qos
+2026-07-23 10:04:11.090 | ++[38;5;242mlib/neutron:source:284                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/segments
+2026-07-23 10:04:11.116 | ++[38;5;242mlib/neutron:source:285                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/ovn-bgp
+2026-07-23 10:04:11.142 | ++[38;5;242mlib/neutron:source:286                   (B[m source /opt/stack/devstack/lib/neutron_plugins/services/evpn
+2026-07-23 10:04:11.168 | ++[38;5;242mlib/neutron:source:289                   (B[m has_neutron_plugin_security_group
+2026-07-23 10:04:11.193 | ++[38;5;242mlib/neutron_plugins/ml2:has_neutron_plugin_security_group:146 (B[m return 0
+2026-07-23 10:04:11.219 | ++[38;5;242mlib/neutron:source:290                   (B[m Q_USE_SECGROUP=True
+2026-07-23 10:04:11.246 | ++[38;5;242mlib/neutron:source:298                   (B[m OVN_BRIDGE_MAPPINGS=public:br-ex
+2026-07-23 10:04:11.387 | +[38;5;242m./stack.sh:main:643                      (B[m source /opt/stack/devstack/lib/ldap
+2026-07-23 10:04:11.510 | +[38;5;242m./stack.sh:main:644                      (B[m source /opt/stack/devstack/lib/dstat
+2026-07-23 10:04:11.633 | +[38;5;242m./stack.sh:main:645                      (B[m source /opt/stack/devstack/lib/atop
+2026-07-23 10:04:11.757 | +[38;5;242m./stack.sh:main:646                      (B[m source /opt/stack/devstack/lib/tcpdump
+2026-07-23 10:04:11.876 | +[38;5;242m./stack.sh:main:647                      (B[m source /opt/stack/devstack/lib/etcd3
+2026-07-23 10:04:12.063 | +[38;5;242m./stack.sh:main:648                      (B[m source /opt/stack/devstack/lib/os-vif
+2026-07-23 10:04:12.094 | +++[38;5;242mlib/os-vif:source:12                     (B[m is_ml2_ovs
+2026-07-23 10:04:12.121 | +++[38;5;242mlib/os-vif:is_ml2_ovs:4                  (B[m [[ ovn == \o\p\e\n\v\s\w\i\t\c\h ]]
+2026-07-23 10:04:12.147 | +++[38;5;242mlib/os-vif:is_ml2_ovs:7                  (B[m echo False
+2026-07-23 10:04:12.174 | ++[38;5;242mlib/os-vif:source:12                     (B[m OS_VIF_OVS_ISOLATE_VIF=False
+2026-07-23 10:04:12.203 | +++[38;5;242mlib/os-vif:source:13                     (B[m trueorfalse False OS_VIF_OVS_ISOLATE_VIF
+2026-07-23 10:04:12.342 | ++[38;5;242mlib/os-vif:source:13                     (B[m OS_VIF_OVS_ISOLATE_VIF=False
+2026-07-23 10:04:12.369 | +[38;5;242m./stack.sh:main:654                      (B[m run_phase source
+2026-07-23 10:04:12.394 | +[38;5;242mfunctions-common:run_phase:1848          (B[m local mode=source
+2026-07-23 10:04:12.420 | +[38;5;242mfunctions-common:run_phase:1849          (B[m local phase=
+2026-07-23 10:04:12.444 | +[38;5;242mfunctions-common:run_phase:1850          (B[m [[ -d /opt/stack/devstack/extras.d ]]
+2026-07-23 10:04:12.470 | +[38;5;242mfunctions-common:run_phase:1851          (B[m local extra_plugin_file_name
+2026-07-23 10:04:12.495 | +[38;5;242mfunctions-common:run_phase:1852          (B[m for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
+2026-07-23 10:04:12.520 | +[38;5;242mfunctions-common:run_phase:1857          (B[m local exceptions=80-tempest.sh
+2026-07-23 10:04:12.546 | +[38;5;242mfunctions-common:run_phase:1858          (B[m local extra
+2026-07-23 10:04:12.574 | ++[38;5;242mfunctions-common:run_phase:1859          (B[m basename /opt/stack/devstack/extras.d/80-tempest.sh
+2026-07-23 10:04:12.605 | +[38;5;242mfunctions-common:run_phase:1859          (B[m extra=80-tempest.sh
+2026-07-23 10:04:12.630 | +[38;5;242mfunctions-common:run_phase:1860          (B[m [[ 80-tempest.sh =~ 80-tempest\.sh ]]
+2026-07-23 10:04:12.656 | +[38;5;242mfunctions-common:run_phase:1864          (B[m [[ -r /opt/stack/devstack/extras.d/80-tempest.sh ]]
+2026-07-23 10:04:12.684 | +[38;5;242mfunctions-common:run_phase:1864          (B[m source /opt/stack/devstack/extras.d/80-tempest.sh source
+2026-07-23 10:04:12.711 | ++[38;5;242mextras.d/80-tempest.sh:source:3          (B[m is_service_enabled tempest
+2026-07-23 10:04:12.854 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-07-23 10:04:12.880 | ++[38;5;242mextras.d/80-tempest.sh:source:4          (B[m [[ source == \s\o\u\r\c\e ]]
+2026-07-23 10:04:12.907 | ++[38;5;242mextras.d/80-tempest.sh:source:6          (B[m source /opt/stack/devstack/lib/tempest
+2026-07-23 10:04:13.133 | ++[38;5;242mextras.d/80-tempest.sh:source:27         (B[m [[ source == \u\n\s\t\a\c\k ]]
+2026-07-23 10:04:13.162 | ++[38;5;242mextras.d/80-tempest.sh:source:32         (B[m [[ source == \c\l\e\a\n ]]
+2026-07-23 10:04:13.192 | +[38;5;242mfunctions-common:run_phase:1869          (B[m [[ source == \s\o\u\r\c\e ]]
+2026-07-23 10:04:13.223 | +[38;5;242mfunctions-common:run_phase:1870          (B[m load_plugin_settings
+2026-07-23 10:04:13.252 | +[38;5;242mfunctions-common:load_plugin_settings:1784 (B[m local plugins=
+2026-07-23 10:04:13.280 | +[38;5;242mfunctions-common:load_plugin_settings:1785 (B[m local plugin
+2026-07-23 10:04:13.309 | +[38;5;242mfunctions-common:load_plugin_settings:1788 (B[m [[ -z '' ]]
+2026-07-23 10:04:13.339 | +[38;5;242mfunctions-common:load_plugin_settings:1789 (B[m return
+2026-07-23 10:04:13.370 | +[38;5;242mfunctions-common:run_phase:1871          (B[m verify_disabled_services
+2026-07-23 10:04:13.401 | +[38;5;242mfunctions-common:verify_disabled_services:2131 (B[m local service
+2026-07-23 10:04:13.429 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.459 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,key, ]]
+2026-07-23 10:04:13.487 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.517 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-api, ]]
+2026-07-23 10:04:13.544 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.572 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-cpu, ]]
+2026-07-23 10:04:13.600 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.628 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-cond, ]]
+2026-07-23 10:04:13.655 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.685 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-sch, ]]
+2026-07-23 10:04:13.712 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.739 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-novnc, ]]
+2026-07-23 10:04:13.765 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.792 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,n-api-meta, ]]
+2026-07-23 10:04:13.819 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.847 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,placement-api, ]]
+2026-07-23 10:04:13.875 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.901 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,placement-client, ]]
+2026-07-23 10:04:13.929 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:13.958 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,g-api, ]]
+2026-07-23 10:04:13.986 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.015 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-sch, ]]
+2026-07-23 10:04:14.043 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.071 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-api, ]]
+2026-07-23 10:04:14.100 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.126 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-vol, ]]
+2026-07-23 10:04:14.156 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.184 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovn-controller, ]]
+2026-07-23 10:04:14.212 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.240 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovn-northd, ]]
+2026-07-23 10:04:14.268 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.295 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovs-vswitchd, ]]
+2026-07-23 10:04:14.324 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.357 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,ovsdb-server, ]]
+2026-07-23 10:04:14.390 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.423 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,q-svc, ]]
+2026-07-23 10:04:14.456 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.490 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,q-ovn-agent, ]]
+2026-07-23 10:04:14.518 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.548 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,rabbit, ]]
+2026-07-23 10:04:14.577 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.605 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,tempest, ]]
+2026-07-23 10:04:14.634 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.662 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,mysql, ]]
+2026-07-23 10:04:14.692 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.722 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,etcd3, ]]
+2026-07-23 10:04:14.751 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.779 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,dstat, ]]
+2026-07-23 10:04:14.807 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.836 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,cinder, ]]
+2026-07-23 10:04:14.863 | +[38;5;242mfunctions-common:verify_disabled_services:2132 (B[m for service in ${ENABLED_SERVICES//,/ }
+2026-07-23 10:04:14.891 | +[38;5;242mfunctions-common:verify_disabled_services:2133 (B[m [[ ,n-net,horizon,heat,h-api,h-api-cfn,h-api-cw, =~ ,c-bak, ]]
+2026-07-23 10:04:14.923 | +[38;5;242m./stack.sh:main:725                      (B[m initialize_database_backends
+2026-07-23 10:04:14.953 | +[38;5;242mlib/database:initialize_database_backends:65 (B[m for backend in $DATABASE_BACKENDS
+2026-07-23 10:04:14.981 | +[38;5;242mlib/database:initialize_database_backends:66 (B[m is_service_enabled mysql
+2026-07-23 10:04:15.134 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-07-23 10:04:15.164 | +[38;5;242mlib/database:initialize_database_backends:66 (B[m DATABASE_TYPE=mysql
+2026-07-23 10:04:15.192 | +[38;5;242mlib/database:initialize_database_backends:65 (B[m for backend in $DATABASE_BACKENDS
+2026-07-23 10:04:15.221 | +[38;5;242mlib/database:initialize_database_backends:66 (B[m is_service_enabled postgresql
+2026-07-23 10:04:15.370 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-07-23 10:04:15.398 | +[38;5;242mlib/database:initialize_database_backends:69 (B[m '[' -z mysql ']'
+2026-07-23 10:04:15.426 | +[38;5;242mlib/database:initialize_database_backends:73 (B[m MYSQL_HOST=127.0.0.1
+2026-07-23 10:04:15.453 | +[38;5;242mlib/database:initialize_database_backends:74 (B[m MYSQL_USER=root
+2026-07-23 10:04:15.482 | +[38;5;242mlib/database:initialize_database_backends:80 (B[m [[ 4 == 6 ]]
+2026-07-23 10:04:15.511 | +[38;5;242mlib/database:initialize_database_backends:83 (B[m DATABASE_HOST=127.0.0.1
+2026-07-23 10:04:15.540 | +[38;5;242mlib/database:initialize_database_backends:86 (B[m DATABASE_USER=root
+2026-07-23 10:04:15.568 | +[38;5;242mlib/database:initialize_database_backends:88 (B[m '[' -n '' ']'
+2026-07-23 10:04:15.597 | +[38;5;242mlib/database:initialize_database_backends:92 (B[m return 0
+2026-07-23 10:04:15.626 | +[38;5;242m./stack.sh:main:726                      (B[m echo 'Using mysql database backend'
+2026-07-23 10:04:15.626 | Using mysql database backend
+2026-07-23 10:04:15.656 | +[38;5;242m./stack.sh:main:729                      (B[m read_password DATABASE_PASSWORD 'ENTER A PASSWORD TO USE FOR THE DATABASE.'
+2026-07-23 10:04:15.820 | +[38;5;242m./stack.sh:main:731                      (B[m define_database_baseurl
+2026-07-23 10:04:15.853 | ++[38;5;242mlib/database:define_database_baseurl:106 (B[m get_database_type_mysql
+2026-07-23 10:04:15.884 | ++[38;5;242mlib/databases/mysql:get_database_type_mysql:32 (B[m [[ PyMySQL == \P\y\M\y\S\Q\L ]]
+2026-07-23 10:04:15.915 | ++[38;5;242mlib/databases/mysql:get_database_type_mysql:33 (B[m echo mysql+pymysql
+2026-07-23 10:04:15.953 | +[38;5;242mlib/database:define_database_baseurl:106 (B[m BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
+2026-07-23 10:04:15.984 | +[38;5;242m./stack.sh:main:743                      (B[m is_service_enabled rabbit
+2026-07-23 10:04:16.142 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-07-23 10:04:16.173 | +[38;5;242m./stack.sh:main:744                      (B[m read_password RABBIT_PASSWORD 'ENTER A PASSWORD TO USE FOR RABBIT.'
+2026-07-23 10:04:16.340 | +[38;5;242m./stack.sh:main:751                      (B[m is_service_enabled keystone
+2026-07-23 10:04:16.511 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-07-23 10:04:16.543 | +[38;5;242m./stack.sh:main:753                      (B[m read_password SERVICE_PASSWORD 'ENTER A SERVICE_PASSWORD TO USE FOR THE SERVICE AUTHENTICATION.'
+2026-07-23 10:04:16.703 | +[38;5;242m./stack.sh:main:755                      (B[m read_password ADMIN_PASSWORD 'ENTER A PASSWORD TO USE FOR HORIZON AND KEYSTONE (20 CHARS OR LESS).'
+2026-07-23 10:04:16.863 | +[38;5;242m./stack.sh:main:766                      (B[m is_service_enabled ldap
+2026-07-23 10:04:17.028 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-07-23 10:04:17.060 | +[38;5;242m./stack.sh:main:775                      (B[m is_service_enabled s-proxy
+2026-07-23 10:04:17.218 | +[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-07-23 10:04:17.247 | +[38;5;242m./stack.sh:main:787                      (B[m save_stackenv 787
+2026-07-23 10:04:17.276 | +[38;5;242mfunctions-common:save_stackenv:65        (B[m local tag=787
+2026-07-23 10:04:17.308 | ++[38;5;242mfunctions-common:save_stackenv:67        (B[m date +%F-%H%M%S
+2026-07-23 10:04:17.343 | +[38;5;242mfunctions-common:save_stackenv:67        (B[m time_stamp=2026-07-23-100417
+2026-07-23 10:04:17.371 | +[38;5;242mfunctions-common:save_stackenv:68        (B[m echo '# 2026-07-23-100417 787'
+2026-07-23 10:04:17.401 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.429 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo BASE_SQL_CONN=mysql+pymysql://root:******@127.0.0.1
+2026-07-23 10:04:17.459 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.487 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo DATA_DIR=/opt/stack/data
+2026-07-23 10:04:17.516 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.548 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo DEST=/opt/stack
+2026-07-23 10:04:17.579 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.609 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo ENABLED_SERVICES=key,n-api,n-cpu,n-cond,n-sch,n-novnc,n-api-meta,placement-api,placement-client,g-api,c-sch,c-api,c-vol,ovn-controller,ovn-northd,ovs-vswitchd,ovsdb-server,q-svc,q-ovn-agent,rabbit,tempest,mysql,etcd3,dstat,cinder,c-bak
+2026-07-23 10:04:17.638 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.668 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo HOST_IP=10.132.239.111
+2026-07-23 10:04:17.701 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.730 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo KEYSTONE_SERVICE_URI=http://10.132.239.111/identity
+2026-07-23 10:04:17.760 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.789 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo LOGFILE=/opt/stack/logs/stack.sh.log.2026-07-23-100348
+2026-07-23 10:04:17.819 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.848 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo OS_CACERT=
+2026-07-23 10:04:17.878 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.907 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo SERVICE_HOST=10.132.239.111
+2026-07-23 10:04:17.936 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:17.969 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo STACK_USER=stack
+2026-07-23 10:04:17.999 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:18.028 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo TLS_IP=
+2026-07-23 10:04:18.057 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:18.087 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo HOST_IPV6=::1
+2026-07-23 10:04:18.117 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:18.149 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo SERVICE_IP_VERSION=4
+2026-07-23 10:04:18.179 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:18.208 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo TUNNEL_ENDPOINT_IP=10.132.239.111
+2026-07-23 10:04:18.241 | +[38;5;242mfunctions-common:save_stackenv:69        (B[m for i in $STACK_ENV_VARS
+2026-07-23 10:04:18.270 | +[38;5;242mfunctions-common:save_stackenv:70        (B[m echo TUNNEL_IP_VERSION=4
+2026-07-23 10:04:18.299 | +[38;5;242m./stack.sh:main:800                      (B[m GIT_DEPTH=0
+2026-07-23 10:04:18.330 | +[38;5;242m./stack.sh:main:800                      (B[m git_clone http://github.com/openstack/requirements.git /opt/stack/requirements master
+2026-07-23 10:04:18.358 | +[38;5;242mfunctions-common:git_clone:589           (B[m local git_remote=http://github.com/openstack/requirements.git
+2026-07-23 10:04:18.383 | +[38;5;242mfunctions-common:git_clone:590           (B[m local git_dest=/opt/stack/requirements
+2026-07-23 10:04:18.410 | +[38;5;242mfunctions-common:git_clone:591           (B[m local git_ref=master
+2026-07-23 10:04:18.435 | +[38;5;242mfunctions-common:git_clone:592           (B[m local orig_dir
+2026-07-23 10:04:18.465 | ++[38;5;242mfunctions-common:git_clone:593           (B[m pwd
+2026-07-23 10:04:18.498 | +[38;5;242mfunctions-common:git_clone:593           (B[m orig_dir=/opt/stack/devstack
+2026-07-23 10:04:18.524 | +[38;5;242mfunctions-common:git_clone:594           (B[m local git_clone_flags=
+2026-07-23 10:04:18.555 | ++[38;5;242mfunctions-common:git_clone:596           (B[m trueorfalse False RECLONE
+2026-07-23 10:04:18.707 | +[38;5;242mfunctions-common:git_clone:596           (B[m RECLONE=False
+2026-07-23 10:04:18.735 | +[38;5;242mfunctions-common:git_clone:597           (B[m [[ 0 -gt 0 ]]
+2026-07-23 10:04:18.764 | +[38;5;242mfunctions-common:git_clone:601           (B[m [[ False = \T\r\u\e ]]
+2026-07-23 10:04:18.792 | +[38;5;242mfunctions-common:git_clone:610           (B[m echo master
+2026-07-23 10:04:18.794 | +[38;5;242mfunctions-common:git_clone:610           (B[m egrep -q '^refs'
+2026-07-23 10:04:18.841 | +[38;5;242mfunctions-common:git_clone:624           (B[m [[ ! -d /opt/stack/requirements ]]
+2026-07-23 10:04:18.867 | +[38;5;242mfunctions-common:git_clone:625           (B[m [[ False = \T\r\u\e ]]
+2026-07-23 10:04:18.894 | +[38;5;242mfunctions-common:git_clone:630           (B[m git_timed clone --no-checkout http://github.com/openstack/requirements.git /opt/stack/requirements
+2026-07-23 10:04:18.920 | +[38;5;242mfunctions-common:git_timed:697           (B[m local count=0
+2026-07-23 10:04:18.946 | +[38;5;242mfunctions-common:git_timed:698           (B[m local timeout=0
+2026-07-23 10:04:18.973 | +[38;5;242mfunctions-common:git_timed:700           (B[m [[ -n 0 ]]
+2026-07-23 10:04:18.999 | +[38;5;242mfunctions-common:git_timed:701           (B[m timeout=0
+2026-07-23 10:04:19.027 | +[38;5;242mfunctions-common:git_timed:704           (B[m time_start git_timed
+2026-07-23 10:04:19.054 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=git_timed
+2026-07-23 10:04:19.080 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-07-23 10:04:19.107 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-07-23 10:04:19.136 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-07-23 10:04:19.169 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1784801059141
+2026-07-23 10:04:19.196 | +[38;5;242mfunctions-common:git_timed:705           (B[m timeout -s SIGINT 0 git clone --no-checkout http://github.com/openstack/requirements.git /opt/stack/requirements
+2026-07-23 10:04:19.207 | Cloning into '/opt/stack/requirements'...
+2026-07-23 10:04:19.843 | warning: redirecting to https://github.com/openstack/requirements.git/
+2026-07-23 10:04:24.554 | +[38;5;242mfunctions-common:git_timed:719           (B[m time_stop git_timed
+2026-07-23 10:04:24.582 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-07-23 10:04:24.607 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-07-23 10:04:24.634 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-07-23 10:04:24.659 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-07-23 10:04:24.686 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-07-23 10:04:24.712 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=git_timed
+2026-07-23 10:04:24.738 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1784801059141
+2026-07-23 10:04:24.764 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1784801059141 ]]
+2026-07-23 10:04:24.792 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-07-23 10:04:24.826 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1784801064797
+2026-07-23 10:04:24.852 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=5656
+2026-07-23 10:04:24.878 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=0
+2026-07-23 10:04:24.903 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-07-23 10:04:24.929 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=5656
+2026-07-23 10:04:24.957 | +[38;5;242mfunctions-common:git_clone:631           (B[m cd /opt/stack/requirements
+2026-07-23 10:04:24.984 | +[38;5;242mfunctions-common:git_clone:632           (B[m git_timed fetch origin master
+2026-07-23 10:04:25.010 | +[38;5;242mfunctions-common:git_timed:697           (B[m local count=0
+2026-07-23 10:04:25.037 | +[38;5;242mfunctions-common:git_timed:698           (B[m local timeout=0
+2026-07-23 10:04:25.063 | +[38;5;242mfunctions-common:git_timed:700           (B[m [[ -n 0 ]]
+2026-07-23 10:04:25.091 | +[38;5;242mfunctions-common:git_timed:701           (B[m timeout=0
+2026-07-23 10:04:25.118 | +[38;5;242mfunctions-common:git_timed:704           (B[m time_start git_timed
+2026-07-23 10:04:25.146 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=git_timed
+2026-07-23 10:04:25.172 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-07-23 10:04:25.200 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-07-23 10:04:25.228 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-07-23 10:04:25.261 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1784801065233
+2026-07-23 10:04:25.287 | +[38;5;242mfunctions-common:git_timed:705           (B[m timeout -s SIGINT 0 git fetch origin master
+2026-07-23 10:04:25.943 | warning: redirecting to https://github.com/openstack/requirements.git/
+2026-07-23 10:04:26.233 | From http://github.com/openstack/requirements
+2026-07-23 10:04:26.233 |  * branch              master     -> FETCH_HEAD
+2026-07-23 10:04:26.284 | +[38;5;242mfunctions-common:git_timed:719           (B[m time_stop git_timed
+2026-07-23 10:04:26.311 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-07-23 10:04:26.337 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-07-23 10:04:26.363 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-07-23 10:04:26.389 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-07-23 10:04:26.416 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-07-23 10:04:26.442 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=git_timed
+2026-07-23 10:04:26.469 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1784801065233
+2026-07-23 10:04:26.495 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1784801065233 ]]
+2026-07-23 10:04:26.529 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-07-23 10:04:26.563 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1784801066534
+2026-07-23 10:04:26.589 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=1301
+2026-07-23 10:04:26.616 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=5656
+2026-07-23 10:04:26.642 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-07-23 10:04:26.669 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=6957
+2026-07-23 10:04:26.698 | +[38;5;242mfunctions-common:git_clone:633           (B[m git_timed checkout FETCH_HEAD
+2026-07-23 10:04:26.725 | +[38;5;242mfunctions-common:git_timed:697           (B[m local count=0
+2026-07-23 10:04:26.753 | +[38;5;242mfunctions-common:git_timed:698           (B[m local timeout=0
+2026-07-23 10:04:26.779 | +[38;5;242mfunctions-common:git_timed:700           (B[m [[ -n 0 ]]
+2026-07-23 10:04:26.806 | +[38;5;242mfunctions-common:git_timed:701           (B[m timeout=0
+2026-07-23 10:04:26.835 | +[38;5;242mfunctions-common:git_timed:704           (B[m time_start git_timed
+2026-07-23 10:04:26.861 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=git_timed
+2026-07-23 10:04:26.888 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-07-23 10:04:26.915 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-07-23 10:04:26.944 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-07-23 10:04:26.976 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1784801066949
+2026-07-23 10:04:27.004 | +[38;5;242mfunctions-common:git_timed:705           (B[m timeout -s SIGINT 0 git checkout FETCH_HEAD
+2026-07-23 10:04:27.040 | Note: switching to 'FETCH_HEAD'.
+2026-07-23 10:04:27.041 | 
+2026-07-23 10:04:27.041 | You are in 'detached HEAD' state. You can look around, make experimental
+2026-07-23 10:04:27.041 | changes and commit them, and you can discard any commits you make in this
+2026-07-23 10:04:27.041 | state without impacting any branches by switching back to a branch.
+2026-07-23 10:04:27.041 | 
+2026-07-23 10:04:27.041 | If you want to create a new branch to retain commits you create, you may
+2026-07-23 10:04:27.041 | do so (now or later) by using -c with the switch command. Example:
+2026-07-23 10:04:27.041 | 
+2026-07-23 10:04:27.041 |   git switch -c <new-branch-name>
+2026-07-23 10:04:27.041 | 
+2026-07-23 10:04:27.041 | Or undo this operation with:
+2026-07-23 10:04:27.041 | 
+2026-07-23 10:04:27.041 |   git switch -
+2026-07-23 10:04:27.041 | 
+2026-07-23 10:04:27.041 | Turn off this advice by setting config variable advice.detachedHead to false
+2026-07-23 10:04:27.041 | 
+2026-07-23 10:04:27.041 | HEAD is now at 7c466f62 update constraint for openstack-release-test to new release 8.5.0
+2026-07-23 10:04:27.072 | +[38;5;242mfunctions-common:git_timed:719           (B[m time_stop git_timed
+2026-07-23 10:04:27.099 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-07-23 10:04:27.125 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-07-23 10:04:27.150 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-07-23 10:04:27.176 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-07-23 10:04:27.202 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-07-23 10:04:27.227 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=git_timed
+2026-07-23 10:04:27.253 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1784801066949
+2026-07-23 10:04:27.279 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1784801066949 ]]
+2026-07-23 10:04:27.308 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-07-23 10:04:27.341 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1784801067313
+2026-07-23 10:04:27.369 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=364
+2026-07-23 10:04:27.395 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=6957
+2026-07-23 10:04:27.422 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-07-23 10:04:27.449 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=7321
+2026-07-23 10:04:27.476 | +[38;5;242mfunctions-common:git_clone:669           (B[m sudo git config --system --add safe.directory /opt/stack/requirements
+2026-07-23 10:04:27.548 | +[38;5;242mfunctions-common:git_clone:672           (B[m cd /opt/stack/requirements
+2026-07-23 10:04:27.575 | +[38;5;242mfunctions-common:git_clone:673           (B[m git show --oneline
+2026-07-23 10:04:27.577 | +[38;5;242mfunctions-common:git_clone:673           (B[m head -1
+2026-07-23 10:04:27.586 | 7c466f62 update constraint for openstack-release-test to new release 8.5.0
+2026-07-23 10:04:27.618 | +[38;5;242mfunctions-common:git_clone:674           (B[m cd /opt/stack/devstack
+2026-07-23 10:04:27.647 | +[38;5;242m./stack.sh:main:804                      (B[m echo_summary 'Installing package prerequisites'
+2026-07-23 10:04:27.676 | +[38;5;242m./stack.sh:echo_summary:462              (B[m [[ -t 3 ]]
+2026-07-23 10:04:27.706 | +[38;5;242m./stack.sh:echo_summary:468              (B[m echo -e Installing package prerequisites
+2026-07-23 10:04:27.735 | +[38;5;242m./stack.sh:main:805                      (B[m source /opt/stack/devstack/tools/install_prereqs.sh
+2026-07-23 10:04:27.765 | ++[38;5;242mtools/install_prereqs.sh:source:11       (B[m FORCE_PREREQ=0
+2026-07-23 10:04:27.795 | ++[38;5;242mtools/install_prereqs.sh:source:13       (B[m getopts :f opt
+2026-07-23 10:04:27.824 | ++[38;5;242mtools/install_prereqs.sh:source:23       (B[m [[ -z /opt/stack/devstack ]]
+2026-07-23 10:04:27.853 | ++[38;5;242mtools/install_prereqs.sh:source:43       (B[m PREREQ_RERUN_MARKER=/opt/stack/devstack/.prereqs
+2026-07-23 10:04:27.882 | ++[38;5;242mtools/install_prereqs.sh:source:44       (B[m PREREQ_RERUN_HOURS=2
+2026-07-23 10:04:27.912 | ++[38;5;242mtools/install_prereqs.sh:source:45       (B[m PREREQ_RERUN_SECONDS=7200
+2026-07-23 10:04:27.943 | +++[38;5;242mtools/install_prereqs.sh:source:47       (B[m date +%s
+2026-07-23 10:04:27.980 | ++[38;5;242mtools/install_prereqs.sh:source:47       (B[m NOW=1784801067
+2026-07-23 10:04:28.012 | +++[38;5;242mtools/install_prereqs.sh:source:48       (B[m head -1 /opt/stack/devstack/.prereqs
+2026-07-23 10:04:28.049 | +++[38;5;242mtools/install_prereqs.sh:source:48       (B[m echo 0
+2026-07-23 10:04:28.081 | ++[38;5;242mtools/install_prereqs.sh:source:48       (B[m LAST_RUN=0
+2026-07-23 10:04:28.112 | ++[38;5;242mtools/install_prereqs.sh:source:49       (B[m DELTA=1784801067
+2026-07-23 10:04:28.141 | ++[38;5;242mtools/install_prereqs.sh:source:50       (B[m [[ 1784801067 -lt 7200 ]]
+2026-07-23 10:04:28.171 | ++[38;5;242mtools/install_prereqs.sh:source:57       (B[m export_proxy_variables
+2026-07-23 10:04:28.199 | ++[38;5;242mfunctions-common:export_proxy_variables:2238 (B[m isset http_proxy
+2026-07-23 10:04:28.226 | ++[38;5;242mfunctions-common:isset:266               (B[m [[ -v http_proxy ]]
+2026-07-23 10:04:28.253 | ++[38;5;242mfunctions-common:export_proxy_variables:2239 (B[m export http_proxy=http://10.120.61.146:80
+2026-07-23 10:04:28.280 | ++[38;5;242mfunctions-common:export_proxy_variables:2239 (B[m http_proxy=http://10.120.61.146:80
+2026-07-23 10:04:28.309 | ++[38;5;242mfunctions-common:export_proxy_variables:2241 (B[m isset https_proxy
+2026-07-23 10:04:28.338 | ++[38;5;242mfunctions-common:isset:266               (B[m [[ -v https_proxy ]]
+2026-07-23 10:04:28.366 | ++[38;5;242mfunctions-common:export_proxy_variables:2242 (B[m export https_proxy=http://10.120.61.146:443
+2026-07-23 10:04:28.393 | ++[38;5;242mfunctions-common:export_proxy_variables:2242 (B[m https_proxy=http://10.120.61.146:443
+2026-07-23 10:04:28.421 | ++[38;5;242mfunctions-common:export_proxy_variables:2244 (B[m isset no_proxy
+2026-07-23 10:04:28.449 | ++[38;5;242mfunctions-common:isset:266               (B[m [[ -v no_proxy ]]
+2026-07-23 10:04:28.476 | ++[38;5;242mfunctions-common:export_proxy_variables:2245 (B[m export no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208
+2026-07-23 10:04:28.504 | ++[38;5;242mfunctions-common:export_proxy_variables:2245 (B[m no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208
+2026-07-23 10:04:28.538 | +++[38;5;242mtools/install_prereqs.sh:source:64       (B[m get_packages general,key,n-api,n-cpu,n-cond,n-sch,n-novnc,n-api-meta,placement-api,placement-client,g-api,c-sch,c-api,c-vol,ovn-controller,ovn-northd,ovs-vswitchd,ovsdb-server,q-svc,q-ovn-agent,rabbit,tempest,mysql,etcd3,dstat,cinder,c-bak
+2026-07-23 10:04:28.728 | ++[38;5;242mtools/install_prereqs.sh:source:64       (B[m PACKAGES='apache2
+2026-07-23 10:04:28.728 | apache2-dev
+2026-07-23 10:04:28.728 | bc
+2026-07-23 10:04:28.728 | bsdmainutils
+2026-07-23 10:04:28.728 | curl
+2026-07-23 10:04:28.728 | g++
+2026-07-23 10:04:28.729 | gawk
+2026-07-23 10:04:28.729 | gcc
+2026-07-23 10:04:28.729 | gettext  
+2026-07-23 10:04:28.729 | git
+2026-07-23 10:04:28.729 | graphviz 
+2026-07-23 10:04:28.729 | iputils-ping
+2026-07-23 10:04:28.729 | libffi-dev 
+2026-07-23 10:04:28.729 | libjpeg-dev 
+2026-07-23 10:04:28.729 | libpq-dev  
+2026-07-23 10:04:28.729 | libssl-dev 
+2026-07-23 10:04:28.729 | libsystemd-dev 
+2026-07-23 10:04:28.729 | libxml2-dev  
+2026-07-23 10:04:28.729 | libxslt1-dev  
+2026-07-23 10:04:28.729 | libyaml-dev
+2026-07-23 10:04:28.729 | lsof 
+2026-07-23 10:04:28.729 | openssh-server
+2026-07-23 10:04:28.729 | openssl
+2026-07-23 10:04:28.729 | pkg-config
+2026-07-23 10:04:28.729 | psmisc
+2026-07-23 10:04:28.729 | python3-dev
+2026-07-23 10:04:28.729 | python3-pip
+2026-07-23 10:04:28.729 | python3-systemd
+2026-07-23 10:04:28.729 | python3-venv
+2026-07-23 10:04:28.729 | tar
+2026-07-23 10:04:28.729 | tcpdump
+2026-07-23 10:04:28.729 | unzip
+2026-07-23 10:04:28.729 | uuid-runtime
+2026-07-23 10:04:28.729 | wget
+2026-07-23 10:04:28.730 | zlib1g-dev
+2026-07-23 10:04:28.730 | libkrb5-dev
+2026-07-23 10:04:28.730 | libldap2-dev
+2026-07-23 10:04:28.730 | libsasl2-dev
+2026-07-23 10:04:28.730 | memcached
+2026-07-23 10:04:28.730 | python3-mysqldb
+2026-07-23 10:04:28.730 | sqlite3
+2026-07-23 10:04:28.730 | conntrack
+2026-07-23 10:04:28.730 | curl
+2026-07-23 10:04:28.730 | ebtables
+2026-07-23 10:04:28.730 | genisoimage 
+2026-07-23 10:04:28.730 | iptables
+2026-07-23 10:04:28.730 | iputils-arping
+2026-07-23 10:04:28.730 | kpartx
+2026-07-23 10:04:28.730 | libjs-jquery-tablesorter 
+2026-07-23 10:04:28.730 | parted
+2026-07-23 10:04:28.730 | pm-utils
+2026-07-23 10:04:28.730 | python3-mysqldb
+2026-07-23 10:04:28.730 | socat 
+2026-07-23 10:04:28.730 | sqlite3
+2026-07-23 10:04:28.730 | sudo
+2026-07-23 10:04:28.730 | vlan
+2026-07-23 10:04:28.730 | lsscsi
+2026-07-23 10:04:28.730 | open-iscsi
+2026-07-23 10:04:28.730 | cryptsetup
+2026-07-23 10:04:28.730 | dosfstools
+2026-07-23 10:04:28.730 | genisoimage
+2026-07-23 10:04:28.730 | gir1.2-libosinfo-1.0
+2026-07-23 10:04:28.731 | netcat-openbsd
+2026-07-23 10:04:28.731 | open-iscsi
+2026-07-23 10:04:28.731 | qemu-utils
+2026-07-23 10:04:28.731 | sg3-utils
+2026-07-23 10:04:28.731 | sysfsutils
+2026-07-23 10:04:28.731 | lvm2
+2026-07-23 10:04:28.731 | qemu-utils
+2026-07-23 10:04:28.731 | thin-provisioning-tools
+2026-07-23 10:04:28.731 | acl
+2026-07-23 10:04:28.731 | dnsmasq-base
+2026-07-23 10:04:28.731 | dnsmasq-utils 
+2026-07-23 10:04:28.731 | ebtables
+2026-07-23 10:04:28.731 | haproxy 
+2026-07-23 10:04:28.731 | iptables
+2026-07-23 10:04:28.731 | iputils-arping
+2026-07-23 10:04:28.731 | iputils-ping
+2026-07-23 10:04:28.731 | postgresql-server-dev-all
+2026-07-23 10:04:28.731 | python3-mysqldb
+2026-07-23 10:04:28.731 | sqlite3
+2026-07-23 10:04:28.731 | sudo
+2026-07-23 10:04:28.731 | vlan
+2026-07-23 10:04:28.731 | pcp
+2026-07-23 10:04:28.731 | lvm2
+2026-07-23 10:04:28.731 | qemu-utils
+2026-07-23 10:04:28.731 | thin-provisioning-tools'
+2026-07-23 10:04:28.760 | +++[38;5;242mtools/install_prereqs.sh:source:65       (B[m get_plugin_packages
+2026-07-23 10:04:28.923 | ++[38;5;242mtools/install_prereqs.sh:source:65       (B[m PACKAGES='apache2
+2026-07-23 10:04:28.923 | apache2-dev
+2026-07-23 10:04:28.923 | bc
+2026-07-23 10:04:28.923 | bsdmainutils
+2026-07-23 10:04:28.923 | curl
+2026-07-23 10:04:28.923 | g++
+2026-07-23 10:04:28.924 | gawk
+2026-07-23 10:04:28.924 | gcc
+2026-07-23 10:04:28.924 | gettext  
+2026-07-23 10:04:28.924 | git
+2026-07-23 10:04:28.924 | graphviz 
+2026-07-23 10:04:28.924 | iputils-ping
+2026-07-23 10:04:28.924 | libffi-dev 
+2026-07-23 10:04:28.924 | libjpeg-dev 
+2026-07-23 10:04:28.924 | libpq-dev  
+2026-07-23 10:04:28.925 | libssl-dev 
+2026-07-23 10:04:28.925 | libsystemd-dev 
+2026-07-23 10:04:28.925 | libxml2-dev  
+2026-07-23 10:04:28.925 | libxslt1-dev  
+2026-07-23 10:04:28.925 | libyaml-dev
+2026-07-23 10:04:28.925 | lsof 
+2026-07-23 10:04:28.925 | openssh-server
+2026-07-23 10:04:28.926 | openssl
+2026-07-23 10:04:28.926 | pkg-config
+2026-07-23 10:04:28.926 | psmisc
+2026-07-23 10:04:28.926 | python3-dev
+2026-07-23 10:04:28.926 | python3-pip
+2026-07-23 10:04:28.926 | python3-systemd
+2026-07-23 10:04:28.926 | python3-venv
+2026-07-23 10:04:28.926 | tar
+2026-07-23 10:04:28.926 | tcpdump
+2026-07-23 10:04:28.927 | unzip
+2026-07-23 10:04:28.927 | uuid-runtime
+2026-07-23 10:04:28.927 | wget
+2026-07-23 10:04:28.927 | zlib1g-dev
+2026-07-23 10:04:28.927 | libkrb5-dev
+2026-07-23 10:04:28.927 | libldap2-dev
+2026-07-23 10:04:28.927 | libsasl2-dev
+2026-07-23 10:04:28.927 | memcached
+2026-07-23 10:04:28.928 | python3-mysqldb
+2026-07-23 10:04:28.928 | sqlite3
+2026-07-23 10:04:28.928 | conntrack
+2026-07-23 10:04:28.928 | curl
+2026-07-23 10:04:28.928 | ebtables
+2026-07-23 10:04:28.928 | genisoimage 
+2026-07-23 10:04:28.928 | iptables
+2026-07-23 10:04:28.928 | iputils-arping
+2026-07-23 10:04:28.928 | kpartx
+2026-07-23 10:04:28.928 | libjs-jquery-tablesorter 
+2026-07-23 10:04:28.928 | parted
+2026-07-23 10:04:28.929 | pm-utils
+2026-07-23 10:04:28.929 | python3-mysqldb
+2026-07-23 10:04:28.929 | socat 
+2026-07-23 10:04:28.929 | sqlite3
+2026-07-23 10:04:28.929 | sudo
+2026-07-23 10:04:28.929 | vlan
+2026-07-23 10:04:28.929 | lsscsi
+2026-07-23 10:04:28.929 | open-iscsi
+2026-07-23 10:04:28.929 | cryptsetup
+2026-07-23 10:04:28.929 | dosfstools
+2026-07-23 10:04:28.929 | genisoimage
+2026-07-23 10:04:28.929 | gir1.2-libosinfo-1.0
+2026-07-23 10:04:28.929 | netcat-openbsd
+2026-07-23 10:04:28.929 | open-iscsi
+2026-07-23 10:04:28.929 | qemu-utils
+2026-07-23 10:04:28.929 | sg3-utils
+2026-07-23 10:04:28.929 | sysfsutils
+2026-07-23 10:04:28.930 | lvm2
+2026-07-23 10:04:28.930 | qemu-utils
+2026-07-23 10:04:28.930 | thin-provisioning-tools
+2026-07-23 10:04:28.930 | acl
+2026-07-23 10:04:28.930 | dnsmasq-base
+2026-07-23 10:04:28.930 | dnsmasq-utils 
+2026-07-23 10:04:28.930 | ebtables
+2026-07-23 10:04:28.930 | haproxy 
+2026-07-23 10:04:28.930 | iptables
+2026-07-23 10:04:28.930 | iputils-arping
+2026-07-23 10:04:28.931 | iputils-ping
+2026-07-23 10:04:28.931 | postgresql-server-dev-all
+2026-07-23 10:04:28.931 | python3-mysqldb
+2026-07-23 10:04:28.931 | sqlite3
+2026-07-23 10:04:28.931 | sudo
+2026-07-23 10:04:28.931 | vlan
+2026-07-23 10:04:28.931 | pcp
+2026-07-23 10:04:28.931 | lvm2
+2026-07-23 10:04:28.931 | qemu-utils
+2026-07-23 10:04:28.931 | thin-provisioning-tools '
+2026-07-23 10:04:28.951 | ++[38;5;242mtools/install_prereqs.sh:source:67       (B[m is_ubuntu
+2026-07-23 10:04:28.978 | ++[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-07-23 10:04:29.006 | ++[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-07-23 10:04:29.036 | ++[38;5;242mtools/install_prereqs.sh:source:67       (B[m echo apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libffi-dev libjpeg-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools
+2026-07-23 10:04:29.036 | ++[38;5;242mtools/install_prereqs.sh:source:67       (B[m grep -q dkms
+2026-07-23 10:04:29.073 | ++[38;5;242mtools/install_prereqs.sh:source:72       (B[m install_package apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libffi-dev libjpeg-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools
+2026-07-23 10:04:29.101 | ++[38;5;242mfunctions-common:install_package:1438    (B[m update_package_repo
+2026-07-23 10:04:29.127 | ++[38;5;242mfunctions-common:update_package_repo:1412 (B[m NO_UPDATE_REPOS=False
+2026-07-23 10:04:29.156 | ++[38;5;242mfunctions-common:update_package_repo:1413 (B[m REPOS_UPDATED=True
+2026-07-23 10:04:29.182 | ++[38;5;242mfunctions-common:update_package_repo:1414 (B[m RETRY_UPDATE=False
+2026-07-23 10:04:29.210 | ++[38;5;242mfunctions-common:update_package_repo:1416 (B[m [[ False = \T\r\u\e ]]
+2026-07-23 10:04:29.238 | ++[38;5;242mfunctions-common:update_package_repo:1420 (B[m is_ubuntu
+2026-07-23 10:04:29.265 | ++[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-07-23 10:04:29.292 | ++[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-07-23 10:04:29.319 | ++[38;5;242mfunctions-common:update_package_repo:1421 (B[m apt_get_update
+2026-07-23 10:04:29.347 | ++[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ True == \T\r\u\e ]]
+2026-07-23 10:04:29.373 | ++[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ False != \T\r\u\e ]]
+2026-07-23 10:04:29.400 | ++[38;5;242mfunctions-common:apt_get_update:1167     (B[m return
+2026-07-23 10:04:29.430 | ++[38;5;242mfunctions-common:install_package:1439    (B[m real_install_package apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libffi-dev libjpeg-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools
+2026-07-23 10:04:29.458 | ++[38;5;242mfunctions-common:real_install_package:1426 (B[m is_ubuntu
+2026-07-23 10:04:29.486 | ++[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-07-23 10:04:29.516 | ++[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-07-23 10:04:29.545 | ++[38;5;242mfunctions-common:real_install_package:1427 (B[m apt_get install apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libffi-dev libjpeg-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools
+2026-07-23 10:04:29.713 | ++[38;5;242mfunctions-common:apt_get:1207            (B[m sudo DEBIAN_FRONTEND=noninteractive http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 apt-get --option Dpkg::Options::=--force-confold --assume-yes install apache2 apache2-dev bc bsdmainutils curl g++ gawk gcc gettext git graphviz iputils-ping libffi-dev libjpeg-dev libpq-dev libssl-dev libsystemd-dev libxml2-dev libxslt1-dev libyaml-dev lsof openssh-server openssl pkg-config psmisc python3-dev python3-pip python3-systemd python3-venv tar tcpdump unzip uuid-runtime wget zlib1g-dev libkrb5-dev libldap2-dev libsasl2-dev memcached python3-mysqldb sqlite3 conntrack curl ebtables genisoimage iptables iputils-arping kpartx libjs-jquery-tablesorter parted pm-utils python3-mysqldb socat sqlite3 sudo vlan lsscsi open-iscsi cryptsetup dosfstools genisoimage gir1.2-libosinfo-1.0 netcat-openbsd open-iscsi qemu-utils sg3-utils sysfsutils lvm2 qemu-utils thin-provisioning-tools acl dnsmasq-base dnsmasq-utils ebtables haproxy iptables iputils-arping iputils-ping postgresql-server-dev-all python3-mysqldb sqlite3 sudo vlan pcp lvm2 qemu-utils thin-provisioning-tools
+2026-07-23 10:04:29.825 | Reading package lists...
+2026-07-23 10:04:30.236 | Building dependency tree...
+2026-07-23 10:04:30.238 | Reading state information...
+2026-07-23 10:04:30.279 | apache2 is already the newest version (2.4.58-1ubuntu8.15).
+2026-07-23 10:04:30.279 | apache2-dev is already the newest version (2.4.58-1ubuntu8.15).
+2026-07-23 10:04:30.280 | bc is already the newest version (1.07.1-3ubuntu4).
+2026-07-23 10:04:30.280 | bsdmainutils is already the newest version (12.1.8).
+2026-07-23 10:04:30.280 | curl is already the newest version (8.5.0-2ubuntu10.11).
+2026-07-23 10:04:30.280 | g++ is already the newest version (4:13.2.0-7ubuntu1).
+2026-07-23 10:04:30.280 | gawk is already the newest version (1:5.2.1-2ubuntu0.1).
+2026-07-23 10:04:30.280 | gcc is already the newest version (4:13.2.0-7ubuntu1).
+2026-07-23 10:04:30.280 | gettext is already the newest version (0.21-14ubuntu2).
+2026-07-23 10:04:30.280 | git is already the newest version (1:2.43.0-1ubuntu7.3).
+2026-07-23 10:04:30.280 | graphviz is already the newest version (2.42.2-9ubuntu0.1).
+2026-07-23 10:04:30.280 | iputils-ping is already the newest version (3:20240117-1ubuntu0.1).
+2026-07-23 10:04:30.280 | libffi-dev is already the newest version (3.4.6-1build1).
+2026-07-23 10:04:30.280 | libjpeg-dev is already the newest version (8c-2ubuntu11).
+2026-07-23 10:04:30.280 | libpq-dev is already the newest version (16.14-0ubuntu0.24.04.1).
+2026-07-23 10:04:30.280 | libssl-dev is already the newest version (3.0.13-0ubuntu3.11).
+2026-07-23 10:04:30.281 | libsystemd-dev is already the newest version (255.4-1ubuntu8.16).
+2026-07-23 10:04:30.281 | libxml2-dev is already the newest version (2.9.14+dfsg-1.3ubuntu3.8).
+2026-07-23 10:04:30.281 | libxslt1-dev is already the newest version (1.1.39-0exp1ubuntu0.24.04.3).
+2026-07-23 10:04:30.281 | libyaml-dev is already the newest version (0.2.5-1build1).
+2026-07-23 10:04:30.281 | lsof is already the newest version (4.95.0-1build3).
+2026-07-23 10:04:30.281 | openssh-server is already the newest version (1:9.6p1-3ubuntu13.18).
+2026-07-23 10:04:30.281 | openssl is already the newest version (3.0.13-0ubuntu3.11).
+2026-07-23 10:04:30.281 | pkg-config is already the newest version (1.8.1-2build1).
+2026-07-23 10:04:30.281 | psmisc is already the newest version (23.7-1build1).
+2026-07-23 10:04:30.281 | python3-dev is already the newest version (3.12.3-0ubuntu2.1).
+2026-07-23 10:04:30.281 | python3-pip is already the newest version (24.0+dfsg-1ubuntu1.3).
+2026-07-23 10:04:30.281 | python3-systemd is already the newest version (235-1build4).
+2026-07-23 10:04:30.281 | python3-venv is already the newest version (3.12.3-0ubuntu2.1).
+2026-07-23 10:04:30.281 | tar is already the newest version (1.35+dfsg-3ubuntu0.4).
+2026-07-23 10:04:30.281 | tcpdump is already the newest version (4.99.4-3ubuntu4.24.04.1).
+2026-07-23 10:04:30.281 | unzip is already the newest version (6.0-28ubuntu4.1).
+2026-07-23 10:04:30.282 | uuid-runtime is already the newest version (2.39.3-9ubuntu6.5).
+2026-07-23 10:04:30.282 | wget is already the newest version (1.21.4-1ubuntu4.4).
+2026-07-23 10:04:30.282 | zlib1g-dev is already the newest version (1:1.3.dfsg-3.1ubuntu2.1).
+2026-07-23 10:04:30.282 | libkrb5-dev is already the newest version (1.20.1-6ubuntu2.7).
+2026-07-23 10:04:30.282 | libldap2-dev is already the newest version (2.6.10+dfsg-0ubuntu0.24.04.1).
+2026-07-23 10:04:30.282 | libsasl2-dev is already the newest version (2.1.28+dfsg1-5ubuntu3.1).
+2026-07-23 10:04:30.282 | memcached is already the newest version (1.6.24-1ubuntu0.1).
+2026-07-23 10:04:30.282 | sqlite3 is already the newest version (3.45.1-1ubuntu2.7).
+2026-07-23 10:04:30.282 | conntrack is already the newest version (1:1.4.8-1ubuntu1).
+2026-07-23 10:04:30.282 | ebtables is already the newest version (2.0.11-6build1).
+2026-07-23 10:04:30.282 | genisoimage is already the newest version (9:1.1.11-3.5).
+2026-07-23 10:04:30.282 | iptables is already the newest version (1.8.10-3ubuntu2).
+2026-07-23 10:04:30.282 | iputils-arping is already the newest version (3:20240117-1ubuntu0.1).
+2026-07-23 10:04:30.282 | kpartx is already the newest version (0.9.4-5ubuntu8.2).
+2026-07-23 10:04:30.282 | libjs-jquery-tablesorter is already the newest version (1:2.31.3+dfsg1-3).
+2026-07-23 10:04:30.282 | parted is already the newest version (3.6-4build1).
+2026-07-23 10:04:30.283 | pm-utils is already the newest version (1.4.1-21).
+2026-07-23 10:04:30.283 | socat is already the newest version (1.8.0.0-4ubuntu0.1).
+2026-07-23 10:04:30.283 | sudo is already the newest version (1.9.15p5-3ubuntu5.24.04.2).
+2026-07-23 10:04:30.283 | vlan is already the newest version (2.0.5ubuntu5).
+2026-07-23 10:04:30.283 | lsscsi is already the newest version (0.32-1build1).
+2026-07-23 10:04:30.283 | open-iscsi is already the newest version (2.1.9-3ubuntu5.4).
+2026-07-23 10:04:30.283 | cryptsetup is already the newest version (2:2.7.0-1ubuntu4.2).
+2026-07-23 10:04:30.283 | dosfstools is already the newest version (4.2-1.1build1).
+2026-07-23 10:04:30.283 | gir1.2-libosinfo-1.0 is already the newest version (1.11.0-2build3).
+2026-07-23 10:04:30.283 | netcat-openbsd is already the newest version (1.226-1ubuntu2).
+2026-07-23 10:04:30.283 | qemu-utils is already the newest version (1:8.2.2+ds-0ubuntu1.17).
+2026-07-23 10:04:30.283 | sg3-utils is already the newest version (1.46-3ubuntu4).
+2026-07-23 10:04:30.283 | sysfsutils is already the newest version (2.1.1-6build1).
+2026-07-23 10:04:30.283 | lvm2 is already the newest version (2.03.16-3ubuntu3.2).
+2026-07-23 10:04:30.283 | thin-provisioning-tools is already the newest version (0.9.0-2ubuntu5.1).
+2026-07-23 10:04:30.283 | acl is already the newest version (2.3.2-1build1.1).
+2026-07-23 10:04:30.284 | dnsmasq-base is already the newest version (2.90-2ubuntu0.4).
+2026-07-23 10:04:30.284 | dnsmasq-utils is already the newest version (2.90-2ubuntu0.4).
+2026-07-23 10:04:30.284 | haproxy is already the newest version (2.8.16-0ubuntu0.24.04.3).
+2026-07-23 10:04:30.731 | postgresql-server-dev-all is already the newest version (257build1.1).
+2026-07-23 10:04:30.732 | pcp is already the newest version (6.2.0-1.1build4).
+2026-07-23 10:04:30.732 | The following packages were automatically installed and are no longer required:
+2026-07-23 10:04:30.732 |   libcgi-fast-perl libcgi-pm-perl libclone-perl libencode-locale-perl
+2026-07-23 10:04:30.732 |   libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+2026-07-23 10:04:30.732 |   libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
+2026-07-23 10:04:30.732 |   libhttp-date-perl libhttp-message-perl libio-html-perl
+2026-07-23 10:04:30.732 |   liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
+2026-07-23 10:04:30.733 |   liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils
+2026-07-23 10:04:30.733 | Use 'sudo apt autoremove' to remove them.
+2026-07-23 10:04:30.735 | The following additional packages will be installed:
+2026-07-23 10:04:30.736 |   libmysqlclient21 mysql-common
+2026-07-23 10:04:30.737 | Suggested packages:
+2026-07-23 10:04:30.737 |   default-mysql-server | virtual-mysql-server
+2026-07-23 10:04:30.781 | The following NEW packages will be installed:
+2026-07-23 10:04:30.783 |   libmysqlclient21 mysql-common python3-mysqldb
+2026-07-23 10:04:32.544 | 0 upgraded, 3 newly installed, 0 to remove and 66 not upgraded.
+2026-07-23 10:04:32.545 | Need to get 0 B/1,309 kB of archives.
+2026-07-23 10:04:32.545 | After this operation, 7,055 kB of additional disk space will be used.
+2026-07-23 10:04:32.721 | Selecting previously unselected package mysql-common.
+2026-07-23 10:04:34.994 | (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 164935 files and directories currently installed.)
+2026-07-23 10:04:35.014 | Preparing to unpack .../mysql-common_5.8+1.1.0build1_all.deb ...
+2026-07-23 10:04:35.087 | Unpacking mysql-common (5.8+1.1.0build1) ...
+2026-07-23 10:04:35.243 | Selecting previously unselected package libmysqlclient21:amd64.
+2026-07-23 10:04:35.308 | Preparing to unpack .../libmysqlclient21_8.0.46-0ubuntu0.24.04.3_amd64.deb ...
+2026-07-23 10:04:35.317 | Unpacking libmysqlclient21:amd64 (8.0.46-0ubuntu0.24.04.3) ...
+2026-07-23 10:04:35.582 | Selecting previously unselected package python3-mysqldb.
+2026-07-23 10:04:35.643 | Preparing to unpack .../python3-mysqldb_1.4.6-2build3_amd64.deb ...
+2026-07-23 10:04:35.646 | Unpacking python3-mysqldb (1.4.6-2build3) ...
+2026-07-23 10:04:35.862 | Setting up mysql-common (5.8+1.1.0build1) ...
+2026-07-23 10:04:36.170 | update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+2026-07-23 10:04:36.179 | Setting up libmysqlclient21:amd64 (8.0.46-0ubuntu0.24.04.3) ...
+2026-07-23 10:04:36.185 | Setting up python3-mysqldb (1.4.6-2build3) ...
+2026-07-23 10:04:36.707 | Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+2026-07-23 10:04:40.320 | Disabling Ubuntu mode, explicit restart mode configured
+2026-07-23 10:04:40.320 | Restarting services...
+2026-07-23 10:04:40.416 | 
+2026-07-23 10:04:40.416 | Service restarts being deferred:
+2026-07-23 10:04:40.424 |  systemctl restart libvirtd.service
+2026-07-23 10:04:40.424 |  systemctl restart virtlockd.service
+2026-07-23 10:04:40.424 | 
+2026-07-23 10:04:40.424 | No containers need to be restarted.
+2026-07-23 10:04:40.424 | 
+2026-07-23 10:04:40.424 | User sessions running outdated binaries:
+2026-07-23 10:04:40.425 |  root @ session #13: sshd[223595]
+2026-07-23 10:04:40.521 | 
+2026-07-23 10:04:40.521 | No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-07-23 10:04:43.288 | ++[38;5;242mfunctions-common:apt_get:1211            (B[m result=0
+2026-07-23 10:04:43.314 | ++[38;5;242mfunctions-common:apt_get:1214            (B[m time_stop apt-get
+2026-07-23 10:04:43.342 | ++[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-07-23 10:04:43.374 | ++[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-07-23 10:04:43.404 | ++[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-07-23 10:04:43.436 | ++[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-07-23 10:04:43.466 | ++[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-07-23 10:04:43.495 | ++[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get
+2026-07-23 10:04:43.525 | ++[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1784801069683
+2026-07-23 10:04:43.558 | ++[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1784801069683 ]]
+2026-07-23 10:04:43.591 | +++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-07-23 10:04:43.628 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1784801083597
+2026-07-23 10:04:43.658 | ++[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=13914
+2026-07-23 10:04:43.689 | ++[38;5;242mfunctions-common:time_stop:2434          (B[m total=3070
+2026-07-23 10:04:43.719 | ++[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-07-23 10:04:43.749 | ++[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=16984
+2026-07-23 10:04:43.779 | ++[38;5;242mfunctions-common:apt_get:1215            (B[m return 0
+2026-07-23 10:04:43.811 | ++[38;5;242mtools/install_prereqs.sh:source:74       (B[m [[ -n False ]]
+2026-07-23 10:04:43.841 | ++[38;5;242mtools/install_prereqs.sh:source:74       (B[m [[ False != \F\a\l\s\e ]]
+2026-07-23 10:04:43.876 | +++[38;5;242mtools/install_prereqs.sh:source:83       (B[m which python3.12
+2026-07-23 10:04:43.918 | ++[38;5;242mtools/install_prereqs.sh:source:83       (B[m export PYTHON=/usr/bin/python3.12
+2026-07-23 10:04:43.949 | ++[38;5;242mtools/install_prereqs.sh:source:83       (B[m PYTHON=/usr/bin/python3.12
+2026-07-23 10:04:43.980 | ++[38;5;242mtools/install_prereqs.sh:source:88       (B[m date +%s
+2026-07-23 10:04:44.017 | ++[38;5;242mtools/install_prereqs.sh:source:89       (B[m date
+2026-07-23 10:04:44.059 | +[38;5;242m./stack.sh:main:820                      (B[m [[ False != \T\r\u\e ]]
+2026-07-23 10:04:44.090 | +[38;5;242m./stack.sh:main:821                      (B[m PYPI_ALTERNATIVE_URL=
+2026-07-23 10:04:44.120 | +[38;5;242m./stack.sh:main:821                      (B[m /opt/stack/devstack/tools/install_pip.sh
+2026-07-23 10:04:45.308 | +[38;5;242mtools/install_pip.sh:main:25             (B[m FILES=/opt/stack/devstack/files
+2026-07-23 10:04:45.330 | +[38;5;242mtools/install_pip.sh:main:40             (B[m PIP_GET_PIP_URL=https://bootstrap.pypa.io/get-pip.py
+2026-07-23 10:04:45.352 | +[38;5;242mtools/install_pip.sh:main:42             (B[m GetDistro
+2026-07-23 10:04:45.374 | +[38;5;242mfunctions-common:GetDistro:472           (B[m GetOSVersion
+2026-07-23 10:04:45.395 | +[38;5;242mfunctions-common:GetOSVersion:442        (B[m source /etc/os-release
+2026-07-23 10:04:45.417 | ++[38;5;242m/etc/os-release:source:1                 (B[m PRETTY_NAME='Ubuntu 24.04.2 LTS'
+2026-07-23 10:04:45.438 | ++[38;5;242m/etc/os-release:source:2                 (B[m NAME=Ubuntu
+2026-07-23 10:04:45.460 | ++[38;5;242m/etc/os-release:source:3                 (B[m VERSION_ID=24.04
+2026-07-23 10:04:45.481 | ++[38;5;242m/etc/os-release:source:4                 (B[m VERSION='24.04.2 LTS (Noble Numbat)'
+2026-07-23 10:04:45.502 | ++[38;5;242m/etc/os-release:source:5                 (B[m VERSION_CODENAME=noble
+2026-07-23 10:04:45.524 | ++[38;5;242m/etc/os-release:source:6                 (B[m ID=ubuntu
+2026-07-23 10:04:45.546 | ++[38;5;242m/etc/os-release:source:7                 (B[m ID_LIKE=debian
+2026-07-23 10:04:45.567 | ++[38;5;242m/etc/os-release:source:8                 (B[m HOME_URL=https://www.ubuntu.com/
+2026-07-23 10:04:45.589 | ++[38;5;242m/etc/os-release:source:9                 (B[m SUPPORT_URL=https://help.ubuntu.com/
+2026-07-23 10:04:45.611 | ++[38;5;242m/etc/os-release:source:10                (B[m BUG_REPORT_URL=https://bugs.launchpad.net/ubuntu/
+2026-07-23 10:04:45.632 | ++[38;5;242m/etc/os-release:source:11                (B[m PRIVACY_POLICY_URL=https://www.ubuntu.com/legal/terms-and-policies/privacy-policy
+2026-07-23 10:04:45.653 | ++[38;5;242m/etc/os-release:source:12                (B[m UBUNTU_CODENAME=noble
+2026-07-23 10:04:45.675 | ++[38;5;242m/etc/os-release:source:13                (B[m LOGO=ubuntu-logo
+2026-07-23 10:04:45.697 | +[38;5;242mfunctions-common:GetOSVersion:443        (B[m [[ ubuntu =~ (almalinux|centos|rocky|rhel) ]]
+2026-07-23 10:04:45.721 | +[38;5;242mfunctions-common:GetOSVersion:448        (B[m _ensure_lsb_release
+2026-07-23 10:04:45.744 | ++[38;5;242mfunctions-common:_ensure_lsb_release:419 (B[m command -v lsb_release
+2026-07-23 10:04:45.764 | +[38;5;242mfunctions-common:_ensure_lsb_release:419 (B[m [[ -x /usr/bin/lsb_release ]]
+2026-07-23 10:04:45.782 | +[38;5;242mfunctions-common:_ensure_lsb_release:420 (B[m return
+2026-07-23 10:04:45.803 | ++[38;5;242mfunctions-common:GetOSVersion:450        (B[m lsb_release -r -s
+2026-07-23 10:04:45.861 | +[38;5;242mfunctions-common:GetOSVersion:450        (B[m os_RELEASE=24.04
+2026-07-23 10:04:45.886 | ++[38;5;242mfunctions-common:GetOSVersion:451        (B[m lsb_release -c -s
+2026-07-23 10:04:45.944 | +[38;5;242mfunctions-common:GetOSVersion:451        (B[m os_CODENAME=noble
+2026-07-23 10:04:45.969 | ++[38;5;242mfunctions-common:GetOSVersion:452        (B[m lsb_release -i -s
+2026-07-23 10:04:46.029 | +[38;5;242mfunctions-common:GetOSVersion:452        (B[m os_VENDOR=Ubuntu
+2026-07-23 10:04:46.051 | +[38;5;242mfunctions-common:GetOSVersion:455        (B[m [[ Ubuntu =~ (Debian|Ubuntu) ]]
+2026-07-23 10:04:46.073 | +[38;5;242mfunctions-common:GetOSVersion:456        (B[m os_PACKAGE=deb
+2026-07-23 10:04:46.096 | +[38;5;242mfunctions-common:GetOSVersion:461        (B[m typeset -xr os_VENDOR
+2026-07-23 10:04:46.118 | +[38;5;242mfunctions-common:GetOSVersion:462        (B[m typeset -xr os_RELEASE
+2026-07-23 10:04:46.140 | +[38;5;242mfunctions-common:GetOSVersion:463        (B[m typeset -xr os_PACKAGE
+2026-07-23 10:04:46.161 | +[38;5;242mfunctions-common:GetOSVersion:464        (B[m typeset -xr os_CODENAME
+2026-07-23 10:04:46.183 | +[38;5;242mfunctions-common:GetDistro:473           (B[m [[ Ubuntu =~ (Ubuntu) ]]
+2026-07-23 10:04:46.204 | +[38;5;242mfunctions-common:GetDistro:476           (B[m DISTRO=noble
+2026-07-23 10:04:46.226 | +[38;5;242mfunctions-common:GetDistro:513           (B[m typeset -xr DISTRO
+2026-07-23 10:04:46.247 | +[38;5;242mtools/install_pip.sh:main:43             (B[m echo 'Distro: noble'
+2026-07-23 10:04:46.247 | Distro: noble
+2026-07-23 10:04:46.269 | +[38;5;242mtools/install_pip.sh:main:117            (B[m get_versions
+2026-07-23 10:04:46.292 | ++[38;5;242mtools/install_pip.sh:get_versions:48     (B[m which pip
+2026-07-23 10:04:46.320 | +[38;5;242mtools/install_pip.sh:get_versions:48     (B[m PIP=/usr/bin/pip
+2026-07-23 10:04:46.342 | +[38;5;242mtools/install_pip.sh:get_versions:49     (B[m [[ -n /usr/bin/pip ]]
+2026-07-23 10:04:46.365 | ++[38;5;242mtools/install_pip.sh:get_versions:50     (B[m /usr/bin/pip --version
+2026-07-23 10:04:46.366 | ++[38;5;242mtools/install_pip.sh:get_versions:50     (B[m awk '{ print $2}'
+2026-07-23 10:04:47.151 | +[38;5;242mtools/install_pip.sh:get_versions:50     (B[m PIP_VERSION=24.0
+2026-07-23 10:04:47.168 | +[38;5;242mtools/install_pip.sh:get_versions:51     (B[m echo 'pip: 24.0'
+2026-07-23 10:04:47.169 | pip: 24.0
+2026-07-23 10:04:47.189 | +[38;5;242mtools/install_pip.sh:main:119            (B[m [[ -n '' ]]
+2026-07-23 10:04:47.206 | +[38;5;242mtools/install_pip.sh:main:123            (B[m is_fedora
+2026-07-23 10:04:47.222 | +[38;5;242mfunctions-common:is_fedora:526           (B[m [[ -z Ubuntu ]]
+2026-07-23 10:04:47.243 | +[38;5;242mfunctions-common:is_fedora:530           (B[m '[' Ubuntu = Fedora ']'
+2026-07-23 10:04:47.262 | +[38;5;242mfunctions-common:is_fedora:530           (B[m '[' Ubuntu = 'Red Hat' ']'
+2026-07-23 10:04:47.282 | +[38;5;242mfunctions-common:is_fedora:531           (B[m '[' Ubuntu = openEuler ']'
+2026-07-23 10:04:47.303 | +[38;5;242mfunctions-common:is_fedora:532           (B[m '[' Ubuntu = RedHatEnterpriseServer ']'
+2026-07-23 10:04:47.320 | +[38;5;242mfunctions-common:is_fedora:533           (B[m '[' Ubuntu = RedHatEnterprise ']'
+2026-07-23 10:04:47.340 | +[38;5;242mfunctions-common:is_fedora:534           (B[m '[' Ubuntu = RedHatEnterpriseLinux ']'
+2026-07-23 10:04:47.362 | +[38;5;242mfunctions-common:is_fedora:535           (B[m '[' Ubuntu = RockyLinux ']'
+2026-07-23 10:04:47.385 | +[38;5;242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = CentOS ']'
+2026-07-23 10:04:47.406 | +[38;5;242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = CentOSStream ']'
+2026-07-23 10:04:47.428 | +[38;5;242mfunctions-common:is_fedora:537           (B[m '[' Ubuntu = AlmaLinux ']'
+2026-07-23 10:04:47.453 | +[38;5;242mfunctions-common:is_fedora:538           (B[m '[' Ubuntu = OracleServer ']'
+2026-07-23 10:04:47.475 | +[38;5;242mfunctions-common:is_fedora:538           (B[m '[' Ubuntu = Virtuozzo ']'
+2026-07-23 10:04:47.497 | +[38;5;242mtools/install_pip.sh:main:134            (B[m is_ubuntu
+2026-07-23 10:04:47.521 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-07-23 10:04:47.542 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-07-23 10:04:47.564 | +[38;5;242mtools/install_pip.sh:main:137            (B[m sed -i -e /setuptools/d /opt/stack/requirements/upper-constraints.txt
+2026-07-23 10:04:47.595 | +[38;5;242mtools/install_pip.sh:main:146            (B[m set -x
+2026-07-23 10:04:47.617 | +[38;5;242mtools/install_pip.sh:main:149            (B[m get_versions
+2026-07-23 10:04:47.640 | ++[38;5;242mtools/install_pip.sh:get_versions:48     (B[m which pip
+2026-07-23 10:04:47.669 | +[38;5;242mtools/install_pip.sh:get_versions:48     (B[m PIP=/usr/bin/pip
+2026-07-23 10:04:47.693 | +[38;5;242mtools/install_pip.sh:get_versions:49     (B[m [[ -n /usr/bin/pip ]]
+2026-07-23 10:04:47.720 | ++[38;5;242mtools/install_pip.sh:get_versions:50     (B[m awk '{ print $2}'
+2026-07-23 10:04:47.721 | ++[38;5;242mtools/install_pip.sh:get_versions:50     (B[m /usr/bin/pip --version
+2026-07-23 10:04:48.383 | +[38;5;242mtools/install_pip.sh:get_versions:50     (B[m PIP_VERSION=24.0
+2026-07-23 10:04:48.403 | +[38;5;242mtools/install_pip.sh:get_versions:51     (B[m echo 'pip: 24.0'
+2026-07-23 10:04:48.403 | pip: 24.0
+2026-07-23 10:04:48.429 | +[38;5;242m./stack.sh:main:825                      (B[m source /opt/stack/devstack/tools/fixup_stuff.sh
+2026-07-23 10:04:48.453 | ++[38;5;242mtools/fixup_stuff.sh:source:12           (B[m [[ -z /opt/stack/devstack ]]
+2026-07-23 10:04:48.482 | +[38;5;242m./stack.sh:main:826                      (B[m fixup_all
+2026-07-23 10:04:48.508 | +[38;5;242mtools/fixup_stuff.sh:fixup_all:111       (B[m fixup_ubuntu
+2026-07-23 10:04:48.535 | +[38;5;242mtools/fixup_stuff.sh:fixup_ubuntu:95     (B[m is_ubuntu
+2026-07-23 10:04:48.563 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-07-23 10:04:48.589 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-07-23 10:04:48.618 | +[38;5;242mtools/fixup_stuff.sh:fixup_ubuntu:105    (B[m sudo rm -rf '/usr/lib/python3/dist-packages/PyYAML-*.egg-info'
+2026-07-23 10:04:48.686 | +[38;5;242mtools/fixup_stuff.sh:fixup_ubuntu:106    (B[m sudo rm -rf '/usr/lib/python3/dist-packages/pyasn1_modules-*.egg-info'
+2026-07-23 10:04:48.755 | +[38;5;242mtools/fixup_stuff.sh:fixup_ubuntu:107    (B[m sudo rm -rf '/usr/lib/python3/dist-packages/simplejson-*.egg-info'
+2026-07-23 10:04:48.820 | +[38;5;242mtools/fixup_stuff.sh:fixup_all:112       (B[m fixup_fedora
+2026-07-23 10:04:48.848 | +[38;5;242mtools/fixup_stuff.sh:fixup_fedora:33     (B[m is_fedora
+2026-07-23 10:04:48.879 | +[38;5;242mfunctions-common:is_fedora:526           (B[m [[ -z Ubuntu ]]
+2026-07-23 10:04:48.912 | +[38;5;242mfunctions-common:is_fedora:530           (B[m '[' Ubuntu = Fedora ']'
+2026-07-23 10:04:48.942 | +[38;5;242mfunctions-common:is_fedora:530           (B[m '[' Ubuntu = 'Red Hat' ']'
+2026-07-23 10:04:48.970 | +[38;5;242mfunctions-common:is_fedora:531           (B[m '[' Ubuntu = openEuler ']'
+2026-07-23 10:04:48.993 | +[38;5;242mfunctions-common:is_fedora:532           (B[m '[' Ubuntu = RedHatEnterpriseServer ']'
+2026-07-23 10:04:49.019 | +[38;5;242mfunctions-common:is_fedora:533           (B[m '[' Ubuntu = RedHatEnterprise ']'
+2026-07-23 10:04:49.042 | +[38;5;242mfunctions-common:is_fedora:534           (B[m '[' Ubuntu = RedHatEnterpriseLinux ']'
+2026-07-23 10:04:49.071 | +[38;5;242mfunctions-common:is_fedora:535           (B[m '[' Ubuntu = RockyLinux ']'
+2026-07-23 10:04:49.099 | +[38;5;242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = CentOS ']'
+2026-07-23 10:04:49.127 | +[38;5;242mfunctions-common:is_fedora:536           (B[m '[' Ubuntu = CentOSStream ']'
+2026-07-23 10:04:49.154 | +[38;5;242mfunctions-common:is_fedora:537           (B[m '[' Ubuntu = AlmaLinux ']'
+2026-07-23 10:04:49.186 | +[38;5;242mfunctions-common:is_fedora:538           (B[m '[' Ubuntu = OracleServer ']'
+2026-07-23 10:04:49.210 | +[38;5;242mfunctions-common:is_fedora:538           (B[m '[' Ubuntu = Virtuozzo ']'
+2026-07-23 10:04:49.238 | +[38;5;242mtools/fixup_stuff.sh:fixup_fedora:34     (B[m return
+2026-07-23 10:04:49.268 | +[38;5;242m./stack.sh:main:828                      (B[m [[ True == \T\r\u\e ]]
+2026-07-23 10:04:49.296 | +[38;5;242m./stack.sh:main:830                      (B[m sudo ln -sf /opt/stack/data/venv/bin/cinder-manage /usr/local/bin
+2026-07-23 10:04:49.405 | +[38;5;242m./stack.sh:main:831                      (B[m sudo ln -sf /opt/stack/data/venv/bin/cinder-rtstool /usr/local/bin
+2026-07-23 10:04:49.469 | +[38;5;242m./stack.sh:main:832                      (B[m sudo ln -sf /opt/stack/data/venv/bin/glance /usr/local/bin
+2026-07-23 10:04:49.541 | +[38;5;242m./stack.sh:main:833                      (B[m sudo ln -sf /opt/stack/data/venv/bin/nova-manage /usr/local/bin
+2026-07-23 10:04:49.606 | +[38;5;242m./stack.sh:main:834                      (B[m sudo ln -sf /opt/stack/data/venv/bin/openstack /usr/local/bin
+2026-07-23 10:04:49.674 | +[38;5;242m./stack.sh:main:835                      (B[m sudo ln -sf /opt/stack/data/venv/bin/privsep-helper /usr/local/bin
+2026-07-23 10:04:49.756 | +[38;5;242m./stack.sh:main:836                      (B[m sudo ln -sf /opt/stack/data/venv/bin/rally /usr/local/bin
+2026-07-23 10:04:49.834 | +[38;5;242m./stack.sh:main:837                      (B[m sudo ln -sf /opt/stack/data/venv/bin/tox /usr/local/bin
+2026-07-23 10:04:49.902 | +[38;5;242m./stack.sh:main:839                      (B[m setup_devstack_virtualenv
+2026-07-23 10:04:49.931 | +[38;5;242minc/python:setup_devstack_virtualenv:39  (B[m [[ ! -d /opt/stack/data/venv ]]
+2026-07-23 10:04:49.960 | +[38;5;242minc/python:setup_devstack_virtualenv:43  (B[m /usr/bin/python3.12 -m venv --system-site-packages /opt/stack/data/venv
+2026-07-23 10:04:56.594 | +[38;5;242minc/python:setup_devstack_virtualenv:44  (B[m pip_install -U pip 'setuptools[core]'
+2026-07-23 10:04:56.747 | Using python 3.12 to install setuptools
+2026-07-23 10:04:56.770 | +[38;5;242minc/python:pip_install:210               (B[m env http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 PIP_FIND_LINKS= /opt/stack/data/venv/bin/pip install -c /opt/stack/requirements/upper-constraints.txt -U pip 'setuptools[core]'
+2026-07-23 10:04:58.343 | Requirement already satisfied: pip in /opt/stack/data/venv/lib/python3.12/site-packages (24.0)
+2026-07-23 10:04:58.956 | Collecting pip
+2026-07-23 10:05:14.022 |   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', TimeoutError('timed out'))': /packages/5d/95/6b5cb3461ea5673ba0995989746db58eb18b91b54dbf331e72f569540946/pip-26.1.2-py3-none-any.whl.metadata
+2026-07-23 10:05:16.437 |   Downloading pip-26.1.2-py3-none-any.whl.metadata (4.6 kB)
+2026-07-23 10:05:16.456 | Requirement already satisfied: setuptools[core] in /usr/lib/python3/dist-packages (68.1.2)
+2026-07-23 10:05:17.022 | Collecting setuptools[core]
+2026-07-23 10:05:17.076 |   Downloading setuptools-83.0.0-py3-none-any.whl.metadata (6.6 kB)
+2026-07-23 10:05:17.307 | Collecting packaging>=24.2 (from setuptools[core])
+2026-07-23 10:05:17.363 |   Downloading packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
+2026-07-23 10:05:17.494 | Collecting more_itertools>=8.8 (from setuptools[core])
+2026-07-23 10:05:17.551 |   Downloading more_itertools-11.1.0-py3-none-any.whl.metadata (41 kB)
+2026-07-23 10:05:17.615 |      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.4/41.4 kB 568.2 kB/s eta 0:00:00
+2026-07-23 10:05:17.739 | Collecting jaraco.text>=3.7 (from setuptools[core])
+2026-07-23 10:05:17.796 |   Downloading jaraco_text-4.3.0-py3-none-any.whl.metadata (3.8 kB)
+2026-07-23 10:05:17.953 | Collecting wheel>=0.43.0 (from setuptools[core])
+2026-07-23 10:05:18.008 |   Downloading wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)
+2026-07-23 10:05:18.132 | Collecting jaraco.functools>=4 (from setuptools[core])
+2026-07-23 10:05:18.205 |   Downloading jaraco_functools-4.5.0-py3-none-any.whl.metadata (2.9 kB)
+2026-07-23 10:05:18.395 | Collecting jaraco.context>=4.1 (from jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:18.455 |   Downloading jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+2026-07-23 10:05:18.584 | Collecting typer-slim (from jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:18.651 |   Downloading typer_slim-0.24.0-py3-none-any.whl.metadata (4.2 kB)
+2026-07-23 10:05:19.018 | Collecting typer>=0.24.0 (from typer-slim->jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:19.076 |   Downloading typer-0.27.0-py3-none-any.whl.metadata (15 kB)
+2026-07-23 10:05:19.210 | Collecting shellingham>=1.3.0 (from typer>=0.24.0->typer-slim->jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:19.275 |   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-07-23 10:05:19.565 | Collecting rich>=13.8.0 (from typer>=0.24.0->typer-slim->jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:19.625 |   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-07-23 10:05:19.726 | Collecting annotated-doc>=0.0.2 (from typer>=0.24.0->typer-slim->jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:19.789 |   Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+2026-07-23 10:05:19.942 | Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer>=0.24.0->typer-slim->jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:19.998 |   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-07-23 10:05:20.140 | Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer>=0.24.0->typer-slim->jaraco.text>=3.7->setuptools[core])
+2026-07-23 10:05:20.199 |   Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+2026-07-23 10:05:20.275 | Requirement already satisfied: mdurl~=0.1 in /usr/lib/python3/dist-packages (from markdown-it-py>=2.2.0->rich>=13.8.0->typer>=0.24.0->typer-slim->jaraco.text>=3.7->setuptools[core]) (0.1.2)
+2026-07-23 10:05:20.364 | Downloading pip-26.1.2-py3-none-any.whl (1.8 MB)
+2026-07-23 10:05:20.725 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 5.1 MB/s eta 0:00:00
+2026-07-23 10:05:20.783 | Downloading jaraco_functools-4.5.0-py3-none-any.whl (10 kB)
+2026-07-23 10:05:20.940 | Downloading jaraco_text-4.3.0-py3-none-any.whl (14 kB)
+2026-07-23 10:05:21.048 | Downloading more_itertools-11.1.0-py3-none-any.whl (72 kB)
+2026-07-23 10:05:21.108 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.2/72.2 kB 1.1 MB/s eta 0:00:00
+2026-07-23 10:05:21.168 | Downloading packaging-26.2-py3-none-any.whl (100 kB)
+2026-07-23 10:05:21.664 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.2/100.2 kB 183.7 kB/s eta 0:00:00
+2026-07-23 10:05:21.729 | Downloading wheel-0.47.0-py3-none-any.whl (32 kB)
+2026-07-23 10:05:21.839 | Downloading setuptools-83.0.0-py3-none-any.whl (1.0 MB)
+2026-07-23 10:05:22.211 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 2.7 MB/s eta 0:00:00
+2026-07-23 10:05:22.267 | Downloading jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+2026-07-23 10:05:22.424 | Downloading typer_slim-0.24.0-py3-none-any.whl (3.4 kB)
+2026-07-23 10:05:22.492 | Downloading typer-0.27.0-py3-none-any.whl (122 kB)
+2026-07-23 10:05:22.601 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.7/122.7 kB 1.1 MB/s eta 0:00:00
+2026-07-23 10:05:22.658 | Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+2026-07-23 10:05:22.724 | Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-07-23 10:05:22.793 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 5.1 MB/s eta 0:00:00
+2026-07-23 10:05:22.850 | Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-07-23 10:05:22.919 | Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-07-23 10:05:22.934 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 kB 8.7 MB/s eta 0:00:00
+2026-07-23 10:05:22.994 | Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+2026-07-23 10:05:23.449 |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 2.7 MB/s eta 0:00:00
+2026-07-23 10:05:24.364 | Installing collected packages: shellingham, setuptools, pygments, pip, packaging, more_itertools, markdown-it-py, jaraco.context, annotated-doc, wheel, rich, jaraco.functools, typer, typer-slim, jaraco.text
+2026-07-23 10:05:24.381 |   Attempting uninstall: setuptools
+2026-07-23 10:05:24.435 |     Found existing installation: setuptools 68.1.2
+2026-07-23 10:05:24.435 |     Not uninstalling setuptools at /usr/lib/python3/dist-packages, outside environment /opt/stack/data/venv
+2026-07-23 10:05:24.437 |     Can't uninstall 'setuptools'. No files were found to uninstall.
+2026-07-23 10:05:25.703 |   Attempting uninstall: pygments
+2026-07-23 10:05:25.749 |     Found existing installation: Pygments 2.17.2
+2026-07-23 10:05:25.750 |     Not uninstalling pygments at /usr/lib/python3/dist-packages, outside environment /opt/stack/data/venv
+2026-07-23 10:05:25.751 |     Can't uninstall 'Pygments'. No files were found to uninstall.
+2026-07-23 10:05:26.915 |   Attempting uninstall: pip
+2026-07-23 10:05:26.919 |     Found existing installation: pip 24.0
+2026-07-23 10:05:27.000 |     Uninstalling pip-24.0:
+2026-07-23 10:05:27.012 |       Successfully uninstalled pip-24.0
+2026-07-23 10:05:28.871 |   Attempting uninstall: packaging
+2026-07-23 10:05:28.984 |     Found existing installation: packaging 24.0
+2026-07-23 10:05:28.985 |     Not uninstalling packaging at /usr/lib/python3/dist-packages, outside environment /opt/stack/data/venv
+2026-07-23 10:05:28.985 |     Can't uninstall 'packaging'. No files were found to uninstall.
+2026-07-23 10:05:29.137 |   Attempting uninstall: more_itertools
+2026-07-23 10:05:29.158 |     Found existing installation: more-itertools 10.2.0
+2026-07-23 10:05:29.158 |     Not uninstalling more-itertools at /usr/lib/python3/dist-packages, outside environment /opt/stack/data/venv
+2026-07-23 10:05:29.158 |     Can't uninstall 'more-itertools'. No files were found to uninstall.
+2026-07-23 10:05:29.215 |   Attempting uninstall: markdown-it-py
+2026-07-23 10:05:29.251 |     Found existing installation: markdown-it-py 3.0.0
+2026-07-23 10:05:29.252 |     Not uninstalling markdown-it-py at /usr/lib/python3/dist-packages, outside environment /opt/stack/data/venv
+2026-07-23 10:05:29.252 |     Can't uninstall 'markdown-it-py'. No files were found to uninstall.
+2026-07-23 10:05:29.381 |   Attempting uninstall: wheel
+2026-07-23 10:05:29.402 |     Found existing installation: wheel 0.42.0
+2026-07-23 10:05:29.402 |     Not uninstalling wheel at /usr/lib/python3/dist-packages, outside environment /opt/stack/data/venv
+2026-07-23 10:05:29.403 |     Can't uninstall 'wheel'. No files were found to uninstall.
+2026-07-23 10:05:29.443 |   Attempting uninstall: rich
+2026-07-23 10:05:29.468 |     Found existing installation: rich 13.7.1
+2026-07-23 10:05:29.469 |     Not uninstalling rich at /usr/lib/python3/dist-packages, outside environment /opt/stack/data/venv
+2026-07-23 10:05:29.469 |     Can't uninstall 'rich'. No files were found to uninstall.
+2026-07-23 10:05:30.178 | Successfully installed annotated-doc-0.0.4 jaraco.context-6.1.2 jaraco.functools-4.5.0 jaraco.text-4.3.0 markdown-it-py-4.2.0 more_itertools-11.1.0 packaging-26.2 pip-26.1.2 pygments-2.20.0 rich-15.0.0 setuptools-83.0.0 shellingham-1.5.4 typer-0.27.0 typer-slim-0.24.0 wheel-0.47.0
+2026-07-23 10:05:30.477 | +[38;5;242minc/python:pip_install:216               (B[m result=0
+2026-07-23 10:05:30.499 | +[38;5;242minc/python:pip_install:218               (B[m time_stop pip_install
+2026-07-23 10:05:30.520 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-07-23 10:05:30.539 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-07-23 10:05:30.554 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-07-23 10:05:30.570 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-07-23 10:05:30.595 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-07-23 10:05:30.621 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=pip_install
+2026-07-23 10:05:30.647 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1784801096729
+2026-07-23 10:05:30.675 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1784801096729 ]]
+2026-07-23 10:05:30.710 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-07-23 10:05:30.742 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1784801130714
+2026-07-23 10:05:30.769 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=33985
+2026-07-23 10:05:30.795 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=0
+2026-07-23 10:05:30.822 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-07-23 10:05:30.853 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=33985
+2026-07-23 10:05:30.882 | +[38;5;242minc/python:pip_install:219               (B[m return 0
+2026-07-23 10:05:30.910 | +[38;5;242minc/python:setup_devstack_virtualenv:46  (B[m [[ :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin: != *\:\/\o\p\t\/\s\t\a\c\k\/\d\a\t\a\/\v\e\n\v\/\b\i\n\:* ]]
+2026-07-23 10:05:30.938 | +[38;5;242minc/python:setup_devstack_virtualenv:47  (B[m export PATH=/opt/stack/data/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin
+2026-07-23 10:05:30.968 | +[38;5;242minc/python:setup_devstack_virtualenv:47  (B[m PATH=/opt/stack/data/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin
+2026-07-23 10:05:30.997 | +[38;5;242minc/python:setup_devstack_virtualenv:48  (B[m export PYTHON=/opt/stack/data/venv/bin/python3
+2026-07-23 10:05:31.026 | +[38;5;242minc/python:setup_devstack_virtualenv:48  (B[m PYTHON=/opt/stack/data/venv/bin/python3
+2026-07-23 10:05:31.055 | +[38;5;242m./stack.sh:main:843                      (B[m pip_install -U os-testr
+2026-07-23 10:05:31.209 | Using python 3.12 to install os-testr
+2026-07-23 10:05:31.239 | +[38;5;242minc/python:pip_install:210               (B[m env http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.4.30,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 PIP_FIND_LINKS= /opt/stack/data/venv/bin/pip install -c /opt/stack/requirements/upper-constraints.txt -U os-testr
+2026-07-23 10:05:34.028 | Collecting os-testr
+2026-07-23 10:05:34.113 |   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'OSError('Tunnel connection failed: 502 Bad Gateway')': /packages/18/b8/9e4ee82fda62577ec9b23ad6b4fc79fceb5d31cc72a2f5f95d84959cf385/os_testr-3.0.0-py3-none-any.whl.metadata
+2026-07-23 10:05:34.716 |   WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'OSError('Tunnel connection failed: 502 Bad Gateway')': /packages/18/b8/9e4ee82fda62577ec9b23ad6b4fc79fceb5d31cc72a2f5f95d84959cf385/os_testr-3.0.0-py3-none-any.whl.metadata
+2026-07-23 10:05:35.819 |   WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'OSError('Tunnel connection failed: 502 Bad Gateway')': /packages/18/b8/9e4ee82fda62577ec9b23ad6b4fc79fceb5d31cc72a2f5f95d84959cf385/os_testr-3.0.0-py3-none-any.whl.metadata
+2026-07-23 10:05:37.927 |   WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'OSError('Tunnel connection failed: 502 Bad Gateway')': /packages/18/b8/9e4ee82fda62577ec9b23ad6b4fc79fceb5d31cc72a2f5f95d84959cf385/os_testr-3.0.0-py3-none-any.whl.metadata
+2026-07-23 10:05:42.010 |   WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'OSError('Tunnel connection failed: 502 Bad Gateway')': /packages/18/b8/9e4ee82fda62577ec9b23ad6b4fc79fceb5d31cc72a2f5f95d84959cf385/os_testr-3.0.0-py3-none-any.whl.metadata
+2026-07-23 10:05:42.097 | ERROR: Could not install packages due to an OSError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/18/b8/9e4ee82fda62577ec9b23ad6b4fc79fceb5d31cc72a2f5f95d84959cf385/os_testr-3.0.0-py3-none-any.whl.metadata (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 502 Bad Gateway')))
+2026-07-23 10:05:42.097 | 
+2026-07-23 10:05:42.299 | +[38;5;242minc/python:pip_install:1                 (B[m exit_trap
+2026-07-23 10:05:42.330 | +[38;5;242m./stack.sh:exit_trap:544                 (B[m local r=1
+2026-07-23 10:05:42.363 | ++[38;5;242m./stack.sh:exit_trap:545                 (B[m jobs -p
+2026-07-23 10:05:42.395 | +[38;5;242m./stack.sh:exit_trap:545                 (B[m jobs=
+2026-07-23 10:05:42.425 | +[38;5;242m./stack.sh:exit_trap:548                 (B[m [[ -n '' ]]
+2026-07-23 10:05:42.457 | +[38;5;242m./stack.sh:exit_trap:554                 (B[m '[' -f '' ']'
+2026-07-23 10:05:42.488 | +[38;5;242m./stack.sh:exit_trap:559                 (B[m kill_spinner
+2026-07-23 10:05:42.519 | +[38;5;242m./stack.sh:kill_spinner:453              (B[m '[' '!' -z '' ']'
+2026-07-23 10:05:42.545 | +[38;5;242m./stack.sh:exit_trap:561                 (B[m [[ 1 -ne 0 ]]
+2026-07-23 10:05:42.568 | +[38;5;242m./stack.sh:exit_trap:562                 (B[m echo 'Error on exit'
+2026-07-23 10:05:42.568 | Error on exit
+2026-07-23 10:05:42.595 | +[38;5;242m./stack.sh:exit_trap:564                 (B[m type -p generate-subunit
+2026-07-23 10:05:42.621 | +[38;5;242m./stack.sh:exit_trap:567                 (B[m [[ -z /opt/stack/logs ]]
+2026-07-23 10:05:42.649 | +[38;5;242m./stack.sh:exit_trap:570                 (B[m /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/worlddump.py -d /opt/stack/logs
+2026-07-23 10:05:43.045 | ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+2026-07-23 10:05:43.128 | ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+2026-07-23 10:05:44.096 | +[38;5;242m./stack.sh:exit_trap:579                 (B[m exit 1
