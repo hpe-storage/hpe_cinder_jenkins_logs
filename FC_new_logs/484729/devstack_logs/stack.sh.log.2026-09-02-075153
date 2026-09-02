@@ -1,0 +1,203 @@
+2026-09-02 07:51:53.554 | +[38;5;242m./stack.sh:main:491                      (B[m exec
+2026-09-02 07:51:53.554 | ++[38;5;242m./stack.sh:main:491                      (B[m /usr/bin/python3.12 /opt/stack/devstack/tools/outfilter.py -o /opt/stack/logs/stack.sh.log.2026-09-02-075153.summary.2026-09-02-075153
+2026-09-02 07:51:53.554 | +[38;5;242m./stack.sh:main:499                      (B[m echo_summary 'stack.sh log /opt/stack/logs/stack.sh.log.2026-09-02-075153'
+2026-09-02 07:51:53.554 | +[38;5;242m./stack.sh:echo_summary:444              (B[m [[ -t 3 ]]
+2026-09-02 07:51:53.554 | +[38;5;242m./stack.sh:echo_summary:450              (B[m echo -e stack.sh log /opt/stack/logs/stack.sh.log.2026-09-02-075153
+2026-09-02 07:51:53.554 | +[38;5;242m./stack.sh:main:501                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-09-02-075153 /opt/stack/logs/stack.sh.log
+2026-09-02 07:51:53.559 | +[38;5;242m./stack.sh:main:502                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-09-02-075153.summary.2026-09-02-075153 /opt/stack/logs/stack.sh.log.summary
+2026-09-02 07:51:53.589 | +[38;5;242m./stack.sh:main:517                      (B[m check_path_perm_sanity /opt/stack
+2026-09-02 07:51:53.613 | +[38;5;242mfunctions:check_path_perm_sanity:615     (B[m local real_path
+2026-09-02 07:51:53.637 | ++[38;5;242mfunctions:check_path_perm_sanity:616     (B[m readlink -f /opt/stack
+2026-09-02 07:51:53.665 | +[38;5;242mfunctions:check_path_perm_sanity:616     (B[m real_path=/opt/stack
+2026-09-02 07:51:53.689 | +[38;5;242mfunctions:check_path_perm_sanity:617     (B[m local rebuilt_path=
+2026-09-02 07:51:53.718 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m echo /opt/stack
+2026-09-02 07:51:53.718 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m tr / ' '
+2026-09-02 07:51:53.746 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-09-02 07:51:53.769 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt
+2026-09-02 07:51:53.795 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt
+2026-09-02 07:51:53.826 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 755 = 700 ]]
+2026-09-02 07:51:53.850 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-09-02 07:51:53.874 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt/stack
+2026-09-02 07:51:53.898 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt/stack
+2026-09-02 07:51:53.926 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 751 = 700 ]]
+2026-09-02 07:51:53.949 | +[38;5;242m./stack.sh:main:523                      (B[m trap exit_trap EXIT
+2026-09-02 07:51:53.974 | +[38;5;242m./stack.sh:main:564                      (B[m trap err_trap ERR
+2026-09-02 07:51:53.999 | +[38;5;242m./stack.sh:main:577                      (B[m set -o errexit
+2026-09-02 07:51:54.022 | +[38;5;242m./stack.sh:main:580                      (B[m uname -a
+2026-09-02 07:51:54.026 | Linux ubuntu 6.8.0-138-generic #138-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 31 22:41:49 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+2026-09-02 07:51:54.053 | +[38;5;242m./stack.sh:main:583                      (B[m SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
+2026-09-02 07:51:54.078 | +[38;5;242m./stack.sh:main:584                      (B[m rm -f /opt/stack/data/ca-bundle.pem
+2026-09-02 07:51:54.108 | +[38;5;242m./stack.sh:main:587                      (B[m source /opt/stack/devstack/lib/database
+2026-09-02 07:51:54.309 | +[38;5;242m./stack.sh:main:588                      (B[m source /opt/stack/devstack/lib/rpc_backend
+2026-09-02 07:51:54.432 | +[38;5;242m./stack.sh:main:591                      (B[m source /opt/stack/devstack/lib/host
+2026-09-02 07:51:54.459 | +++[38;5;242mlib/host:source:12                       (B[m trueorfalse True ENABLE_KSM
+2026-09-02 07:51:54.593 | ++[38;5;242mlib/host:source:12                       (B[m ENABLE_KSM=True
+2026-09-02 07:51:54.619 | +++[38;5;242mlib/host:source:13                       (B[m trueorfalse True ENABLE_KSMTUNED
+2026-09-02 07:51:54.743 | ++[38;5;242mlib/host:source:13                       (B[m ENABLE_KSMTUNED=True
+2026-09-02 07:51:54.770 | +++[38;5;242mlib/host:source:56                       (B[m trueorfalse False ENABLE_ZSWAP
+2026-09-02 07:51:54.890 | ++[38;5;242mlib/host:source:56                       (B[m ENABLE_ZSWAP=False
+2026-09-02 07:51:54.913 | ++[38;5;242mlib/host:source:59                       (B[m ZSWAP_COMPRESSOR=lz4
+2026-09-02 07:51:54.939 | ++[38;5;242mlib/host:source:60                       (B[m ZSWAP_ZPOOL=zsmalloc
+2026-09-02 07:51:54.964 | +++[38;5;242mlib/host:source:82                       (B[m trueorfalse False ENABLE_SYSCTL_MEM_TUNING
+2026-09-02 07:51:55.085 | ++[38;5;242mlib/host:source:82                       (B[m ENABLE_SYSCTL_MEM_TUNING=False
+2026-09-02 07:51:55.111 | +++[38;5;242mlib/host:source:104                      (B[m trueorfalse False ENABLE_SYSCTL_NET_TUNING
+2026-09-02 07:51:55.233 | ++[38;5;242mlib/host:source:104                      (B[m ENABLE_SYSCTL_NET_TUNING=False
+2026-09-02 07:51:55.257 | +[38;5;242m./stack.sh:main:594                      (B[m tune_host
+2026-09-02 07:51:55.281 | +[38;5;242mlib/host:tune_host:125                   (B[m configure_host_mem
+2026-09-02 07:51:55.303 | +[38;5;242mlib/host:configure_host_mem:99           (B[m configure_zswap
+2026-09-02 07:51:55.324 | +[38;5;242mlib/host:configure_zswap:69              (B[m [[ False == \T\r\u\e ]]
+2026-09-02 07:51:55.345 | +[38;5;242mlib/host:configure_host_mem:100          (B[m configure_ksm
+2026-09-02 07:51:55.367 | +[38;5;242mlib/host:configure_ksm:39                (B[m [[ True == \T\r\u\e ]]
+2026-09-02 07:51:55.389 | +[38;5;242mlib/host:configure_ksm:40                (B[m install_package ksmtuned
+2026-09-02 07:51:55.410 | +[38;5;242mfunctions-common:install_package:1438    (B[m update_package_repo
+2026-09-02 07:51:55.432 | +[38;5;242mfunctions-common:update_package_repo:1412 (B[m NO_UPDATE_REPOS=False
+2026-09-02 07:51:55.453 | +[38;5;242mfunctions-common:update_package_repo:1413 (B[m REPOS_UPDATED=False
+2026-09-02 07:51:55.474 | +[38;5;242mfunctions-common:update_package_repo:1414 (B[m RETRY_UPDATE=False
+2026-09-02 07:51:55.496 | +[38;5;242mfunctions-common:update_package_repo:1416 (B[m [[ False = \T\r\u\e ]]
+2026-09-02 07:51:55.518 | +[38;5;242mfunctions-common:update_package_repo:1420 (B[m is_ubuntu
+2026-09-02 07:51:55.540 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-09-02 07:51:55.563 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-09-02 07:51:55.587 | +[38;5;242mfunctions-common:update_package_repo:1421 (B[m apt_get_update
+2026-09-02 07:51:55.609 | +[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ False == \T\r\u\e ]]
+2026-09-02 07:51:55.630 | +[38;5;242mfunctions-common:apt_get_update:1171     (B[m [[ False = \T\r\u\e ]]
+2026-09-02 07:51:55.651 | +[38;5;242mfunctions-common:apt_get_update:1173     (B[m local sudo=sudo
+2026-09-02 07:51:55.675 | ++[38;5;242mfunctions-common:apt_get_update:1174     (B[m id -u
+2026-09-02 07:51:55.702 | +[38;5;242mfunctions-common:apt_get_update:1174     (B[m [[ 1001 = \0 ]]
+2026-09-02 07:51:55.723 | +[38;5;242mfunctions-common:apt_get_update:1177     (B[m time_start apt-get-update
+2026-09-02 07:51:55.746 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=apt-get-update
+2026-09-02 07:51:55.768 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-09-02 07:51:55.790 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-09-02 07:51:55.812 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-09-02 07:51:55.838 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1788335515816
+2026-09-02 07:51:55.860 | +[38;5;242mfunctions-common:apt_get_update:1179     (B[m local 'proxies=http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 '
+2026-09-02 07:51:55.884 | +[38;5;242mfunctions-common:apt_get_update:1180     (B[m local 'update_cmd=sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update'
+2026-09-02 07:51:55.906 | +[38;5;242mfunctions-common:apt_get_update:1181     (B[m timeout 300 sh -c 'while ! sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update; do sleep 30; done'
+2026-09-02 07:51:57.201 | Hit:1 https://security.ubuntu.com/ubuntu noble-security InRelease
+2026-09-02 07:51:57.469 | Hit:2 https://in.archive.ubuntu.com/ubuntu noble InRelease
+2026-09-02 07:51:57.834 | Hit:3 https://in.archive.ubuntu.com/ubuntu noble-updates InRelease
+2026-09-02 07:51:58.210 | Hit:4 https://in.archive.ubuntu.com/ubuntu noble-backports InRelease
+2026-09-02 07:52:03.890 | Reading package lists...
+2026-09-02 07:52:03.956 | +[38;5;242mfunctions-common:apt_get_update:1185     (B[m REPOS_UPDATED=True
+2026-09-02 07:52:03.974 | +[38;5;242mfunctions-common:apt_get_update:1187     (B[m time_stop apt-get-update
+2026-09-02 07:52:03.997 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-09-02 07:52:04.017 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-09-02 07:52:04.040 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-09-02 07:52:04.061 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-09-02 07:52:04.083 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-09-02 07:52:04.103 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get-update
+2026-09-02 07:52:04.128 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1788335515816
+2026-09-02 07:52:04.155 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1788335515816 ]]
+2026-09-02 07:52:04.183 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-09-02 07:52:04.212 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1788335524187
+2026-09-02 07:52:04.236 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=8371
+2026-09-02 07:52:04.260 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=0
+2026-09-02 07:52:04.283 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-09-02 07:52:04.309 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=8371
+2026-09-02 07:52:04.334 | +[38;5;242mfunctions-common:install_package:1439    (B[m real_install_package ksmtuned
+2026-09-02 07:52:04.357 | +[38;5;242mfunctions-common:real_install_package:1426 (B[m is_ubuntu
+2026-09-02 07:52:04.381 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-09-02 07:52:04.408 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-09-02 07:52:04.433 | +[38;5;242mfunctions-common:real_install_package:1427 (B[m apt_get install ksmtuned
+2026-09-02 07:52:04.579 | +[38;5;242mfunctions-common:apt_get:1207            (B[m sudo DEBIAN_FRONTEND=noninteractive http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 apt-get --option Dpkg::Options::=--force-confold --assume-yes install ksmtuned
+2026-09-02 07:52:04.712 | Reading package lists...
+2026-09-02 07:52:05.159 | Building dependency tree...
+2026-09-02 07:52:05.161 | Reading state information...
+2026-09-02 07:52:05.739 | ksmtuned is already the newest version (4.20150326).
+2026-09-02 07:52:05.740 | The following packages were automatically installed and are no longer required:
+2026-09-02 07:52:05.740 |   libcgi-fast-perl libcgi-pm-perl libclone-perl libencode-locale-perl
+2026-09-02 07:52:05.740 |   libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+2026-09-02 07:52:05.740 |   libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
+2026-09-02 07:52:05.740 |   libhttp-date-perl libhttp-message-perl libio-html-perl
+2026-09-02 07:52:05.741 |   liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
+2026-09-02 07:52:05.742 |   liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils
+2026-09-02 07:52:05.742 | Use 'sudo apt autoremove' to remove them.
+2026-09-02 07:52:05.856 | 0 upgraded, 0 newly installed, 0 to remove and 75 not upgraded.
+2026-09-02 07:52:05.891 | +[38;5;242mfunctions-common:apt_get:1211            (B[m result=0
+2026-09-02 07:52:05.915 | +[38;5;242mfunctions-common:apt_get:1214            (B[m time_stop apt-get
+2026-09-02 07:52:05.937 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-09-02 07:52:05.958 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-09-02 07:52:05.982 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-09-02 07:52:06.007 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-09-02 07:52:06.032 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-09-02 07:52:06.055 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get
+2026-09-02 07:52:06.080 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1788335524554
+2026-09-02 07:52:06.106 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1788335524554 ]]
+2026-09-02 07:52:06.130 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-09-02 07:52:06.160 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1788335526135
+2026-09-02 07:52:06.184 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=1581
+2026-09-02 07:52:06.206 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=1539
+2026-09-02 07:52:06.230 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-09-02 07:52:06.253 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=3120
+2026-09-02 07:52:06.277 | +[38;5;242mfunctions-common:apt_get:1215            (B[m return 0
+2026-09-02 07:52:06.302 | ++[38;5;242mlib/host:configure_ksm:42                (B[m bool_to_int ENABLE_KSM
+2026-09-02 07:52:06.431 | +[38;5;242mlib/host:configure_ksm:42                (B[m set_sysfs_parameter ksm 0 /sys/kernel/mm/ksm/run
+2026-09-02 07:52:06.456 | +[38;5;242mlib/host:set_sysfs_parameter:15          (B[m local name=ksm
+2026-09-02 07:52:06.480 | +[38;5;242mlib/host:set_sysfs_parameter:16          (B[m local value=0
+2026-09-02 07:52:06.504 | +[38;5;242mlib/host:set_sysfs_parameter:17          (B[m local param_file=/sys/kernel/mm/ksm/run
+2026-09-02 07:52:06.527 | +[38;5;242mlib/host:set_sysfs_parameter:19          (B[m [[ ! -e /sys/kernel/mm/ksm/run ]]
+2026-09-02 07:52:06.552 | +[38;5;242mlib/host:set_sysfs_parameter:24          (B[m sudo tee /sys/kernel/mm/ksm/run
+2026-09-02 07:52:06.553 | +[38;5;242mlib/host:set_sysfs_parameter:24          (B[m echo 0
+2026-09-02 07:52:06.586 | 0
+2026-09-02 07:52:06.614 | +[38;5;242mlib/host:configure_host_mem:101          (B[m configure_sysctl_mem_parmaters
+2026-09-02 07:52:06.642 | +[38;5;242mlib/host:configure_sysctl_mem_parmaters:84 (B[m [[ False == \T\r\u\e ]]
+2026-09-02 07:52:06.670 | +[38;5;242mlib/host:tune_host:126                   (B[m configure_host_net
+2026-09-02 07:52:06.695 | +[38;5;242mlib/host:configure_host_net:121          (B[m configure_sysctl_net_parmaters
+2026-09-02 07:52:06.720 | +[38;5;242mlib/host:configure_sysctl_net_parmaters:106 (B[m [[ False == \T\r\u\e ]]
+2026-09-02 07:52:06.745 | +[38;5;242m./stack.sh:main:600                      (B[m fetch_plugins
+2026-09-02 07:52:06.769 | +[38;5;242mfunctions-common:fetch_plugins:1766      (B[m local plugins=
+2026-09-02 07:52:06.793 | +[38;5;242mfunctions-common:fetch_plugins:1767      (B[m local plugin
+2026-09-02 07:52:06.816 | +[38;5;242mfunctions-common:fetch_plugins:1770      (B[m [[ -z '' ]]
+2026-09-02 07:52:06.841 | +[38;5;242mfunctions-common:fetch_plugins:1771      (B[m return
+2026-09-02 07:52:06.865 | +[38;5;242m./stack.sh:main:604                      (B[m run_phase override_defaults
+2026-09-02 07:52:06.888 | +[38;5;242mfunctions-common:run_phase:1848          (B[m local mode=override_defaults
+2026-09-02 07:52:06.915 | +[38;5;242mfunctions-common:run_phase:1849          (B[m local phase=
+2026-09-02 07:52:06.938 | +[38;5;242mfunctions-common:run_phase:1850          (B[m [[ -d /opt/stack/devstack/extras.d ]]
+2026-09-02 07:52:06.962 | +[38;5;242mfunctions-common:run_phase:1851          (B[m local extra_plugin_file_name
+2026-09-02 07:52:06.989 | +[38;5;242mfunctions-common:run_phase:1852          (B[m for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
+2026-09-02 07:52:07.013 | +[38;5;242mfunctions-common:run_phase:1857          (B[m local exceptions=80-tempest.sh
+2026-09-02 07:52:07.041 | +[38;5;242mfunctions-common:run_phase:1858          (B[m local extra
+2026-09-02 07:52:07.073 | ++[38;5;242mfunctions-common:run_phase:1859          (B[m basename /opt/stack/devstack/extras.d/80-tempest.sh
+2026-09-02 07:52:07.105 | +[38;5;242mfunctions-common:run_phase:1859          (B[m extra=80-tempest.sh
+2026-09-02 07:52:07.135 | +[38;5;242mfunctions-common:run_phase:1860          (B[m [[ 80-tempest.sh =~ 80-tempest\.sh ]]
+2026-09-02 07:52:07.165 | +[38;5;242mfunctions-common:run_phase:1864          (B[m [[ -r /opt/stack/devstack/extras.d/80-tempest.sh ]]
+2026-09-02 07:52:07.193 | +[38;5;242mfunctions-common:run_phase:1864          (B[m source /opt/stack/devstack/extras.d/80-tempest.sh override_defaults
+2026-09-02 07:52:07.222 | ++[38;5;242mextras.d/80-tempest.sh:source:3          (B[m is_service_enabled tempest
+2026-09-02 07:52:07.362 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 0
+2026-09-02 07:52:07.392 | ++[38;5;242mextras.d/80-tempest.sh:source:4          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2026-09-02 07:52:07.418 | ++[38;5;242mextras.d/80-tempest.sh:source:7          (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-09-02 07:52:07.445 | ++[38;5;242mextras.d/80-tempest.sh:source:10         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-09-02 07:52:07.471 | ++[38;5;242mextras.d/80-tempest.sh:source:13         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-09-02 07:52:07.494 | ++[38;5;242mextras.d/80-tempest.sh:source:16         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-09-02 07:52:07.518 | ++[38;5;242mextras.d/80-tempest.sh:source:19         (B[m [[ override_defaults == \s\t\a\c\k ]]
+2026-09-02 07:52:07.542 | ++[38;5;242mextras.d/80-tempest.sh:source:27         (B[m [[ override_defaults == \u\n\s\t\a\c\k ]]
+2026-09-02 07:52:07.570 | ++[38;5;242mextras.d/80-tempest.sh:source:32         (B[m [[ override_defaults == \c\l\e\a\n ]]
+2026-09-02 07:52:07.595 | +[38;5;242mfunctions-common:run_phase:1869          (B[m [[ override_defaults == \s\o\u\r\c\e ]]
+2026-09-02 07:52:07.620 | +[38;5;242mfunctions-common:run_phase:1872          (B[m [[ override_defaults == \o\v\e\r\r\i\d\e\_\d\e\f\a\u\l\t\s ]]
+2026-09-02 07:52:07.645 | +[38;5;242mfunctions-common:run_phase:1873          (B[m plugin_override_defaults
+2026-09-02 07:52:07.675 | +[38;5;242mfunctions-common:plugin_override_defaults:1807 (B[m local plugins=
+2026-09-02 07:52:07.702 | +[38;5;242mfunctions-common:plugin_override_defaults:1808 (B[m local plugin
+2026-09-02 07:52:07.728 | +[38;5;242mfunctions-common:plugin_override_defaults:1811 (B[m [[ -z '' ]]
+2026-09-02 07:52:07.752 | +[38;5;242mfunctions-common:plugin_override_defaults:1812 (B[m return
+2026-09-02 07:52:07.780 | +[38;5;242m./stack.sh:main:607                      (B[m source /opt/stack/devstack/lib/apache
+2026-09-02 07:52:07.921 | +[38;5;242m./stack.sh:main:610                      (B[m source /opt/stack/devstack/lib/tls
+2026-09-02 07:52:07.948 | ++[38;5;242mlib/tls:source:38                        (B[m is_service_enabled tls-proxy
+2026-09-02 07:52:08.079 | ++[38;5;242mfunctions-common:is_service_enabled:2076 (B[m return 1
+2026-09-02 07:52:08.106 | +++[38;5;242mlib/tls:source:43                        (B[m hostname -f
+2026-09-02 07:52:08.140 | ++[38;5;242mlib/tls:source:43                        (B[m DEVSTACK_HOSTNAME=localhost
+2026-09-02 07:52:08.165 | ++[38;5;242mlib/tls:source:44                        (B[m DEVSTACK_CERT_NAME=devstack-cert
+2026-09-02 07:52:08.191 | ++[38;5;242mlib/tls:source:45                        (B[m DEVSTACK_CERT=/opt/stack/data/devstack-cert.pem
+2026-09-02 07:52:08.218 | ++[38;5;242mlib/tls:source:48                        (B[m ROOT_CA_DIR=/opt/stack/data/CA/root-ca
+2026-09-02 07:52:08.244 | ++[38;5;242mlib/tls:source:49                        (B[m INT_CA_DIR=/opt/stack/data/CA/int-ca
+2026-09-02 07:52:08.271 | ++[38;5;242mlib/tls:source:51                        (B[m ORG_NAME=OpenStack
+2026-09-02 07:52:08.296 | ++[38;5;242mlib/tls:source:52                        (B[m ORG_UNIT_NAME=DevStack
+2026-09-02 07:52:08.319 | ++[38;5;242mlib/tls:source:55                        (B[m STUD_PROTO=--tls
+2026-09-02 07:52:08.347 | ++[38;5;242mlib/tls:source:56                        (B[m STUD_CIPHERS='TLSv1+HIGH:!DES:!aNULL:!eNULL:@STRENGTH'
+2026-09-02 07:52:08.372 | ++[38;5;242mlib/tls:source:63                        (B[m OPENSSL=/usr/bin/openssl
+2026-09-02 07:52:08.408 | +[38;5;242m./stack.sh:main:613                      (B[m source /opt/stack/devstack/lib/infra
+2026-09-02 07:52:08.528 | +[38;5;242m./stack.sh:main:614                      (B[m source /opt/stack/devstack/lib/libraries
+2026-09-02 07:52:08.657 | +[38;5;242m./stack.sh:main:615                      (B[m source /opt/stack/devstack/lib/lvm
+2026-09-02 07:52:08.780 | +[38;5;242m./stack.sh:main:616                      (B[m source /opt/stack/devstack/lib/horizon
+2026-09-02 07:52:08.894 | +[38;5;242m./stack.sh:main:617                      (B[m source /opt/stack/devstack/lib/keystone
+2026-09-02 07:52:09.107 | +[38;5;242m./stack.sh:main:618                      (B[m source /opt/stack/devstack/lib/glance
+2026-09-02 07:52:09.461 | +[38;5;242m./stack.sh:main:619                      (B[m source /opt/stack/devstack/lib/nova
+2026-09-02 07:52:09.926 | +[38;5;242m./stack.sh:main:620                      (B[m source /opt/stack/devstack/lib/placement
