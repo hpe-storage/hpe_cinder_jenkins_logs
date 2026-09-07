@@ -1,0 +1,189 @@
+2026-09-07 11:17:13.246 | +[38;5;242m./stack.sh:main:491                      (B[m exec
+2026-09-07 11:17:13.246 | ++[38;5;242m./stack.sh:main:491                      (B[m /usr/bin/python3.12 /opt/stack/devstack/tools/outfilter.py -o /opt/stack/logs/stack.sh.log.2026-09-07-111712.summary.2026-09-07-111712
+2026-09-07 11:17:13.246 | +[38;5;242m./stack.sh:main:499                      (B[m echo_summary 'stack.sh log /opt/stack/logs/stack.sh.log.2026-09-07-111712'
+2026-09-07 11:17:13.246 | +[38;5;242m./stack.sh:echo_summary:444              (B[m [[ -t 3 ]]
+2026-09-07 11:17:13.246 | +[38;5;242m./stack.sh:echo_summary:450              (B[m echo -e stack.sh log /opt/stack/logs/stack.sh.log.2026-09-07-111712
+2026-09-07 11:17:13.246 | +[38;5;242m./stack.sh:main:501                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-09-07-111712 /opt/stack/logs/stack.sh.log
+2026-09-07 11:17:13.274 | +[38;5;242m./stack.sh:main:502                      (B[m ln -sf /opt/stack/logs/stack.sh.log.2026-09-07-111712.summary.2026-09-07-111712 /opt/stack/logs/stack.sh.log.summary
+2026-09-07 11:17:13.303 | +[38;5;242m./stack.sh:main:517                      (B[m check_path_perm_sanity /opt/stack
+2026-09-07 11:17:13.324 | +[38;5;242mfunctions:check_path_perm_sanity:615     (B[m local real_path
+2026-09-07 11:17:13.350 | ++[38;5;242mfunctions:check_path_perm_sanity:616     (B[m readlink -f /opt/stack
+2026-09-07 11:17:13.390 | +[38;5;242mfunctions:check_path_perm_sanity:616     (B[m real_path=/opt/stack
+2026-09-07 11:17:13.412 | +[38;5;242mfunctions:check_path_perm_sanity:617     (B[m local rebuilt_path=
+2026-09-07 11:17:13.439 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m echo /opt/stack
+2026-09-07 11:17:13.440 | ++[38;5;242mfunctions:check_path_perm_sanity:618     (B[m tr / ' '
+2026-09-07 11:17:13.471 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-09-07 11:17:13.497 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt
+2026-09-07 11:17:13.524 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt
+2026-09-07 11:17:13.554 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 755 = 700 ]]
+2026-09-07 11:17:13.577 | +[38;5;242mfunctions:check_path_perm_sanity:618     (B[m for i in $(echo ${real_path} | tr "/" " ")
+2026-09-07 11:17:13.598 | +[38;5;242mfunctions:check_path_perm_sanity:619     (B[m rebuilt_path=/opt/stack
+2026-09-07 11:17:13.623 | ++[38;5;242mfunctions:check_path_perm_sanity:621     (B[m stat -c %a /opt/stack
+2026-09-07 11:17:13.654 | +[38;5;242mfunctions:check_path_perm_sanity:621     (B[m [[ 751 = 700 ]]
+2026-09-07 11:17:13.678 | +[38;5;242m./stack.sh:main:523                      (B[m trap exit_trap EXIT
+2026-09-07 11:17:13.703 | +[38;5;242m./stack.sh:main:564                      (B[m trap err_trap ERR
+2026-09-07 11:17:13.726 | +[38;5;242m./stack.sh:main:577                      (B[m set -o errexit
+2026-09-07 11:17:13.749 | +[38;5;242m./stack.sh:main:580                      (B[m uname -a
+2026-09-07 11:17:13.753 | Linux ubuntu 6.8.0-138-generic #138-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 31 22:41:49 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+2026-09-07 11:17:13.776 | +[38;5;242m./stack.sh:main:583                      (B[m SSL_BUNDLE_FILE=/opt/stack/data/ca-bundle.pem
+2026-09-07 11:17:13.800 | +[38;5;242m./stack.sh:main:584                      (B[m rm -f /opt/stack/data/ca-bundle.pem
+2026-09-07 11:17:13.827 | +[38;5;242m./stack.sh:main:587                      (B[m source /opt/stack/devstack/lib/database
+2026-09-07 11:17:14.040 | +[38;5;242m./stack.sh:main:588                      (B[m source /opt/stack/devstack/lib/rpc_backend
+2026-09-07 11:17:14.170 | +[38;5;242m./stack.sh:main:591                      (B[m source /opt/stack/devstack/lib/host
+2026-09-07 11:17:14.195 | +++[38;5;242mlib/host:source:12                       (B[m trueorfalse True ENABLE_KSM
+2026-09-07 11:17:14.318 | ++[38;5;242mlib/host:source:12                       (B[m ENABLE_KSM=True
+2026-09-07 11:17:14.344 | +++[38;5;242mlib/host:source:13                       (B[m trueorfalse True ENABLE_KSMTUNED
+2026-09-07 11:17:14.467 | ++[38;5;242mlib/host:source:13                       (B[m ENABLE_KSMTUNED=True
+2026-09-07 11:17:14.490 | +++[38;5;242mlib/host:source:56                       (B[m trueorfalse False ENABLE_ZSWAP
+2026-09-07 11:17:14.598 | ++[38;5;242mlib/host:source:56                       (B[m ENABLE_ZSWAP=False
+2026-09-07 11:17:14.618 | ++[38;5;242mlib/host:source:59                       (B[m ZSWAP_COMPRESSOR=lz4
+2026-09-07 11:17:14.639 | ++[38;5;242mlib/host:source:60                       (B[m ZSWAP_ZPOOL=zsmalloc
+2026-09-07 11:17:14.661 | +++[38;5;242mlib/host:source:82                       (B[m trueorfalse False ENABLE_SYSCTL_MEM_TUNING
+2026-09-07 11:17:14.787 | ++[38;5;242mlib/host:source:82                       (B[m ENABLE_SYSCTL_MEM_TUNING=False
+2026-09-07 11:17:14.811 | +++[38;5;242mlib/host:source:104                      (B[m trueorfalse False ENABLE_SYSCTL_NET_TUNING
+2026-09-07 11:17:14.938 | ++[38;5;242mlib/host:source:104                      (B[m ENABLE_SYSCTL_NET_TUNING=False
+2026-09-07 11:17:14.962 | +[38;5;242m./stack.sh:main:594                      (B[m tune_host
+2026-09-07 11:17:14.984 | +[38;5;242mlib/host:tune_host:125                   (B[m configure_host_mem
+2026-09-07 11:17:15.005 | +[38;5;242mlib/host:configure_host_mem:99           (B[m configure_zswap
+2026-09-07 11:17:15.029 | +[38;5;242mlib/host:configure_zswap:69              (B[m [[ False == \T\r\u\e ]]
+2026-09-07 11:17:15.054 | +[38;5;242mlib/host:configure_host_mem:100          (B[m configure_ksm
+2026-09-07 11:17:15.078 | +[38;5;242mlib/host:configure_ksm:39                (B[m [[ True == \T\r\u\e ]]
+2026-09-07 11:17:15.100 | +[38;5;242mlib/host:configure_ksm:40                (B[m install_package ksmtuned
+2026-09-07 11:17:15.122 | +[38;5;242mfunctions-common:install_package:1438    (B[m update_package_repo
+2026-09-07 11:17:15.144 | +[38;5;242mfunctions-common:update_package_repo:1412 (B[m NO_UPDATE_REPOS=False
+2026-09-07 11:17:15.162 | +[38;5;242mfunctions-common:update_package_repo:1413 (B[m REPOS_UPDATED=False
+2026-09-07 11:17:15.186 | +[38;5;242mfunctions-common:update_package_repo:1414 (B[m RETRY_UPDATE=False
+2026-09-07 11:17:15.209 | +[38;5;242mfunctions-common:update_package_repo:1416 (B[m [[ False = \T\r\u\e ]]
+2026-09-07 11:17:15.231 | +[38;5;242mfunctions-common:update_package_repo:1420 (B[m is_ubuntu
+2026-09-07 11:17:15.251 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-09-07 11:17:15.273 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-09-07 11:17:15.299 | +[38;5;242mfunctions-common:update_package_repo:1421 (B[m apt_get_update
+2026-09-07 11:17:15.322 | +[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ False == \T\r\u\e ]]
+2026-09-07 11:17:15.343 | +[38;5;242mfunctions-common:apt_get_update:1171     (B[m [[ False = \T\r\u\e ]]
+2026-09-07 11:17:15.364 | +[38;5;242mfunctions-common:apt_get_update:1173     (B[m local sudo=sudo
+2026-09-07 11:17:15.389 | ++[38;5;242mfunctions-common:apt_get_update:1174     (B[m id -u
+2026-09-07 11:17:15.416 | +[38;5;242mfunctions-common:apt_get_update:1174     (B[m [[ 1001 = \0 ]]
+2026-09-07 11:17:15.437 | +[38;5;242mfunctions-common:apt_get_update:1177     (B[m time_start apt-get-update
+2026-09-07 11:17:15.460 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=apt-get-update
+2026-09-07 11:17:15.484 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-09-07 11:17:15.505 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-09-07 11:17:15.527 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-09-07 11:17:15.554 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1788779835531
+2026-09-07 11:17:15.577 | +[38;5;242mfunctions-common:apt_get_update:1179     (B[m local 'proxies=http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 '
+2026-09-07 11:17:15.600 | +[38;5;242mfunctions-common:apt_get_update:1180     (B[m local 'update_cmd=sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update'
+2026-09-07 11:17:15.622 | +[38;5;242mfunctions-common:apt_get_update:1181     (B[m timeout 300 sh -c 'while ! sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update; do sleep 30; done'
+2026-09-07 11:17:17.090 | Hit:1 https://security.ubuntu.com/ubuntu noble-security InRelease
+2026-09-07 11:17:17.515 | Hit:2 https://in.archive.ubuntu.com/ubuntu noble InRelease
+2026-09-07 11:17:17.856 | Hit:3 https://in.archive.ubuntu.com/ubuntu noble-updates InRelease
+2026-09-07 11:17:18.198 | Hit:4 https://in.archive.ubuntu.com/ubuntu noble-backports InRelease
+2026-09-07 11:17:23.808 | Reading package lists...
+2026-09-07 11:17:23.877 | +[38;5;242mfunctions-common:apt_get_update:1185     (B[m REPOS_UPDATED=True
+2026-09-07 11:17:23.897 | +[38;5;242mfunctions-common:apt_get_update:1187     (B[m time_stop apt-get-update
+2026-09-07 11:17:23.913 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-09-07 11:17:23.936 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-09-07 11:17:23.958 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-09-07 11:17:23.980 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-09-07 11:17:24.004 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-09-07 11:17:24.025 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get-update
+2026-09-07 11:17:24.049 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1788779835531
+2026-09-07 11:17:24.072 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1788779835531 ]]
+2026-09-07 11:17:24.095 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-09-07 11:17:24.122 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1788779844099
+2026-09-07 11:17:24.145 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=8568
+2026-09-07 11:17:24.167 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=0
+2026-09-07 11:17:24.189 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-09-07 11:17:24.212 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=8568
+2026-09-07 11:17:24.231 | +[38;5;242mfunctions-common:install_package:1439    (B[m real_install_package ksmtuned
+2026-09-07 11:17:24.247 | +[38;5;242mfunctions-common:real_install_package:1426 (B[m is_ubuntu
+2026-09-07 11:17:24.265 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-09-07 11:17:24.281 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-09-07 11:17:24.304 | +[38;5;242mfunctions-common:real_install_package:1427 (B[m apt_get install ksmtuned
+2026-09-07 11:17:24.454 | +[38;5;242mfunctions-common:apt_get:1207            (B[m sudo DEBIAN_FRONTEND=noninteractive http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 apt-get --option Dpkg::Options::=--force-confold --assume-yes install ksmtuned
+2026-09-07 11:17:24.524 | E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem. 
+2026-09-07 11:17:24.556 | +[38;5;242mfunctions-common:apt_get:1211            (B[m result=100
+2026-09-07 11:17:24.579 | +[38;5;242mfunctions-common:apt_get:1214            (B[m time_stop apt-get
+2026-09-07 11:17:24.601 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-09-07 11:17:24.624 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-09-07 11:17:24.646 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-09-07 11:17:24.670 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-09-07 11:17:24.692 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-09-07 11:17:24.715 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get
+2026-09-07 11:17:24.740 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1788779844424
+2026-09-07 11:17:24.764 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1788779844424 ]]
+2026-09-07 11:17:24.787 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-09-07 11:17:24.815 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1788779844791
+2026-09-07 11:17:24.842 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=367
+2026-09-07 11:17:24.867 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=704
+2026-09-07 11:17:24.889 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-09-07 11:17:24.911 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=1071
+2026-09-07 11:17:24.933 | +[38;5;242mfunctions-common:apt_get:1215            (B[m return 100
+2026-09-07 11:17:24.958 | +[38;5;242mfunctions-common:install_package:1440    (B[m RETRY_UPDATE=True
+2026-09-07 11:17:24.980 | +[38;5;242mfunctions-common:install_package:1440    (B[m update_package_repo
+2026-09-07 11:17:25.004 | +[38;5;242mfunctions-common:update_package_repo:1412 (B[m NO_UPDATE_REPOS=False
+2026-09-07 11:17:25.026 | +[38;5;242mfunctions-common:update_package_repo:1413 (B[m REPOS_UPDATED=True
+2026-09-07 11:17:25.049 | +[38;5;242mfunctions-common:update_package_repo:1414 (B[m RETRY_UPDATE=True
+2026-09-07 11:17:25.072 | +[38;5;242mfunctions-common:update_package_repo:1416 (B[m [[ False = \T\r\u\e ]]
+2026-09-07 11:17:25.096 | +[38;5;242mfunctions-common:update_package_repo:1420 (B[m is_ubuntu
+2026-09-07 11:17:25.121 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-09-07 11:17:25.144 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-09-07 11:17:25.168 | +[38;5;242mfunctions-common:update_package_repo:1421 (B[m apt_get_update
+2026-09-07 11:17:25.191 | +[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ True == \T\r\u\e ]]
+2026-09-07 11:17:25.212 | +[38;5;242mfunctions-common:apt_get_update:1166     (B[m [[ True != \T\r\u\e ]]
+2026-09-07 11:17:25.236 | +[38;5;242mfunctions-common:apt_get_update:1171     (B[m [[ False = \T\r\u\e ]]
+2026-09-07 11:17:25.259 | +[38;5;242mfunctions-common:apt_get_update:1173     (B[m local sudo=sudo
+2026-09-07 11:17:25.284 | ++[38;5;242mfunctions-common:apt_get_update:1174     (B[m id -u
+2026-09-07 11:17:25.314 | +[38;5;242mfunctions-common:apt_get_update:1174     (B[m [[ 1001 = \0 ]]
+2026-09-07 11:17:25.337 | +[38;5;242mfunctions-common:apt_get_update:1177     (B[m time_start apt-get-update
+2026-09-07 11:17:25.360 | +[38;5;242mfunctions-common:time_start:2406         (B[m local name=apt-get-update
+2026-09-07 11:17:25.384 | +[38;5;242mfunctions-common:time_start:2407         (B[m local start_time=
+2026-09-07 11:17:25.406 | +[38;5;242mfunctions-common:time_start:2408         (B[m [[ -n '' ]]
+2026-09-07 11:17:25.431 | ++[38;5;242mfunctions-common:time_start:2411         (B[m date +%s%3N
+2026-09-07 11:17:25.460 | +[38;5;242mfunctions-common:time_start:2411         (B[m _TIME_START[$name]=1788779845435
+2026-09-07 11:17:25.482 | +[38;5;242mfunctions-common:apt_get_update:1179     (B[m local 'proxies=http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 '
+2026-09-07 11:17:25.506 | +[38;5;242mfunctions-common:apt_get_update:1180     (B[m local 'update_cmd=sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update'
+2026-09-07 11:17:25.529 | +[38;5;242mfunctions-common:apt_get_update:1181     (B[m timeout 300 sh -c 'while ! sudo http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208  apt-get update; do sleep 30; done'
+2026-09-07 11:17:26.812 | Hit:1 https://security.ubuntu.com/ubuntu noble-security InRelease
+2026-09-07 11:17:26.981 | Hit:2 https://in.archive.ubuntu.com/ubuntu noble InRelease
+2026-09-07 11:17:27.321 | Hit:3 https://in.archive.ubuntu.com/ubuntu noble-updates InRelease
+2026-09-07 11:17:27.667 | Hit:4 https://in.archive.ubuntu.com/ubuntu noble-backports InRelease
+2026-09-07 11:17:30.393 | Reading package lists...
+2026-09-07 11:17:30.460 | +[38;5;242mfunctions-common:apt_get_update:1185     (B[m REPOS_UPDATED=True
+2026-09-07 11:17:30.475 | +[38;5;242mfunctions-common:apt_get_update:1187     (B[m time_stop apt-get-update
+2026-09-07 11:17:30.493 | +[38;5;242mfunctions-common:time_stop:2420          (B[m local name
+2026-09-07 11:17:30.511 | +[38;5;242mfunctions-common:time_stop:2421          (B[m local end_time
+2026-09-07 11:17:30.525 | +[38;5;242mfunctions-common:time_stop:2422          (B[m local elapsed_time
+2026-09-07 11:17:30.543 | +[38;5;242mfunctions-common:time_stop:2423          (B[m local total
+2026-09-07 11:17:30.565 | +[38;5;242mfunctions-common:time_stop:2424          (B[m local start_time
+2026-09-07 11:17:30.586 | +[38;5;242mfunctions-common:time_stop:2426          (B[m name=apt-get-update
+2026-09-07 11:17:30.609 | +[38;5;242mfunctions-common:time_stop:2427          (B[m start_time=1788779845435
+2026-09-07 11:17:30.630 | +[38;5;242mfunctions-common:time_stop:2429          (B[m [[ -z 1788779845435 ]]
+2026-09-07 11:17:30.654 | ++[38;5;242mfunctions-common:time_stop:2432          (B[m date +%s%3N
+2026-09-07 11:17:30.681 | +[38;5;242mfunctions-common:time_stop:2432          (B[m end_time=1788779850658
+2026-09-07 11:17:30.703 | +[38;5;242mfunctions-common:time_stop:2433          (B[m elapsed_time=5223
+2026-09-07 11:17:30.724 | +[38;5;242mfunctions-common:time_stop:2434          (B[m total=8568
+2026-09-07 11:17:30.746 | +[38;5;242mfunctions-common:time_stop:2436          (B[m _TIME_START[$name]=
+2026-09-07 11:17:30.766 | +[38;5;242mfunctions-common:time_stop:2437          (B[m _TIME_TOTAL[$name]=13791
+2026-09-07 11:17:30.790 | +[38;5;242mfunctions-common:install_package:1440    (B[m real_install_package ksmtuned
+2026-09-07 11:17:30.819 | +[38;5;242mfunctions-common:real_install_package:1426 (B[m is_ubuntu
+2026-09-07 11:17:30.843 | +[38;5;242mfunctions-common:is_ubuntu:546           (B[m [[ -z deb ]]
+2026-09-07 11:17:30.863 | +[38;5;242mfunctions-common:is_ubuntu:549           (B[m '[' deb = deb ']'
+2026-09-07 11:17:30.880 | +[38;5;242mfunctions-common:real_install_package:1427 (B[m apt_get install ksmtuned
+2026-09-07 11:17:31.015 | +[38;5;242mfunctions-common:apt_get:1207            (B[m sudo DEBIAN_FRONTEND=noninteractive http_proxy=http://10.120.61.146:80 https_proxy=http://10.120.61.146:443 no_proxy=10.201.5.87,10.201.4.29,10.201.3.85,10.201.3.86,localhost,127.0.0.1,10.201.4.31,10.201.4.32,10.201.4.33,10.201.4.34,10.201.1.221,172.28.65.17,172.28.65.18,172.28.65.207,172.28.65.208 apt-get --option Dpkg::Options::=--force-confold --assume-yes install ksmtuned
+2026-09-07 11:17:31.071 | E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem. 
+2026-09-07 11:17:31.101 | +[38;5;242mfunctions-common:apt_get:1               (B[m exit_trap
+2026-09-07 11:17:31.128 | +[38;5;242m./stack.sh:exit_trap:525                 (B[m local r=100
+2026-09-07 11:17:31.152 | ++[38;5;242m./stack.sh:exit_trap:526                 (B[m jobs -p
+2026-09-07 11:17:31.173 | +[38;5;242m./stack.sh:exit_trap:526                 (B[m jobs=
+2026-09-07 11:17:31.196 | +[38;5;242m./stack.sh:exit_trap:529                 (B[m [[ -n '' ]]
+2026-09-07 11:17:31.221 | +[38;5;242m./stack.sh:exit_trap:535                 (B[m '[' -f '' ']'
+2026-09-07 11:17:31.246 | +[38;5;242m./stack.sh:exit_trap:540                 (B[m kill_spinner
+2026-09-07 11:17:31.268 | +[38;5;242m./stack.sh:kill_spinner:435              (B[m '[' '!' -z '' ']'
+2026-09-07 11:17:31.292 | +[38;5;242m./stack.sh:exit_trap:542                 (B[m [[ 100 -ne 0 ]]
+2026-09-07 11:17:31.315 | +[38;5;242m./stack.sh:exit_trap:543                 (B[m echo 'Error on exit'
+2026-09-07 11:17:31.315 | Error on exit
+2026-09-07 11:17:31.342 | +[38;5;242m./stack.sh:exit_trap:545                 (B[m type -p generate-subunit
+2026-09-07 11:17:31.368 | +[38;5;242m./stack.sh:exit_trap:548                 (B[m [[ -z /opt/stack/logs ]]
+2026-09-07 11:17:31.395 | +[38;5;242m./stack.sh:exit_trap:551                 (B[m /usr/bin/python3.12 /opt/stack/devstack/tools/worlddump.py -d /opt/stack/logs
+2026-09-07 11:17:31.809 | ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+2026-09-07 11:17:31.891 | ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+2026-09-07 11:17:32.758 | +[38;5;242m./stack.sh:exit_trap:560                 (B[m exit 100
