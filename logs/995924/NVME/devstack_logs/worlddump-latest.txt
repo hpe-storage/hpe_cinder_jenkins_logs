@@ -1,0 +1,813 @@
+
+File System Summary
+===================
+
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              1.6G  4.3M  1.6G   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv   98G   25G   69G  26% /
+tmpfs                              7.9G  4.0K  7.9G   1% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+tmpfs                              7.9G     0  7.9G   0% /run/qemu
+/dev/sda2                          2.0G  200M  1.6G  11% /boot
+tmpfs                              1.6G   16K  1.6G   1% /run/user/0
+tmpfs                              512M  123M  390M  24% /opt/stack/data/etcd
+
+
+Process Listing
+===============
+
+ps axo user,ppid,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,args
+---------------------------------------------------------------
+
+USER        PPID     PID %CPU %MEM    VSZ   RSS TT       STAT  STARTED     TIME COMMAND
+root           0       1  0.8  0.0  22740 14156 ?        Ss     Aug 19 04:37:28 /usr/lib/systemd/systemd --system --deserialize=98
+root           0       2  0.0  0.0      0     0 ?        S      Aug 19 00:00:03 [kthreadd]
+root           2       3  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [pool_workqueue_release]
+root           2       4  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-rcu_g]
+root           2       5  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-rcu_p]
+root           2       6  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-slub_]
+root           2       7  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-netns]
+root           2      12  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-mm_pe]
+root           2      13  0.0  0.0      0     0 ?        I      Aug 19 00:00:00 [rcu_tasks_kthread]
+root           2      14  0.0  0.0      0     0 ?        I      Aug 19 00:00:00 [rcu_tasks_rude_kthread]
+root           2      15  0.0  0.0      0     0 ?        I      Aug 19 00:00:00 [rcu_tasks_trace_kthread]
+root           2      16  0.0  0.0      0     0 ?        S      Aug 19 00:02:28 [ksoftirqd/0]
+root           2      17  0.1  0.0      0     0 ?        I      Aug 19 00:36:12 [rcu_preempt]
+root           2      18  0.0  0.0      0     0 ?        S      Aug 19 00:00:30 [migration/0]
+root           2      19  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [idle_inject/0]
+root           2      20  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [cpuhp/0]
+root           2      21  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [cpuhp/1]
+root           2      22  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [idle_inject/1]
+root           2      23  0.0  0.0      0     0 ?        S      Aug 19 00:00:30 [migration/1]
+root           2      24  0.0  0.0      0     0 ?        S      Aug 19 00:02:32 [ksoftirqd/1]
+root           2      27  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [cpuhp/2]
+root           2      28  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [idle_inject/2]
+root           2      29  0.0  0.0      0     0 ?        S      Aug 19 00:00:29 [migration/2]
+root           2      30  0.0  0.0      0     0 ?        S      Aug 19 00:02:23 [ksoftirqd/2]
+root           2      33  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [cpuhp/3]
+root           2      34  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [idle_inject/3]
+root           2      35  0.0  0.0      0     0 ?        S      Aug 19 00:00:29 [migration/3]
+root           2      36  0.0  0.0      0     0 ?        S      Aug 19 00:02:18 [ksoftirqd/3]
+root           2      43  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [kdevtmpfs]
+root           2      44  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-inet_]
+root           2      45  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [kauditd]
+root           2      46  0.0  0.0      0     0 ?        S      Aug 19 00:00:04 [khungtaskd]
+root           2      47  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [oom_reaper]
+root           2      50  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-write]
+root           2      51  0.0  0.0      0     0 ?        S      Aug 19 00:01:41 [kcompactd0]
+root           2      52  0.0  0.0      0     0 ?        SN     Aug 19 00:00:00 [ksmd]
+root           2      54  0.0  0.0      0     0 ?        SN     Aug 19 00:00:00 [khugepaged]
+root           2      55  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-kinte]
+root           2      56  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-kbloc]
+root           2      57  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-blkcg]
+root           2      58  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/9-acpi]
+root           2      60  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-tpm_d]
+root           2      61  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-ata_s]
+root           2      62  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-md]
+root           2      63  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-md_bi]
+root           2      64  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-edac-]
+root           2      65  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-devfr]
+root           2      66  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [watchdogd]
+root           2      68  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-quota]
+root           2      72  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [kswapd0]
+root           2      73  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [ecryptfs-kthread]
+root           2      74  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-kthro]
+root           2      75  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/24-pciehp]
+root           2      76  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/25-pciehp]
+root           2      77  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/26-pciehp]
+root           2      78  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/27-pciehp]
+root           2      79  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/28-pciehp]
+root           2      80  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/29-pciehp]
+root           2      81  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/30-pciehp]
+root           2      82  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/31-pciehp]
+root           2      83  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/32-pciehp]
+root           2      84  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/33-pciehp]
+root           2      85  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/34-pciehp]
+root           2      86  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/35-pciehp]
+root           2      87  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/36-pciehp]
+root           2      88  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/37-pciehp]
+root           2      89  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/38-pciehp]
+root           2      90  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/39-pciehp]
+root           2      91  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/40-pciehp]
+root           2      92  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/41-pciehp]
+root           2      93  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/42-pciehp]
+root           2      94  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/43-pciehp]
+root           2      95  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/44-pciehp]
+root           2      96  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/45-pciehp]
+root           2      97  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/46-pciehp]
+root           2      98  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/47-pciehp]
+root           2      99  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/48-pciehp]
+root           2     100  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/49-pciehp]
+root           2     101  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/50-pciehp]
+root           2     102  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/51-pciehp]
+root           2     103  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/52-pciehp]
+root           2     104  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/53-pciehp]
+root           2     105  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/54-pciehp]
+root           2     106  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/55-pciehp]
+root           2     107  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-acpi_]
+root           2     109  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_0]
+root           2     110  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     111  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_1]
+root           2     112  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     116  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-mld]
+root           2     118  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-ipv6_]
+root           2     127  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-kstrp]
+root           2     129  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/u13:0]
+root           2     130  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/u14:0]
+root           2     131  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/u15:0]
+root           2     132  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/u16:0]
+root           2     133  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/u17:0]
+root           2     138  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-crypt]
+root           2     148  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-charg]
+root           2     203  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_2]
+root           2     204  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     205  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-vmw_p]
+root           2     222  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_3]
+root           2     223  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     224  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_4]
+root           2     225  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     226  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_5]
+root           2     227  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     228  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_6]
+root           2     229  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     230  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_7]
+root           2     231  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     232  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_8]
+root           2     233  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     234  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_9]
+root           2     235  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     236  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_10]
+root           2     237  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     238  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_11]
+root           2     239  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     240  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_12]
+root           2     241  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     242  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_13]
+root           2     243  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     244  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_14]
+root           2     245  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     246  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_15]
+root           2     247  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     248  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_16]
+root           2     249  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     250  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_17]
+root           2     251  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     252  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_18]
+root           2     253  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     254  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_19]
+root           2     255  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     256  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_20]
+root           2     257  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     258  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_21]
+root           2     259  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     260  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_22]
+root           2     261  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     262  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_23]
+root           2     263  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     264  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_24]
+root           2     265  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     266  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_25]
+root           2     267  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     268  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_26]
+root           2     269  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     270  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_27]
+root           2     271  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     272  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_28]
+root           2     273  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     274  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_29]
+root           2     275  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     276  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_30]
+root           2     277  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     278  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_31]
+root           2     279  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     280  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [scsi_eh_32]
+root           2     281  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-scsi_]
+root           2     337  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-kdmfl]
+root           2     367  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-raid5]
+root           2     414  0.1  0.0      0     0 ?        S      Aug 19 00:59:27 [jbd2/dm-0-8]
+root           2     415  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-ext4-]
+root           2     512  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-nvme-]
+root           2     513  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-nvme-]
+root           2     514  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-nvme-]
+root           2     515  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-nvme-]
+root           2     518  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-kmpat]
+root           2     519  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-kmpat]
+root           2     632  0.0  0.0      0     0 ?        S      Aug 19 00:00:17 [irq/63-vmw_vmci]
+root           2     633  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/64-vmw_vmci]
+root           2     648  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [irq/16-vmwgfx]
+root           2     649  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-ttm]
+root           2     661  0.0  0.0      0     0 ?        S      Aug 19 00:00:00 [jbd2/sda2-8]
+root           2     662  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-ext4-]
+root           2     939  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-cfg80]
+message+       1    1019  0.1  0.0  10484  6224 ?        Ss     Aug 19 00:45:44 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root           1    1128  0.0  0.0  18896  9908 ?        Ss     Aug 19 00:12:17 /usr/lib/systemd/systemd-logind
+root           1    1146  0.0  0.0  71292 15208 ?        Ss     Aug 19 00:00:00 /usr/sbin/virtlockd
+root           1    1514  0.0  0.1 109692 23172 ?        Ssl    Aug 19 00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root           1    1705  0.0  0.0   6104  2040 tty1     Ss+    Aug 19 00:00:00 /sbin/agetty -o -p -- \u --noclear - linux
+root           2    1709  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-targe]
+root           2    1710  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-targe]
+root           2    1713  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-xcopy]
+libvirt+       1    2461  0.0  0.0  11484  2324 ?        S      Aug 19 00:00:01 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root        2461    2463  0.0  0.0  11484  1292 ?        S      Aug 19 00:00:00 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/lib/libvirt/libvirt_leaseshelper
+root           2    4308  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-tls-s]
+root           2    4741  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-nvme_]
+root           2   38257  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-iscsi]
+root           2   74922  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-dio/d]
+root           2  101681  0.0  0.0      0     0 ?        I<     Aug 19 00:00:00 [kworker/R-dm_bu]
+root           2  146340  0.0  0.0      0     0 ?        I<     Sep 09 00:00:02 [kworker/1:2H-kblockd]
+root           2  401324  0.0  0.0      0     0 ?        I<     Sep 09 00:00:00 [kworker/0:0H]
+root           2  477014  0.0  0.0      0     0 ?        I<     Sep 09 00:00:00 [kworker/3:0H]
+root           2 1025313  0.0  0.0      0     0 ?        I<     Sep 09 00:00:16 [kworker/3:2H-kblockd]
+root           2 1427258  0.0  0.0      0     0 ?        I<   13:40:46 00:00:10 [kworker/1:1H-kblockd]
+root           1 1689908  0.0  0.0  20096 11324 ?        Ss     Sep 02 00:00:08 /usr/lib/systemd/systemd --user
+root     1689908 1689909  0.0  0.0  21172  3520 ?        S      Sep 02 00:00:00 (sd-pam)
+root           2 1689914  0.0  0.0      0     0 ?        S      Sep 02 00:00:00 [psimon]
+root           2 2014952  0.0  0.0      0     0 ?        I<   17:38:50 00:00:08 [kworker/0:1H-kblockd]
+root           2 2058331  0.0  0.0      0     0 ?        I<   18:01:35 00:00:00 [kworker/2:0H]
+root           2 2484217  0.0  0.0      0     0 ?        I<   03:53:31 00:00:03 [kworker/2:1H-kblockd]
+root           2 2659793  0.0  0.0      0     0 ?        I    05:09:31 00:00:01 [kworker/1:1-events]
+root           2 2689443  0.0  0.0      0     0 ?        I    05:20:21 00:00:01 [kworker/u9:1-flush-252:0]
+root           2 2719019  0.0  0.0      0     0 ?        I    05:28:34 00:00:01 [kworker/u12:3-events_power_efficient]
+root           2 2749330  0.0  0.0      0     0 ?        I    05:38:02 00:00:00 [kworker/2:2-cgroup_free]
+root           2 2754853  0.0  0.0      0     0 ?        I    05:39:27 00:00:01 [kworker/u10:0-flush-252:0]
+root           2 2755260  0.1  0.0      0     0 ?        I    05:43:24 00:00:04 [kworker/u8:0-ext4-rsv-conversion]
+root           2 2755650  0.0  0.0      0     0 ?        I    05:47:10 00:00:01 [kworker/u10:3-flush-252:0]
+root           2 2772883  0.0  0.0      0     0 ?        I    05:53:44 00:00:00 [kworker/u12:0-flush-252:0]
+root           2 2774736  0.0  0.0      0     0 ?        I    05:55:06 00:00:00 [kworker/0:3-cgroup_release]
+root           2 2774943  0.0  0.0      0     0 ?        I    05:56:23 00:00:00 [kworker/u10:2-flush-252:0]
+root           2 2776973  0.0  0.0      0     0 ?        I    05:56:41 00:00:00 [kworker/2:0-events]
+root           2 2784430  0.0  0.0      0     0 ?        I    05:57:44 00:00:00 [kworker/3:2-cgroup_release]
+root           1 2784977  0.0  0.0   2804   984 ?        S    05:59:22 00:00:00 sh -c (cp '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/script.sh' '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/script.sh.copy'; { while [ -d '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53' -a \! -f '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt' ]; do touch '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-log.txt'; sleep 3; done } & jsc=durable-29b5615e98601fa0e3f80cd3ef959fe822884ba3417576e0892979112d203ac6; JENKINS_SERVER_COOKIE=$jsc 'sh' -xe  '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/script.sh.copy' > '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-log.txt' 2>&1; echo $? > '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt.tmp'; mv '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt.tmp' '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt'; wait) >&- 2>&- &
+root     2784977 2784979  0.0  0.0   2804   924 ?        S    05:59:22 00:00:00 sh -c (cp '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/script.sh' '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/script.sh.copy'; { while [ -d '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53' -a \! -f '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt' ]; do touch '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-log.txt'; sleep 3; done } & jsc=durable-29b5615e98601fa0e3f80cd3ef959fe822884ba3417576e0892979112d203ac6; JENKINS_SERVER_COOKIE=$jsc 'sh' -xe  '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/script.sh.copy' > '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-log.txt' 2>&1; echo $? > '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt.tmp'; mv '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt.tmp' '/home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/jenkins-result.txt'; wait) >&- 2>&- &
+root     2784977 2784980  0.0  0.0   2800  1920 ?        S    05:59:22 00:00:00 sh -xe /home/ci_user/jenkins/workspace/OpenstackCI/Cinder CI/Openstack NVME CI@tmp/durable-a10dec53/script.sh.copy
+root     2784980 2784986  0.0  0.0  16912  7308 ?        S    05:59:22 00:00:00 sudo -u stack bash -c export TERM=xterm-256color; cd /opt/stack/devstack && ./stack.sh
+stack    2784986 2784987  0.0  0.0   7340  3580 ?        S    05:59:22 00:00:00 bash -c export TERM=xterm-256color; cd /opt/stack/devstack && ./stack.sh
+stack    2784987 2784988  3.1  0.0  14664 11232 ?        S    05:59:22 00:00:47 bash ./stack.sh
+stack    2784988 2787574  0.2  0.0  20012 12572 ?        S    05:59:37 00:00:03 /usr/bin/python3.12 /opt/stack/devstack/tools/outfilter.py -v --no-timestamp -o /opt/stack/logs/stack.sh.log.2026-09-11-055937
+stack    2784988 2787583  0.0  0.0  20012 12480 ?        S    05:59:37 00:00:00 /usr/bin/python3.12 /opt/stack/devstack/tools/outfilter.py -o /opt/stack/logs/stack.sh.log.2026-09-11-055937.summary.2026-09-11-055937
+root           2 2794849  0.1  0.0      0     0 ?        I    06:02:12 00:00:02 [kworker/u11:0-events_power_efficient]
+root           2 2796180  0.0  0.0      0     0 ?        I    06:03:17 00:00:01 [kworker/u9:0-events_unbound]
+root           2 2815621  0.0  0.0      0     0 ?        I    06:11:14 00:00:00 [kworker/u11:1-events_power_efficient]
+root           2 2817440  0.0  0.0      0     0 ?        I    06:14:10 00:00:00 [kworker/1:2-cgroup_free]
+root           2 2820816  0.0  0.0      0     0 ?        I    06:14:31 00:00:00 [kworker/0:1-events]
+root           1 2824131  0.0  0.0  71296 15580 ?        Ss   06:14:57 00:00:00 /usr/sbin/virtlogd
+root           2 2824133  0.0  0.0      0     0 ?        I    06:14:57 00:00:00 [kworker/2:1-cgroup_free]
+root           2 2824134  0.0  0.0      0     0 ?        I    06:14:57 00:00:00 [kworker/u8:1]
+root           2 2828707  0.0  0.0      0     0 ?        I    06:15:59 00:00:00 [kworker/3:3-events]
+root           2 2829692  0.0  0.0      0     0 ?        I    06:16:14 00:00:00 [kworker/u12:2-writeback]
+root           2 2830823  0.0  0.0      0     0 ?        I    06:16:24 00:00:00 [kworker/u9:2-events_power_efficient]
+root           2 2832200  0.0  0.0      0     0 ?        I    06:16:36 00:00:00 [kworker/u11:2-writeback]
+root           1 2832266  0.9  0.1 11736720 28064 ?      Ssl  06:16:37 00:00:04 /opt/stack/bin/etcd --name ubuntu --data-dir /opt/stack/data/etcd --initial-cluster-state new --initial-cluster-token etcd-cluster-01 --initial-cluster ubuntu=http://10.132.239.111:2380 --initial-advertise-peer-urls http://10.132.239.111:2380 --advertise-client-urls http://10.132.239.111:2379 --listen-peer-urls http://0.0.0.0:2380 --listen-client-urls http://10.132.239.111:2379 --log-level=debug
+stack          1 2832891  0.0  0.0   5692  1916 ?        S    06:16:56 00:00:00 cat /opt/stack/async/install_tempest.fifo
+root           2 2844288  0.0  0.0      0     0 ?        I    06:20:00 00:00:00 [kworker/2:3-cgroup_free]
+root           2 2852172  0.0  0.0      0     0 ?        I    06:22:34 00:00:00 [kworker/1:0-events]
+root           2 2853432  0.0  0.0      0     0 ?        I    06:22:45 00:00:00 [kworker/u11:3-events_power_efficient]
+root           2 2853938  0.2  0.0      0     0 ?        I    06:22:52 00:00:00 [kworker/u9:3-flush-252:0]
+root           2 2854354  0.0  0.0      0     0 ?        I    06:22:56 00:00:00 [kworker/0:0-cgroup_bpf_destroy]
+root           2 2855005  0.0  0.0      0     0 ?        I    06:23:07 00:00:00 [kworker/3:0-events]
+root           2 2855366  0.0  0.0      0     0 ?        I    06:23:25 00:00:00 [kworker/u12:1-flush-252:0]
+root           1 2855374  0.0  0.0   2800  1960 ?        Ss   06:23:25 00:00:00 /bin/sh /usr/lib/apt/apt.systemd.daily install
+root     2855374 2855378  0.0  0.0   2800  1972 ?        S    06:23:25 00:00:00 /bin/sh /usr/lib/apt/apt.systemd.daily lock_is_held install
+root     2855378 2855440 19.4  0.7 367752 128296 ?       Sl   06:23:26 00:00:09 /usr/bin/python3 /usr/bin/unattended-upgrade
+root     2855440 2855611  2.7  0.7 386176 125224 ?       S    06:23:35 00:00:01 /usr/bin/python3 /usr/bin/unattended-upgrade
+root           2 2856141  0.0  0.0      0     0 ?        S    06:23:41 00:00:00 [psimon]
+root     2855611 2857673  0.0  0.4 386176 67416 ?        S    06:23:51 00:00:00 /usr/bin/python3 /usr/bin/unattended-upgrade
+root     2857673 2857688  0.0  0.0   2804  1908 ?        S    06:23:51 00:00:00 sh -c -- test -x /usr/lib/needrestart/apt-pinvoke && /usr/lib/needrestart/apt-pinvoke -m u || true
+root     2857688 2857689  2.6  0.1  22920 17644 ?        S    06:23:51 00:00:00 /usr/bin/perl /usr/share/debconf/frontend /usr/sbin/needrestart -m u
+root     2857689 2857771  2.9  0.1  23264 17960 ?        S    06:23:52 00:00:00 /usr/bin/perl /usr/sbin/needrestart -m u
+root     2857771 2858046  0.2  0.0  18136  7288 ?        S    06:23:55 00:00:00 systemctl restart apache2.service cron.service devstack@dstat.service devstack@keystone.service dm-event.service epmd.service fwupd.service haproxy.service iscsid.service ksmtuned.service memcached.service multipathd.service mysql.service open-vm-tools.service packagekit.service pmcd.service pmie.service pmie_farm.service pmlogger.service pmlogger_farm.service pmproxy.service polkit.service rabbitmq-server.service rsyslog.service ssh.service systemd-journald.service systemd-machined.service systemd-networkd.service systemd-resolved.service systemd-timesyncd.service systemd-udevd.service udisks2.service upower.service vgauth.service
+root           1 2858056  0.1  0.0   6828  2932 ?        Ss   06:23:55 00:00:00 /usr/sbin/cron -f -P
+stack          1 2858060  0.1  0.0   7344  3596 ?        Ss   06:23:55 00:00:00 /bin/bash /opt/stack/devstack/tools/dstat.sh /opt/stack/logs
+root           1 2858074  0.0  0.0   5180  2728 ?        Ss   06:23:55 00:00:00 /usr/sbin/dmeventd -f
+epmd           1 2858075  0.0  0.0   7168  3292 ?        Ss   06:23:55 00:00:00 /usr/bin/epmd -systemd
+root           1 2858096  0.8  0.0  96888 12672 ?        Ss   06:23:55 00:00:00 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -S /run/haproxy-master.sock
+root           1 2858107  0.0  0.0  13820  2044 ?        Ss   06:23:55 00:00:00 /usr/sbin/iscsid
+root           1 2858108  0.0  0.0  14204 14188 ?        S<Ls 06:23:55 00:00:00 /usr/sbin/iscsid
+root           1 2858112  0.0  0.0   7344  2276 ?        S    06:23:55 00:00:00 /bin/bash /usr/sbin/ksmtuned
+root     2858112 2858113  0.0  0.0   5688  2124 ?        S    06:23:55 00:00:00 sleep 60
+root           1 2858114  0.2  0.1 372600 21112 ?        Ssl  06:23:55 00:00:00 /usr/libexec/packagekitd
+root           1 2858123  0.5  0.1 289120 27456 ?        SLsl 06:23:55 00:00:00 /sbin/multipathd -d -s
+root           1 2858133  1.5  0.1 464688 28472 ?        Ssl  06:23:55 00:00:00 /usr/libexec/fwupd/fwupd
+memcache       1 2858141  0.4  0.0 412132  4980 ?        Ssl  06:23:55 00:00:00 /usr/bin/memcached -m 64 -p 11211 -u memcache -l 127.0.0.1 -l ::1 -P /var/run/memcached/memcached.pid
+root           1 2858189  0.2  0.0  17564  8040 ?        Ss   06:23:55 00:00:00 /usr/lib/systemd/systemd-machined
+systemd+       1 2858198  0.5  0.0  19032  9736 ?        Ss   06:23:55 00:00:00 /usr/lib/systemd/systemd-networkd
+systemd+       1 2858224  0.8  0.0  21348 13144 ?        Ss   06:23:56 00:00:00 /usr/lib/systemd/systemd-resolved
+root           1 2858225  0.5  0.0  28160  6888 ?        Ss   06:23:56 00:00:00 /usr/lib/systemd/systemd-udevd
+root           1 2858254  0.6  0.0 314008  9144 ?        Ssl  06:23:56 00:00:00 /usr/libexec/upowerd
+polkitd        1 2858263  0.7  0.0 308172  8136 ?        Ssl  06:23:56 00:00:00 /usr/lib/polkit-1/polkitd --no-debug
+root           1 2858272  0.1  0.0  12024  8276 ?        Ss   06:23:56 00:00:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root           1 2858305  0.0  0.0  53472 12184 ?        Ss   06:23:56 00:00:00 /usr/bin/VGAuthService
+root           1 2858307  0.3  0.0 242424  9356 ?        Ssl  06:23:56 00:00:00 /usr/bin/vmtoolsd
+root           1 2858315  0.5  0.0 468988 13636 ?        Ssl  06:23:56 00:00:00 /usr/libexec/udisks2/udisksd
+haproxy  2858096 2858415  0.0  0.0 246164  7032 ?        Sl   06:23:56 00:00:00 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -S /run/haproxy-master.sock
+syslog         1 2858481  1.1  0.0 222712  6064 ?        Ssl  06:23:57 00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root           2 2858516  0.0  0.0      0     0 ?        S    06:23:57 00:00:00 [psimon]
+stack    2858060 2858536  2.3  0.1  38868 25096 ?        S    06:23:57 00:00:00 /usr/bin/python3 /bin/dstat -tcmndrylpg --tcp --output /opt/stack/logs/dstat-csv.log
+stack    2858060 2858537  2.3  0.1  38872 25176 ?        S    06:23:57 00:00:00 /usr/bin/python3 /bin/dstat -tcmndrylpg --swap --tcp
+root           1 2858543  0.1  0.0  19060  8788 ?        Ss   06:23:57 00:00:00 /usr/sbin/apache2 -k start
+root           1 2858556  1.9  0.0  11840  7648 ?        S<s  06:23:57 00:00:00 ovsdb-server /etc/openvswitch/conf.db -vconsole:emer -vsyslog:err -vfile:info --remote=punix:/var/run/openvswitch/db.sock --private-key=db:Open_vSwitch,SSL,private_key --certificate=db:Open_vSwitch,SSL,certificate --bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert --no-chdir --log-file=/var/log/openvswitch/ovsdb-server.log --pidfile=/var/run/openvswitch/ovsdb-server.pid --detach
+stack          1 2858578  0.0  0.0   5696  1932 ?        S    06:23:57 00:00:00 cat /opt/stack/async/nova-cell-1.fifo
+www-data 2858543 2858581  0.2  0.0 1948560 16336 ?       Sl   06:23:57 00:00:00 /usr/sbin/apache2 -k start
+www-data 2858543 2858582  0.2  0.0 2014096 16340 ?       Sl   06:23:57 00:00:00 /usr/sbin/apache2 -k start
+root           1 2858659  1.1  0.0 392036 12748 ?        Ssl  06:23:57 00:00:00 /usr/sbin/ModemManager
+root           1 2858725  1.7  0.2 154532 43976 ?        S<s  06:23:57 00:00:00 /usr/lib/systemd/systemd-journald
+stack          1 2859010  0.6  0.1  66524 19824 ?        Ss   06:23:59 00:00:00 keystoneuWSGI master
+stack    2859010 2859043 32.3  0.7 183600 125080 ?       S    06:23:59 00:00:04 keystoneuWSGI worker 1
+stack    2859010 2859045 34.8  0.7 183588 125088 ?       S    06:23:59 00:00:04 keystoneuWSGI worker 2
+mysql          1 2859092 14.2  2.4 2315556 399844 ?      Ssl  06:23:59 00:00:01 /usr/sbin/mysqld
+pcp            1 2859103  5.6  0.0  14912  7672 ?        Ss   06:23:59 00:00:00 /usr/lib/pcp/bin/pmcd -A
+root     2859103 2859106  0.0  0.0  14796  5848 ?        S    06:23:59 00:00:00 /var/lib/pcp/pmdas/root/pmdaroot
+root     2859106 2859107  0.7  0.0  14912  6852 ?        S    06:24:00 00:00:00 /var/lib/pcp/pmdas/proc/pmdaproc -d 3
+root     2859106 2859108  0.0  0.0  14028  5456 ?        S    06:24:00 00:00:00 /var/lib/pcp/pmdas/xfs/pmdaxfs -d 11
+root     2859106 2859109  1.8  0.0  14916  6976 ?        S    06:24:00 00:00:00 /var/lib/pcp/pmdas/linux/pmdalinux
+root     2859106 2859110  0.0  0.0  14088  5660 ?        S    06:24:00 00:00:00 /var/lib/pcp/pmdas/kvm/pmdakvm -d 95
+pcp            1 2859119  0.3  0.0  15568  9432 ?        Ssl  06:24:00 00:00:00 /usr/lib/pcp/bin/pmproxy -F -A
+pcp            1 2859644  0.4  0.0  14576  6908 ?        S    06:24:01 00:00:00 /usr/bin/pmie -b -m pmie_check -F -P -l /var/log/pcp/pmie/ubuntu/pmie.log -c config.default
+pcp            1 2859656  0.1  0.0  13856  4788 ?        Ss   06:24:01 00:00:00 /usr/lib/pcp/bin/pmpause
+pcp            1 2859765  7.4  0.0  15212  7600 ?        S    06:24:01 00:00:00 /usr/lib/pcp/bin/pmlogger -N -P -d "/var/log/pcp/pmlogger/LOCALHOSTNAME" -r -T24h10m -c config.default -v 100mb -m pmlogger_check %Y%m%d.%H.%M
+rabbitmq       1 2859851 75.3  0.6 2562004 101708 ?      Ssl  06:24:02 00:00:08 /usr/lib/erlang/erts-13.2.2.5/bin/beam.smp -W w -MBas ageffcbf -MHas ageffcbf -MBlmbcs 512 -MHlmbcs 512 -MMmcs 30 -pc unicode -P 1048576 -t 5000000 -stbt db -zdbbl 128000 -sbwt none -sbwtdcpu none -sbwtdio none -- -root /usr/lib/erlang -bindir /usr/lib/erlang/erts-13.2.2.5/bin -progname erl -- -home /var/lib/rabbitmq -- -pa  -noshell -noinput -s rabbit boot -boot start_sasl -syslog logger [] -syslog syslog_error_logger false -kernel prevent_overlapping_partitions false -enable-feature maybe_expr
+root           2 2859853  0.0  0.0      0     0 ?        I    06:24:02 00:00:00 [kworker/0:2-events]
+root           2 2859854  0.0  0.0      0     0 ?        I    06:24:02 00:00:00 [kworker/0:4-events]
+rabbitmq 2859851 2859893  0.0  0.0   2692  1736 ?        Ss   06:24:02 00:00:00 erl_child_setup 65536
+pcp            1 2859960  0.2  0.0  13856  4844 ?        Ss   06:24:02 00:00:00 /usr/lib/pcp/bin/pmpause
+systemd+       1 2860462  2.3  0.0  91036  7940 ?        Ssl  06:24:04 00:00:00 /usr/lib/systemd/systemd-timesyncd
+rabbitmq 2859893 2860563  0.0  0.0   3656  1916 ?        Ss   06:24:06 00:00:00 /usr/lib/erlang/erts-13.2.2.5/bin/inet_gethost 4
+rabbitmq 2860563 2860564  0.0  0.0   3656  1500 ?        S    06:24:06 00:00:00 /usr/lib/erlang/erts-13.2.2.5/bin/inet_gethost 4
+root     2784979 2860605  0.0  0.0   5688  2128 ?        S    06:24:11 00:00:00 sleep 3
+stack    2784988 2860698 77.7  0.0  21776 14480 ?        S    06:24:12 00:00:00 /opt/stack/data/venv/bin/python3 /opt/stack/devstack/tools/worlddump.py -d /opt/stack/logs
+stack    2860698 2860701  0.0  0.0   2804  1912 ?        S    06:24:12 00:00:00 /bin/sh -c ps axo user,ppid,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,args
+stack    2860701 2860702  700  0.0  11020  4692 ?        R    06:24:12 00:00:00 ps axo user,ppid,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,args
+root           1 3300793  0.2  0.0  15744 11608 ?        Ss     Sep 03 00:30:27 sshd: root@notty
+root     3300793 3301485  1.0  0.9 7842072 153940 ?      Ssl    Sep 03 02:04:56 java -jar remoting.jar -workDir /home/ci_user/jenkins -jar-cache /home/ci_user/jenkins/remoting/jarCache
+
+
+Network Dump
+============
+
+bridge link
+-----------
+
+
+ip link show type bridge
+------------------------
+
+6: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:72:06:28 brd ff:ff:ff:ff:ff:ff
+
+ip neigh
+--------
+
+10.132.239.1 dev ens192 lladdr 00:00:00:00:00:60 REACHABLE 
+10.132.239.3 dev ens192 lladdr 08:f1:ea:60:48:00 STALE 
+10.132.239.2 dev ens192 lladdr 08:f1:ea:60:88:00 STALE 
+10.132.239.244 dev ens192 lladdr 00:50:56:9f:94:e0 REACHABLE 
+
+ip addr
+-------
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:a8:bb:e5 brd ff:ff:ff:ff:ff:ff
+    altname enp11s0
+    inet 10.132.239.111/24 brd 10.132.239.255 scope global ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:fea8:bbe5/64 scope link 
+       valid_lft forever preferred_lft forever
+6: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:72:06:28 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+
+ip route
+--------
+
+default via 10.132.239.1 dev ens192 proto static 
+10.132.239.0/24 dev ens192 proto kernel scope link src 10.132.239.111 
+192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1 linkdown 
+
+ip -6 route
+-----------
+
+fe80::/64 dev ens192 proto kernel metric 256 pref medium
+
+ip netns
+--------
+
+
+
+Open vSwitch Dump
+=================
+
+sudo ovs-vsctl show
+-------------------
+
+16fd281d-2a76-486b-85f2-0834abdc8d25
+    Manager "ptcp:6640:127.0.0.1"
+    Bridge br-int
+        fail_mode: secure
+        datapath_type: system
+        Port patch-br-int-to-provnet-87abcced-553d-4ba9-a555-c3cde06435cf
+            Interface patch-br-int-to-provnet-87abcced-553d-4ba9-a555-c3cde06435cf
+                type: patch
+                options: {peer=patch-provnet-87abcced-553d-4ba9-a555-c3cde06435cf-to-br-int}
+        Port br-int
+            Interface br-int
+                type: internal
+    Bridge br-ex
+        Port patch-provnet-87abcced-553d-4ba9-a555-c3cde06435cf-to-br-int
+            Interface patch-provnet-87abcced-553d-4ba9-a555-c3cde06435cf-to-br-int
+                type: patch
+                options: {peer=patch-br-int-to-provnet-87abcced-553d-4ba9-a555-c3cde06435cf}
+        Port br-ex
+            Interface br-ex
+                type: internal
+    ovs_version: "3.3.9"
+
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-ex
+-------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-ex': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-ex' returned non-zero exit status 1.
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-int
+--------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-int': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 show br-int' returned non-zero exit status 1.
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-ex
+------------------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-ex': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-ex' returned non-zero exit status 1.
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-int
+-------------------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-int': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports-desc br-int' returned non-zero exit status 1.
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-ex
+-------------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-ex': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-ex' returned non-zero exit status 1.
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-int
+--------------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-int': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-ports br-int' returned non-zero exit status 1.
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-ex
+-------------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-ex': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-ex' returned non-zero exit status 1.
+sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-int
+--------------------------------------------------------------------------------------------------------------
+
+*** Failed to run 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-int': Command 'sudo ovs-ofctl --protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15 dump-flows br-int' returned non-zero exit status 1.
+
+IP Tables Dump
+==============
+
+sudo iptables --line-numbers -L -nv -t filter
+---------------------------------------------
+
+Chain INPUT (policy ACCEPT 331M packets, 338G bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     331M  338G LIBVIRT_INP  0    --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 LIBVIRT_FWX  0    --  *      *       0.0.0.0/0            0.0.0.0/0           
+2        0     0 LIBVIRT_FWI  0    --  *      *       0.0.0.0/0            0.0.0.0/0           
+3        0     0 LIBVIRT_FWO  0    --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain OUTPUT (policy ACCEPT 219M packets, 89G bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     219M   89G LIBVIRT_OUT  0    --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain LIBVIRT_FWI (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     0    --  *      virbr0  0.0.0.0/0            192.168.122.0/24     ctstate RELATED,ESTABLISHED
+2        0     0 REJECT     0    --  *      virbr0  0.0.0.0/0            0.0.0.0/0            reject-with icmp-port-unreachable
+
+Chain LIBVIRT_FWO (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     0    --  virbr0 *       192.168.122.0/24     0.0.0.0/0           
+2        0     0 REJECT     0    --  virbr0 *       0.0.0.0/0            0.0.0.0/0            reject-with icmp-port-unreachable
+
+Chain LIBVIRT_FWX (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     0    --  virbr0 virbr0  0.0.0.0/0            0.0.0.0/0           
+
+Chain LIBVIRT_INP (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     17   --  virbr0 *       0.0.0.0/0            0.0.0.0/0            udp dpt:53
+2        0     0 ACCEPT     6    --  virbr0 *       0.0.0.0/0            0.0.0.0/0            tcp dpt:53
+3        0     0 ACCEPT     17   --  virbr0 *       0.0.0.0/0            0.0.0.0/0            udp dpt:67
+4        0     0 ACCEPT     6    --  virbr0 *       0.0.0.0/0            0.0.0.0/0            tcp dpt:67
+
+Chain LIBVIRT_OUT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     17   --  *      virbr0  0.0.0.0/0            0.0.0.0/0            udp dpt:53
+2        0     0 ACCEPT     6    --  *      virbr0  0.0.0.0/0            0.0.0.0/0            tcp dpt:53
+3        0     0 ACCEPT     17   --  *      virbr0  0.0.0.0/0            0.0.0.0/0            udp dpt:68
+4        0     0 ACCEPT     6    --  *      virbr0  0.0.0.0/0            0.0.0.0/0            tcp dpt:68
+
+sudo iptables --line-numbers -L -nv -t nat
+------------------------------------------
+
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 1941K packets, 116M bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1    1941K  116M LIBVIRT_PRT  0    --  *      *       0.0.0.0/0            0.0.0.0/0           
+2        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+3        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+4        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+5        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+6        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+7        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+8        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+9        0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+10       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+11       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+12       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+13       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+14       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+15       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+16       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+17       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+18       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+19       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+20       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+21       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+22       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+23       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+24       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+25       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+26       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+27       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+28       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+29       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+30       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+31       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+32       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+33       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+34       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+35       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+36       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+37       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+38       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+39       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+40       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+41       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+42       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+43       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+44       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+45       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+46       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+47       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+48       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+49       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+50       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+51       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+52       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+53       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+54       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+55       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+56       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+57       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+58       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+59       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+60       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+61       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+62       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+63       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+64       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+65       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+66       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+67       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+68       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+69       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+70       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+71       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+72       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+73       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+74       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+75       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+76       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+77       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+78       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+79       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+80       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+81       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+82       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+83       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+84       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+85       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+86       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+87       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+88       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+89       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+90       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+91       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+92       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+93       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+94       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+95       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+96       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+97       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+98       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+99       0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+100      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+101      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+102      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+103      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+104      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+105      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+106      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+107      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+108      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+109      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+110      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+111      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+112      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+113      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+114      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+115      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+116      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+117      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+118      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+119      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+120      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+121      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+122      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+123      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+124      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+125      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+126      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+127      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+128      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+129      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+130      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+131      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+132      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+133      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+134      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+135      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+136      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+137      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+138      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+139      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+140      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+141      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+142      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+143      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+144      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+145      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+146      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+147      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+148      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+149      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+150      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+151      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+152      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+153      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+154      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+155      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+156      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+157      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+158      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+159      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+160      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+161      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+162      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+163      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+164      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+165      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+166      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+167      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+168      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+169      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+170      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+171      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+172      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+173      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+174      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+175      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+176      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+177      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+178      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+179      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+180      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+181      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+182      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+183      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+184      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+185      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+186      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+187      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+188      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+189      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+190      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+191      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+192      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+193      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+194      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+195      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+196      0     0 MASQUERADE  0    --  *      ens192  172.24.4.0/24        0.0.0.0/0           
+
+Chain LIBVIRT_PRT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 RETURN     0    --  *      *       192.168.122.0/24     224.0.0.0/24        
+2        0     0 RETURN     0    --  *      *       192.168.122.0/24     255.255.255.255     
+3        0     0 MASQUERADE  6    --  *      *       192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+4        0     0 MASQUERADE  17   --  *      *       192.168.122.0/24    !192.168.122.0/24     masq ports: 1024-65535
+5        0     0 MASQUERADE  0    --  *      *       192.168.122.0/24    !192.168.122.0/24    
+
+sudo iptables --line-numbers -L -nv -t mangle
+---------------------------------------------
+
+Chain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 219M packets, 89G bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     219M   89G LIBVIRT_PRT  0    --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain LIBVIRT_PRT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 CHECKSUM   17   --  *      virbr0  0.0.0.0/0            0.0.0.0/0            udp dpt:68 CHECKSUM fill
+
+
+EB Tables Dump
+==============
+
+sudo ebtables -t filter -L
+--------------------------
+
+Bridge table: filter
+
+Bridge chain: INPUT, entries: 0, policy: ACCEPT
+
+Bridge chain: FORWARD, entries: 0, policy: ACCEPT
+
+Bridge chain: OUTPUT, entries: 0, policy: ACCEPT
+
+sudo ebtables -t nat -L
+-----------------------
+
+Bridge table: nat
+
+Bridge chain: PREROUTING, entries: 0, policy: ACCEPT
+
+Bridge chain: OUTPUT, entries: 0, policy: ACCEPT
+
+Bridge chain: POSTROUTING, entries: 0, policy: ACCEPT
+
+
+Compute consoles
+================
+
+
+nova-compute Guru Meditation Report
+===================================
+
+Skipping as nova-compute does not appear to be running
+
+neutron-dhcp-agent Guru Meditation Report
+=========================================
+
+Skipping as neutron-dhcp-agent does not appear to be running
+
+neutron-l3-agent Guru Meditation Report
+=======================================
+
+Skipping as neutron-l3-agent does not appear to be running
+
+neutron-metadata-agent Guru Meditation Report
+=============================================
+
+Skipping as neutron-metadata-agent does not appear to be running
+
+neutron-openvswitch-agent Guru Meditation Report
+================================================
+
+Skipping as neutron-openvswitch-agent does not appear to be running
+
+cinder-volume Guru Meditation Report
+====================================
+
+Skipping as cinder-volume does not appear to be running
