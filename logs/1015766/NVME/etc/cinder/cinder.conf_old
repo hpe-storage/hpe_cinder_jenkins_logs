@@ -13,8 +13,8 @@ interface = public
 auth_type = password
 
 [DEFAULT]
-cinder_internal_tenant_user_id = 1f045c65590b4327a13ccacf86e4a533
-cinder_internal_tenant_project_id = 45dbbb22ed3e4dc1bb89b9994ca4cc21
+cinder_internal_tenant_user_id = 54b8b93c22f644dbab418ba38de4fe9a
+cinder_internal_tenant_project_id = bc510a1942234de2a15675f00678c0ea
 graceful_shutdown_timeout = 5
 glance_api_servers = http://10.132.239.111/image
 log_color = True
@@ -105,3 +105,6 @@ auth_url = http://10.132.239.111/identity
 interface = public
 auth_type = password
 send_service_user_token = True
+
+[os_brick]
+lock_path = /opt/stack/data/os_brick
